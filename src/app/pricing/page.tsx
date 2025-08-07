@@ -1,12 +1,12 @@
 import { Header } from "@/layout/Header/Header";
 import { Wrapper } from "@/layout/Wrapper/Wrapper";
-import { Hero } from "./components/Hero/Hero";
+import Main from "./components/Main";
 
 export default function Home() {
   return (
     <Wrapper>
       <Header />
-      <Hero />
+      <Main />
     </Wrapper>
   );
 }

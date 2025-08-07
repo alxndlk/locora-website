@@ -1,0 +1,8 @@
+.hero {
+  height: 300vh;
+  width: 100%;
+  /* background-image: url("/images/test.webp"); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: -64px;
+}

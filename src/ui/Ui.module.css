@@ -1,0 +1,43 @@
+.secondaryButton {
+  display: flex;
+  padding: 0 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.secondaryButton::before {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-color: transparent;
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  content: "";
+  background: linear-gradient(#090a0c, #090a0c) padding-box,
+    linear-gradient(180deg, hsla(0, 0%, 100%, 0.3), hsla(0, 0%, 100%, 0.15))
+      border-box;
+}
+
+.secondaryButton::after {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  border-radius: 9999px;
+  content: "";
+  border-width: 1px;
+  border-color: transparent;
+  opacity: 0;
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(#17171a, #17171a) padding-box,
+    linear-gradient(180deg, hsla(0, 0%, 100%, 0.5), hsla(0, 0%, 100%, 0.25))
+      border-box;
+}
+
+.secondaryButton:hover::after {
+  opacity: 1;
+}

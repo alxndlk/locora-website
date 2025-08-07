@@ -1,0 +1,51 @@
+.section {
+  padding: 140px 40px;
+  color: #fff;
+  font-size: 36px;
+  line-height: 1.5;
+  font-weight: 500;
+  min-height: 100vh;
+  background: transparent;
+}
+
+.container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  gap: 90px;
+  margin-bottom: 10rem;
+}
+
+.paragraph {
+  display: flex;
+  flex-wrap: wrap;
+  white-space: pre-wrap;
+}
+
+.word {
+  display: inline-block;
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 20vh;
+  pointer-events: none;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+}
+
+.bottomOverlay {
+  bottom: 0;
+  mask-image: linear-gradient(to top, black 0%, transparent 100%);
+}
+
+.topOverlay {
+  top: 0;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
