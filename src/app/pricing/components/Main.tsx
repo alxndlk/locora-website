@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect, useState } from "react";
 import styles from "./Main.module.css";
+import Blocks from "./Blocks";
 
 const paragraphs = [
   `Locora helps you decode cities. It's a smart layer of information designed for travelers, digital nomads, and remote workers who want more than just Google Maps.`,
@@ -47,39 +48,80 @@ const Main = () => {
 
   return (
     <section className={styles.section}>
-      <div className={`${styles.overlay} ${styles.bottomOverlay}`} />
       <div className={`${styles.overlay} ${styles.topOverlay}`} />
+      <div className={`${styles.overlay} ${styles.bottomOverlay}`} />
 
       <div className={styles.container}>
-        {allWordsNested.map((words, pIndex) => (
-          <p className={styles.paragraph} key={pIndex}>
-            {words.map((word, wIndex) => {
-              const index = globalIndex++;
-              return (
-                <span
-                  key={wIndex}
-                  ref={(el) => {
-                    wordRefs.current[index] = el;
-                  }}
-                  className={styles.word}
-                  style={{
-                    opacity: visibleMap[index] ? 1 : 0.15,
-                    transform: visibleMap[index]
-                      ? "none"
-                      : "translateY(12px) scale(0.96)",
-                    transition: "opacity 0.4s ease, transform 0.4s ease",
-                    whiteSpace: word.match(/\s+/) ? "pre" : "normal",
-                  }}
-                >
-                  {word}
-                </span>
-              );
-            })}
-          </p>
-        ))}
+        {/* TEXT SECTION */}
+        <div className={styles.textSection}>
+          {allWordsNested.map((words, pIndex) => (
+            <p className={styles.paragraph} key={pIndex}>
+              {words.map((word, wIndex) => {
+                const index = globalIndex++;
+                return (
+                  <span
+                    key={wIndex}
+                    ref={(el) => {
+                      wordRefs.current[index] = el;
+                    }}
+                    className={styles.word}
+                    style={{
+                      opacity: visibleMap[index] ? 1 : 0.15,
+                      transform: visibleMap[index]
+                        ? "none"
+                        : "translateY(12px) scale(0.96)",
+                      transition: "opacity 0.4s ease, transform 0.4s ease",
+                      whiteSpace: word.match(/\s+/) ? "pre" : "normal",
+                    }}
+                  >
+                    {word}
+                  </span>
+                );
+              })}
+            </p>
+          ))}
+        </div>
+
+        {/* BLOCKS SECTION */}
       </div>
-      <div className={`${styles.overlay} ${styles.topOverlay}`} />
-      <div className={`${styles.overlay} ${styles.bottomOverlay}`} />
+
+      <div className={styles.blocksSection}>
+        <Blocks />
+      </div>
+
+      <div className={styles.container}>
+        {/* TEXT SECTION */}
+        <div className={styles.textSection}>
+          {allWordsNested.map((words, pIndex) => (
+            <p className={styles.paragraph} key={pIndex}>
+              {words.map((word, wIndex) => {
+                const index = globalIndex++;
+                return (
+                  <span
+                    key={wIndex}
+                    ref={(el) => {
+                      wordRefs.current[index] = el;
+                    }}
+                    className={styles.word}
+                    style={{
+                      opacity: visibleMap[index] ? 1 : 0.15,
+                      transform: visibleMap[index]
+                        ? "none"
+                        : "translateY(12px) scale(0.96)",
+                      transition: "opacity 0.4s ease, transform 0.4s ease",
+                      whiteSpace: word.match(/\s+/) ? "pre" : "normal",
+                    }}
+                  >
+                    {word}
+                  </span>
+                );
+              })}
+            </p>
+          ))}
+        </div>
+
+        {/* BLOCKS SECTION */}
+      </div>
     </section>
   );
 };

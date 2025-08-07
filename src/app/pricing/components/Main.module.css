@@ -1,11 +1,14 @@
 .section {
-  padding: 140px 40px;
+  padding: 140px 0;
   color: #fff;
   font-size: 36px;
   line-height: 1.5;
   font-weight: 500;
   min-height: 100vh;
   background: transparent;
+  gap: 90px;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -17,7 +20,12 @@
   flex-direction: column;
   z-index: 1;
   gap: 90px;
-  margin-bottom: 10rem;
+}
+
+.textSection {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
 }
 
 .paragraph {

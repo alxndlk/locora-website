@@ -118,7 +118,7 @@
   left: 0;
   display: none;
   flex-direction: column;
-  top: 2.9rem;
+  top: 2.85rem;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(30px) saturate(180%);
