@@ -47,19 +47,19 @@
   user-select: none;
   mask-image: linear-gradient(
     to right,
-    black 0%,
+    rgb(9 10 12) 0%,
     transparent 35%,
     transparent 65%,
-    black 100%
+    rgb(9 10 12) 100%
   );
   -webkit-mask-image: linear-gradient(
     to right,
-    black 0%,
+    rgb(9 10 12) 0%,
     transparent 35%,
     transparent 65%,
-    black 100%
+    rgb(9 10 12) 100%
   );
-  background: #000;
+  background: rgb(9 10 12);
 }
 .overlay {
   position: absolute;

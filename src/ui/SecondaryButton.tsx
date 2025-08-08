@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import styles from "./Ui.module.css";
 import { SecondaryButtonProps } from "../../types";
+import { PiUserList } from "react-icons/pi";
 
 export const SecondaryButton = ({
   text,
@@ -19,12 +20,14 @@ export const SecondaryButton = ({
   fontWeight,
   onClick,
   widthButton,
+  paddingButton,
 }: SecondaryButtonProps) => {
   const iconsMap: { [key: string]: JSX.Element } = {
     FaChevronRight: <FaChevronRight size={iconSize} color={iconColor} />,
     FaChevronLeft: <FaChevronLeft size={iconSize} color={iconColor} />,
     FaStore: <FaStore size={iconSize} color={iconColor} />,
     FaApple: <FaApple size={iconSize} color={iconColor} />,
+    PiUserList: <PiUserList size={iconSize} color={iconColor} />,
   };
 
   const IconComponent = icon ? iconsMap[icon] : null;
@@ -38,6 +41,7 @@ export const SecondaryButton = ({
         fontSize: fontSize,
         fontWeight: fontWeight,
         width: widthButton,
+        padding: paddingButton,
       }}
     >
       {iconPosition === "left" && IconComponent}

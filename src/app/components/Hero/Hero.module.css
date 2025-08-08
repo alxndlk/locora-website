@@ -1,8 +1,186 @@
 .hero {
-  height: 300vh;
-  width: 100%;
-  /* background-image: url("/images/test.webp"); */
-  background-size: contain;
-  background-repeat: no-repeat;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
   margin-top: -64px;
+  height: 100vh;
+}
+
+.wrapper {
+  width: 1200px;
+  height: 100%;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(60%);
+}
+
+.wrapper::before {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(transparent 60%, rgb(9 10 12));
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-top: 184px;
+  align-items: start;
+  text-align: start;
+  max-width: 600px;
+}
+
+.container h1 {
+  font-size: 84px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  text-wrap: balance;
+
+  background: linear-gradient(45deg, #fff 50%, #fffded);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Для Firefox */
+  background-clip: text;
+  color: transparent;
+}
+
+.container i {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+}
+
+.container p {
+  letter-spacing: -0.04em;
+  margin-top: 0.125rem;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.375;
+  margin-top: 1rem;
+  color: rgb(229 229 231);
+  max-width: 28rem;
+}
+
+.span {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.08);
+  will-change: transform;
+  opacity: 1;
+  transform: none;
+  border-radius: 50px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 4px;
+  font-size: 14px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 6px 16px;
+  position: relative;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 12%);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.absolute {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+  /* margin-top: 5rem; */
+}
+
+.absolute h2 {
+  color: hsla(0, 0%, 100%, 0.6);
+  line-height: 1;
+  font-weight: 300;
+  margin-bottom: 0.875rem;
+  font-size: 14px;
+}
+
+.absolute ul {
+  display: flex;
+  font-weight: 600;
+  line-height: 1.125;
+  font-size: 14px;
+}
+
+.absolute li {
+  position: relative;
+}
+
+.absolute li:not(:first-child)::before {
+  content: " ";
+  display: inline-block;
+  vertical-align: middle;
+  background-color: hsla(0, 0%, 100%, 0.3);
+  border-radius: 9999px;
+  width: 3px;
+  height: 3px;
+  aspect-ratio: 1/1;
+  margin-left: 0.625rem;
+  margin-right: 0.625rem;
+  margin-bottom: 0.1rem;
+}
+
+.iphone {
+  position: absolute;
+  right: 10%;
+  top: 30%;
+  width: 600px;
+  aspect-ratio: 906 / 1824;
+  background-image: url("/images/iphone.png");
+  background-size: cover;
+}
+
+.iphone::before {
+  width: 90%;
+  height: 90%;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 30px;
+  top: 2rem;
+  content: "";
+  z-index: -1;
+  border-radius: 100px;
+  backdrop-filter: blur(10px) saturate(180%);
+}
+
+.iphone::after {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  transition: 0.3s ease;
+  content: "";
+  top: 50%;
+  left: 50%;
+  filter: blur(135px);
+  opacity: 0.1;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  z-index: 0;
+  background-color: #ffe6084d;
 }

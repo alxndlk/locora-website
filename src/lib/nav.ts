@@ -44,6 +44,16 @@ export const links = {
     route: "/blog",
     description: "Read our latest articles",
   },
+  terms: {
+    name: "Terms of Service",
+    route: "/terms",
+    description: "Review the rules and conditions for using our services",
+  },
+  privacy: {
+    name: "Privacy Policy",
+    route: "/privacy",
+    description: "Learn how we collect, use, and protect your information",
+  },
 };
 
 export const socialLinks = {

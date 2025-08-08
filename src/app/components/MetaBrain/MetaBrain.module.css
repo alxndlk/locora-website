@@ -1,0 +1,44 @@
+.MetaBrain {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 1200px;
+  padding-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  text-align: start;
+  color: rgb(11 13 16);
+  position: relative;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  padding-right: 4rem;
+  padding-left: 15rem;
+}
+
+.container h1 {
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  font-weight: 600;
+  font-size: 80px;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.container p {
+  letter-spacing: -0.04em;
+  line-height: 1.25;
+  font-size: 18px;
+  max-width: 705px;
+  margin-top: 1rem;
+  z-index: 1;
+  color: rgb(48, 50, 54);
+}

@@ -1,0 +1,241 @@
+.knowledge {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 1200px;
+  padding-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  text-align: start;
+  color: rgb(11 13 16);
+  position: relative;
+}
+
+.container h1 {
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  font-weight: 600;
+  font-size: 80px;
+  z-index: 1;
+}
+
+.container p {
+  letter-spacing: -0.04em;
+  line-height: 1.25;
+  font-size: 18px;
+  max-width: 705px;
+  margin-top: 1rem;
+  z-index: 1;
+  color: rgb(48, 50, 54);
+}
+
+.flex {
+  display: flex;
+  margin-top: 2.5rem;
+  gap: 1.25rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.container::after {
+  background-image: linear-gradient(
+    -30deg,
+    hsla(32, 29%, 90%, 0) 33.3%,
+    #dbe2f0 48.28%
+  );
+  filter: blur(64px);
+  border-radius: 50%;
+  opacity: 0.6;
+  width: 31%;
+  height: 42.5%;
+  right: -10%;
+  top: 15%;
+  position: absolute;
+  content: "";
+}
+
+.container::before {
+  background-image: linear-gradient(180deg, #ffeee5 15%, #d5e0ff 83.5%);
+  filter: blur(64px);
+  border-radius: 50%;
+  opacity: 0.6;
+  width: 36.2%;
+  height: 80.3%;
+  left: -10%;
+  bottom: 0%;
+  position: absolute;
+  content: "";
+}
+
+.card {
+  border-radius: 20px;
+  padding: 1.5rem;
+  height: 412px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 0.75rem;
+  box-sizing: 0 0 0 0px #fff, 0 0 0 calc(6px + 0px) hsla(0, 0%, 100%, 0.4),
+    0 0 #0000;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:nth-last-of-type(4) {
+  width: 412px !important;
+  background-color: rgb(12 12 13);
+}
+
+.card:nth-last-of-type(4)::before {
+  background-image: url("/images/bg_2.avif");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  position: absolute;
+  content: "";
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.card:nth-last-of-type(4)::after {
+  mask-image: linear-gradient(
+    to top,
+    #1a1a1ac5 0%,
+    transparent 35%,
+    transparent 65%,
+    transparent 100%
+  );
+
+  background: #000;
+  z-index: 0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  position: absolute;
+  content: "";
+  border-radius: 10px;
+}
+
+.card:nth-last-of-type(3) {
+  width: 768px;
+}
+
+.card:nth-last-of-type(3)::before {
+  background-image: url("/images/city.jpg");
+  background-size: cover;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  position: absolute;
+  content: "";
+  border-radius: 10px;
+  filter: brightness(90%);
+  z-index: -1;
+}
+
+.card:nth-last-of-type(3)::after {
+  mask-image: linear-gradient(
+    to top,
+    #1a1a1a8c 0%,
+    transparent 35%,
+    transparent 65%,
+    transparent 100%
+  );
+
+  background: #000;
+  z-index: 0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  position: absolute;
+  content: "";
+  border-radius: 10px;
+}
+
+.card:nth-last-of-type(1) {
+  width: 412px !important;
+  background-color: rgb(12 12 13);
+}
+
+.card:nth-last-of-type(1)::before {
+  background-image: url("/images/bg.avif");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  position: absolute;
+  content: "";
+  border-radius: 10px;
+  transform: scaleX(-1);
+  z-index: -1;
+}
+
+.card:nth-last-of-type(2) {
+  width: 768px;
+  background-color: #f1f1f1;
+}
+
+.card:nth-last-of-type(2)::before {
+  background-image: url("/images/notification.png");
+  background-size: cover;
+  background-position: 0 -70;
+  background-repeat: no-repeat;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  position: absolute;
+  content: "";
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.card:nth-last-of-type(2)::after {
+  mask-image: linear-gradient(
+    to top,
+    #1a1a1ac5 0%,
+    transparent 35%,
+    transparent 65%,
+    transparent 100%
+  );
+
+  background: #000;
+  z-index: 0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  position: absolute;
+  content: "";
+  border-radius: 10px;
+}
+
+.card p {
+  color: hsla(0, 0%, 100%, 0.65);
+  letter-spacing: -0.02em;
+  line-height: 1.375;
+  font-weight: 300;
+  max-width: 436px;
+  text-wrap: balance;
+}
+
+.card span {
+  color: #fff;
+  font-weight: 500;
+}

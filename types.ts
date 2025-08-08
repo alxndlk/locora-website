@@ -26,4 +26,21 @@ export type SecondaryButtonProps = {
   fontWeight?: 400 | 500 | 600 | 700;
   onClick?: () => void;
   widthButton?: string;
+  paddingButton?: string;
+};
+
+export type PrimaryButtonProps = {
+  text: string;
+  icon?: string;
+  iconPosition?: "left" | "right";
+  popupMessage?: string;
+  popupButton?: string;
+  iconSize?: number;
+  iconColor?: string;
+  buttonSize?: number;
+  fontSize?: number;
+  fontWeight?: 400 | 500 | 600 | 700;
+  onClick?: () => void;
+  widthButton?: string;
+  paddingButton?: string;
 };
