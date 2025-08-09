@@ -1,9 +1,9 @@
 import { Wrapper } from "@/layout/Wrapper/Wrapper";
 import Main from "./components/Main";
 
-export default function Pricing() {
+export default function Login() {
   return (
-    <Wrapper>
+    <Wrapper footerLarge={false}>
       <Main />
     </Wrapper>
   );

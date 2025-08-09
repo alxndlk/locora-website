@@ -54,6 +54,11 @@ export const links = {
     route: "/privacy",
     description: "Learn how we collect, use, and protect your information",
   },
+  profile: {
+    name: "Profile",
+    route: "/profile",
+    description: "Get and manage information about your account.",
+  },
 };
 
 export const socialLinks = {

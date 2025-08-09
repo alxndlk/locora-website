@@ -43,4 +43,6 @@ export type PrimaryButtonProps = {
   onClick?: () => void;
   widthButton?: string;
   paddingButton?: string;
+  type?: "submit" | "reset" | "button" | undefined;
+  formAction?: (formData: FormData) => void | Promise<void>;
 };

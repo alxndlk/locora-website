@@ -7,9 +7,10 @@ import { Header } from "../Header/Header";
 
 type WrapperProps = {
   children: ReactNode;
+  footerLarge?: boolean;
 };
 
-export const Wrapper: React.FC<WrapperProps> = ({ children }) => {
+export const Wrapper: React.FC<WrapperProps> = ({ children, footerLarge }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -32,7 +33,7 @@ export const Wrapper: React.FC<WrapperProps> = ({ children }) => {
       <Header />
       <div className={styles.line} style={{ width: `${progress}%` }} />
       {children}
-      <Footer />
+      <Footer size={footerLarge} />
     </div>
   );
 };

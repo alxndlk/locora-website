@@ -1,0 +1,223 @@
+.main {
+  width: 100%;
+  margin-top: -64px;
+  display: flex;
+  justify-content: center;
+}
+
+.main::before {
+  background-image: url("/images/bg_3.webp");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background-size: cover;
+  filter: brightness(0.7);
+  z-index: -1;
+}
+
+.container {
+  width: 1200px;
+  padding: 0 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.holder {
+  padding-top: 3rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 480px;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: start;
+  justify-content: start;
+  box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+    4px 6px 25px rgba(0, 0, 0, 0.56);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(30px) saturate(180%);
+  border-radius: 24px;
+  position: relative;
+}
+
+.light {
+  opacity: 0.6;
+  background: radial-gradient(50% 50%, #fff, rgba(199, 255, 238, 0));
+  width: 80%;
+  height: 1px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.holder::before {
+  content: "";
+  filter: blur(135px);
+  opacity: 0.1;
+  z-index: 0;
+  border-radius: 36px;
+  width: 100%;
+  height: 130%;
+  transition: all 0.3s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  background-color: #00b3ff;
+  user-select: none;
+  pointer-events: none;
+}
+
+.span {
+  letter-spacing: -0.02em;
+  line-height: 1.375;
+  font-size: 14px;
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 1rem;
+}
+
+.span span {
+  opacity: 0.4;
+  color: #fff;
+}
+
+.span a {
+  transition: 0.3s ease;
+  color: rgb(201 203 207);
+}
+
+.span a:hover {
+  color: #fff;
+}
+
+.icon {
+  width: 42px;
+  height: 42px;
+  transition: 0.3s ease;
+}
+
+.icon:hover {
+  transform: rotate(180deg);
+}
+
+.holder h3 {
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 36px;
+  margin-top: 17px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.75rem;
+  width: 100%;
+}
+
+.input p {
+  letter-spacing: -0.02em;
+  line-height: 1.375;
+  font-size: 14px;
+  color: rgb(193, 193, 194);
+  margin-bottom: 0.25rem;
+  font-weight: 300;
+}
+
+.input input {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  color: rgb(255 255 255);
+  letter-spacing: -0.02em;
+  font-size: 13px;
+  padding-top: 9px;
+  font-weight: 400;
+  padding-bottom: 9px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border-color: hsla(0, 0%, 100%, 0.1);
+  border-width: 1px;
+  border-radius: 0.25rem;
+  height: 42px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: start;
+  justify-content: center;
+  background-color: rgb(11 12 14);
+  position: relative;
+}
+
+.input button {
+  margin-top: 27px;
+}
+
+.or {
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+  align-items: center;
+  width: 100%;
+}
+
+.or span {
+  width: 100%;
+  height: 1px;
+  background-image: linear-gradient(90deg, #443d59, #2d2f31 50.9%);
+}
+
+.or h1 {
+  font-size: 13px;
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+  color: rgb(97 101 107);
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  margin-top: 25px;
+}
+
+.buttons button {
+  font-size: 13px;
+  font-weight: 500;
+  height: 40px;
+  justify-content: center;
+  letter-spacing: 0.26px;
+  line-height: 19.5px;
+  margin-left: 1px;
+  margin-right: 1px;
+  padding-left: 8px;
+  padding-right: 8px;
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+  background-color: rgb(11 12 14);
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.buttons button:hover {
+  background-color: rgb(21, 22, 26);
+}

@@ -3,7 +3,7 @@ import {
   FaChevronRight,
   FaChevronLeft,
   FaStore,
-  FaApple,
+  FaAppStore,
 } from "react-icons/fa";
 import styles from "./Ui.module.css";
 import { SecondaryButtonProps } from "../../types";
@@ -26,7 +26,7 @@ export const SecondaryButton = ({
     FaChevronRight: <FaChevronRight size={iconSize} color={iconColor} />,
     FaChevronLeft: <FaChevronLeft size={iconSize} color={iconColor} />,
     FaStore: <FaStore size={iconSize} color={iconColor} />,
-    FaApple: <FaApple size={iconSize} color={iconColor} />,
+    FaAppStore: <FaAppStore size={iconSize} color={iconColor} />,
     PiUserList: <PiUserList size={iconSize} color={iconColor} />,
   };
 

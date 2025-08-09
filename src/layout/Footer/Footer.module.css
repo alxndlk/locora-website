@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  z-index: 9999;
+  z-index: 999999999;
 }
 
 .container {

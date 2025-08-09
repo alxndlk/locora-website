@@ -181,7 +181,8 @@
   justify-content: center;
 }
 
-.linkDescription {
+.linkDescription,
+.secondary {
   opacity: 0.7;
   margin-top: 0.125rem;
   font-weight: 300;
@@ -190,7 +191,8 @@
   font-size: 12px;
 }
 
-.linkName {
+.linkName,
+.primary {
   line-height: 1.125;
   letter-spacing: -0.02em;
   font-size: 14px;
@@ -209,4 +211,98 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  text-align: end;
+  justify-content: center;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 12%);
+  position: relative;
+}
+
+.profile {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+}
+
+.profile::before {
+  width: 10px;
+  height: 10px;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  content: "";
+  background: rgb(34, 139, 34);
+  background: linear-gradient(
+    159deg,
+    rgba(34, 139, 34, 1) 0%,
+    rgba(50, 205, 50, 1) 100%
+  );
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.profileDropdown {
+  display: flex;
+  position: absolute;
+  right: 0;
+  flex-direction: column;
+  top: 2.85rem;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(30px) saturate(180%);
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0.5) 0px 14px 20px 0px;
+  border: 1px solid rgba(255, 255, 255, 12%);
+  border-radius: 1.5rem;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  display: flex;
+  flex-direction: column;
+}
+
+.logout {
+  opacity: 0.7;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.125;
+  font-size: 12px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.logout:hover {
+  opacity: 1;
+}
+
+.signout {
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  text-align: start;
+  gap: 0.375rem;
+  transition: 0.3s ease;
+  position: relative;
+  cursor: pointer;
 }

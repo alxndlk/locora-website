@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const Blocks = () => {
   const BLOCKS = [
     {
-      name: "Common",
+      name: "Basic",
       price: 0,
       type: "/monthly",
       description: "Perfect for individuals exploring Locora's core features.",

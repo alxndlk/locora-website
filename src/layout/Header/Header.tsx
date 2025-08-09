@@ -1,17 +1,47 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown, FaChevronRight, FaGithub } from "react-icons/fa6";
 import styles from "./Header.module.css";
 import { SecondaryButton } from "@/ui/SecondaryButton";
 import { NavLink } from "../../../types";
-import { navItems } from "@/lib/nav";
+import { links, navItems } from "@/lib/nav";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { createClient } from "@/utils/supabase/client";
+import { User } from "@supabase/supabase-js";
+import { signout } from "@/lib/auth-actions";
+import { FaRegUserCircle } from "react-icons/fa";
+import { MdOutlineLogout } from "react-icons/md";
 
 export const Header = () => {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+
+  const supabase = useMemo(() => createClient(), []);
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    let mounted = true;
+
+    supabase.auth.getUser().then(({ data }) => {
+      if (mounted) setUser(data.user ?? null);
+    });
+
+    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => {
+      mounted = false;
+      sub?.subscription.unsubscribe();
+    };
+  }, [supabase]);
+
+  const router = useRouter();
+
+  const userName = user?.user_metadata?.full_name ?? user?.email ?? "User";
 
   const renderNavLink = (link: NavLink, i: number) => {
     const content = (
@@ -73,7 +103,7 @@ export const Header = () => {
         >
           <Link href="/" className={styles.logo}>
             <Image
-              src="/images/logo.png"
+              src="/images/logo-white.png"
               alt="logo"
               width={1024}
               height={1024}
@@ -158,18 +188,90 @@ export const Header = () => {
             <FaGithub size={16} />
             Star Us
           </a>
-          <SecondaryButton
-            text="SIGN IN"
-            buttonSize={32}
-            fontSize={11}
-            fontWeight={700}
-          />
-          <SecondaryButton
-            text="SIGN UP"
-            buttonSize={32}
-            fontSize={11}
-            fontWeight={700}
-          />
+
+          {!user ? (
+            <>
+              <SecondaryButton
+                text="SIGN IN"
+                buttonSize={32}
+                fontSize={11}
+                fontWeight={700}
+                onClick={() => router.push(links.login.route)}
+              />
+              <SecondaryButton
+                text="SIGN UP"
+                buttonSize={32}
+                fontSize={11}
+                fontWeight={700}
+                onClick={() => router.push(links.signup.route)}
+              />
+            </>
+          ) : (
+            <div
+              className={styles.profile}
+              onMouseEnter={() => setOpenMenu("user")}
+              onMouseLeave={() => setOpenMenu(null)}
+            >
+              <Image
+                src={
+                  user.user_metadata.avatar_url ?? user.user_metadata.picture
+                }
+                alt={
+                  user.user_metadata.full_name ?? user.email ?? "User avatar"
+                }
+                className={styles.avatar}
+                width={32}
+                height={32}
+              />
+
+              <AnimatePresence>
+                {openMenu === "user" && (
+                  <motion.div
+                    className={styles.profileDropdown}
+                    initial={{ opacity: 0, y: 6, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 6, scale: 0.98 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                  >
+                    <div
+                      className={styles.dropdownItem}
+                      onClick={() => {
+                        router.push(links.profile.route);
+                      }}
+                    >
+                      <div className={styles.icon}>
+                        <FaRegUserCircle size={18} />
+                      </div>
+                      <div className={styles.primary}>
+                        {userName}
+                        <div className={styles.secondary}>{user.email}</div>
+                      </div>
+                    </div>
+
+                    <form
+                      action={async () => {
+                        signout();
+                        router.push(links.login.route);
+                      }}
+                      className={styles.dropdownItem}
+                    >
+                      <button type="submit" className={styles.signout}>
+                        <div className={styles.icon}>
+                          <MdOutlineLogout size={18} />
+                        </div>
+                        <div className={styles.primary}>
+                          Sign Out
+                          <div className={styles.secondary}>
+                            We will miss you! 🥲
+                          </div>
+                        </div>
+                      </button>
+                    </form>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          )}
         </motion.div>
       </motion.div>
     </motion.header>

@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// Пользовательский профиль
+model UserProfile {
+  id             String   @id @default(uuid())
+  email          String   @unique @db.VarChar(255)
+  first_name     String   @db.VarChar(100)
+  last_name      String   @db.VarChar(100)
+  avatar         String?  @db.VarChar(500)
+  auth_providers String[] @db.Text
+  created_at     DateTime @default(now())
+  updated_at     DateTime @updatedAt
+  last_login_at  DateTime?
+
+  // Preferences
+  preferences    Json?
+  // Домашняя локация 
+  home_location  Json?
+
+  // Связи
+  visited_cities     VisitedCity[]
+  visited_countries  VisitedCountry[]
+  achievements       Achievement[]
+  plan               Plan?
+
+  @@map("user_profiles")
+}
+
+/// Посещённый город
+model VisitedCity {
+  id          String   @id @default(uuid())
+  json_name   String?  @db.VarChar(255)
+  achieved_at DateTime
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  user        UserProfile @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  user_id     String
+
+  @@unique([user_id, json_name])
+  @@index([user_id])
+  @@map("visited_cities")
+}
+
+/// Посещённая страна
+model VisitedCountry {
+  id          String   @id @default(uuid())
+  json_name   String?  @db.VarChar(255)
+  achieved_at DateTime
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  user        UserProfile @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  user_id     String
+
+  @@unique([user_id, json_name])
+  @@index([user_id])
+  @@map("visited_countries")
+}
+
+/// Достижения
+model Achievement {
+  id          String   @id @default(uuid())
+  key         String   @db.VarChar(100)
+  achieved_at DateTime
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  user        UserProfile @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  user_id     String
+
+  @@unique([user_id, key])
+  @@index([user_id])
+  @@map("achievements")
+}
+
+/// План подписки
+model Plan {
+  id            String   @id @default(uuid())
+  name          PlanName
+  connected_at  DateTime
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+
+  user          UserProfile @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  user_id       String @unique
+
+  @@map("plans")
+}
+
+/// Перечисление доступных планов
+enum PlanName {
+  basic
+  pro
+  one_time
+  one_time_editing
+}
