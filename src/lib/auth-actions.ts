@@ -1,20 +1,9 @@
 "use server";
 
 import { createServerSupabaseClient } from "@/utils/supabase/server";
-import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-
-export type OtpState = {
-  step: "email" | "code" | "done";
-  email?: string;
-  error?: string;
-  message?: string;
-  loggedIn?: boolean;
-  cooldownUntil?: number;
-};
-
-const COOLDOWN_MS = 60_000;
+import { COOLDOWN_MS, OtpState } from "./types/auth";
 
 function keyFor(email: string) {
   return `otp_cd:${email.toLowerCase()}`;
@@ -33,7 +22,6 @@ export async function requestEmailOtp(
   const now = Date.now();
   const existing = jar.get(key)?.value ? Number(jar.get(key)!.value) : 0;
 
-  // если кулдаун активен — возвращаем оставшееся время
   if (existing && now < existing) {
     return {
       step: "code",
@@ -43,7 +31,6 @@ export async function requestEmailOtp(
     };
   }
 
-  // просим OTP только для существующих пользователей
   const { error } = await supabase.auth.signInWithOtp({
     email,
     options: { shouldCreateUser: false },
@@ -58,7 +45,6 @@ export async function requestEmailOtp(
     return { step: "email", error: msg };
   }
 
-  // ставим кулдаун
   const until = now + COOLDOWN_MS;
   jar.set(key, String(until), {
     httpOnly: true,
@@ -84,7 +70,13 @@ export async function verifyEmailOtp(
   const token = (formData.get("code") as string)?.trim();
 
   if (!email || !token) {
-    return { step: "code", email, error: "Enter the 6-digit code" };
+    return {
+      step: "code",
+      email,
+      error: "Enter the 6-digit code",
+      cooldownUntil: prev.cooldownUntil,
+      errorNonce: (prev.errorNonce ?? 0) + 1,
+    };
   }
 
   const { error } = await supabase.auth.verifyOtp({
@@ -94,36 +86,16 @@ export async function verifyEmailOtp(
   });
 
   if (error) {
-    return { step: "code", email, error: "Invalid or expired code" };
+    return {
+      step: "code",
+      email,
+      error: "Invalid or expired code",
+      cooldownUntil: prev.cooldownUntil,
+      errorNonce: (prev.errorNonce ?? 0) + 1,
+    };
   }
 
-  redirect("/");
-}
-
-export async function signup(formData: FormData) {
-  const supabase = createServerSupabaseClient();
-
-  const firstName = formData.get("first-name") as string;
-  const lastName = formData.get("last-name") as string;
-  const data = {
-    email: formData.get("email") as string,
-    password: formData.get("password") as string,
-    options: {
-      data: {
-        full_name: `${firstName + " " + lastName}`,
-        email: formData.get("email") as string,
-      },
-    },
-  };
-
-  const { error } = await supabase.auth.signUp(data);
-
-  if (error) {
-    redirect("/error");
-  }
-
-  revalidatePath("/", "layout");
-  redirect("/");
+  return { step: "done", email, loggedIn: true, message: "Signed in" };
 }
 
 export async function signout() {
@@ -149,4 +121,50 @@ export async function signInWithGoogle() {
   }
 
   redirect(data.url);
+}
+
+export async function signInWithGitHub() {
+  const supabase = createServerSupabaseClient();
+
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: "github",
+    options: {
+      redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback`,
+      scopes: "read:user user:email",
+    },
+  });
+
+  if (error) {
+    console.error("GitHub OAuth error:", error);
+    return redirect("/error");
+  }
+
+  if (data?.url) {
+    return redirect(data.url);
+  }
+
+  return redirect("/error");
+}
+
+export async function signInWithApple() {
+  const supabase = createServerSupabaseClient();
+
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: "apple",
+    options: {
+      redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback`,
+      scopes: "read:user user:email",
+    },
+  });
+
+  if (error) {
+    console.error("Apple OAuth error:", error);
+    return redirect("/error");
+  }
+
+  if (data?.url) {
+    return redirect(data.url);
+  }
+
+  return redirect("/error");
 }

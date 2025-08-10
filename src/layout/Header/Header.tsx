@@ -15,6 +15,8 @@ import { User } from "@supabase/supabase-js";
 import { signout } from "@/lib/auth-actions";
 import { FaRegUserCircle } from "react-icons/fa";
 import { MdOutlineLogout } from "react-icons/md";
+import { useFormStatus } from "react-dom";
+import Spinner from "@/ui/Spinner";
 
 export const Header = () => {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -81,6 +83,26 @@ export const Header = () => {
       );
     }
   };
+
+  function SignoutButton() {
+    const { pending } = useFormStatus();
+    return (
+      <>
+        <button type="submit" className={styles.signout} disabled={pending}>
+          <div className={styles.icon}>
+            <MdOutlineLogout size={18} />
+          </div>
+          <div className={styles.primary}>
+            {pending ? "Signing out…" : "Sign Out"}
+            <div className={styles.secondary}>
+              {pending ? "Please wait" : "We will miss you! 🥲"}
+            </div>
+          </div>
+        </button>
+        {pending && <Spinner size={24} />}
+      </>
+    );
+  }
 
   return (
     <motion.header
@@ -250,22 +272,13 @@ export const Header = () => {
 
                     <form
                       action={async () => {
-                        signout();
+                        await signout();
                         router.push(links.login.route);
                       }}
                       className={styles.dropdownItem}
+                      style={{ justifyContent: "space-between", width: "100%" }}
                     >
-                      <button type="submit" className={styles.signout}>
-                        <div className={styles.icon}>
-                          <MdOutlineLogout size={18} />
-                        </div>
-                        <div className={styles.primary}>
-                          Sign Out
-                          <div className={styles.secondary}>
-                            We will miss you! 🥲
-                          </div>
-                        </div>
-                      </button>
+                      <SignoutButton />
                     </form>
                   </motion.div>
                 )}

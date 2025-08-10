@@ -305,4 +305,5 @@
   transition: 0.3s ease;
   position: relative;
   cursor: pointer;
+  width: 100%;
 }

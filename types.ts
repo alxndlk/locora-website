@@ -46,3 +46,30 @@ export type PrimaryButtonProps = {
   type?: "submit" | "reset" | "button" | undefined;
   formAction?: (formData: FormData) => void | Promise<void>;
 };
+
+export type OTPInputProps = {
+  digits: string[];
+  setInputRef: (idx: number) => (el: HTMLInputElement | null) => void;
+  handleChange: (idx: number, val: string) => void;
+  handleKeyDown: (
+    idx: number,
+    e: React.KeyboardEvent<HTMLInputElement>
+  ) => void;
+  handlePaste: (e: React.ClipboardEvent<HTMLInputElement>) => void;
+  error?: boolean;
+  disabled?: boolean;
+  className?: string;
+  inputClassName?: string;
+  dividerClassName?: string;
+};
+
+export type ResendCodeProps = {
+  onResend: (formData: FormData) => void;
+  email: string;
+  disabled: boolean;
+  emailPending: boolean;
+  cooldownLeft: number;
+  className?: string;
+  buttonClassName?: string;
+  textClassName?: string;
+};
