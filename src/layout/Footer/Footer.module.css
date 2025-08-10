@@ -6,6 +6,7 @@
   align-items: center;
   text-align: center;
   z-index: 999999999;
+  background-color: var(--background);
 }
 
 .container {

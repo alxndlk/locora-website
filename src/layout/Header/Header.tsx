@@ -244,6 +244,9 @@ export const Header = () => {
                 className={styles.avatar}
                 width={32}
                 height={32}
+                onClick={() => {
+                  router.push(links.profile.route);
+                }}
               />
 
               <AnimatePresence>
