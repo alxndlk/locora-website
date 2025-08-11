@@ -17,8 +17,13 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { MdOutlineLogout } from "react-icons/md";
 import { useFormStatus } from "react-dom";
 import Spinner from "@/ui/Spinner";
+import Avatar from "boring-avatars";
 
-export const Header = () => {
+type HeaderProps = {
+  blackHeader?: boolean;
+};
+
+export const Header = ({ blackHeader }: HeaderProps) => {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
 
   const supabase = useMemo(() => createClient(), []);
@@ -110,6 +115,7 @@ export const Header = () => {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
+      style={blackHeader ? { color: "#0b0d10" } : {}}
     >
       <motion.div
         className={styles.container}
@@ -130,6 +136,7 @@ export const Header = () => {
               width={1024}
               height={1024}
               className={styles.logoImage}
+              style={blackHeader ? { filter: "invert(1)" } : {}}
             />
           </Link>
 

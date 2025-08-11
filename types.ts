@@ -73,3 +73,52 @@ export type ResendCodeProps = {
   buttonClassName?: string;
   textClassName?: string;
 };
+
+export type Achievements = {
+  id: string;
+  label: string;
+  description: string;
+  achieved_at: Date;
+  emoji?: string;
+  color?: string;
+};
+
+export type ProfileViewProps = {
+  name: string;
+  username?: string;
+  email?: string;
+  avatarUrl?: string;
+  memberSince?: string;
+
+  countries: number;
+  cities: number;
+
+  achievements: Achievements[];
+  totalAchiements: number;
+};
+
+export type TempUnit = "C" | "F";
+export type TimeFmt = "12" | "24";
+export type CurrencyCode =
+  | "USD"
+  | "EUR"
+  | "GBP"
+  | "JPY"
+  | "AUD"
+  | "CZK"
+  | "UAH";
+
+export type Prefs = {
+  currency?: "USD" | "EUR" | "GBP" | "JPY" | "AUD";
+  temp_unit?: "C" | "F";
+  time_fmt?: "12" | "24";
+};
+
+export type UserAchievement = {
+  id: string;
+  label: string;
+  description?: string;
+  emoji?: string;
+  color?: string;
+  achieved_at: string;
+};

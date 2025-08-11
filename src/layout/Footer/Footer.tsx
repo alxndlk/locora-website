@@ -28,13 +28,7 @@ type FooterProps = {
 
 const Footer = ({ size = true }: FooterProps) => {
   return (
-    <motion.div
-      className={styles.footer}
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-    >
+    <div className={styles.footer}>
       <div className={styles.container}>
         {size && (
           <motion.div className={styles.flex} variants={containerVariants}>
@@ -119,7 +113,7 @@ const Footer = ({ size = true }: FooterProps) => {
           </h3>
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

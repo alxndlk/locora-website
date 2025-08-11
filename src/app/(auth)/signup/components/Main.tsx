@@ -12,6 +12,7 @@ import {
   signInWithApple,
 } from "@/lib/auth-actions";
 import { useFormStatus } from "react-dom";
+import { useRandomBackground } from "@/hooks/useRandomBackground";
 
 export default function SignupMain() {
   function OAuthButton({
@@ -48,8 +49,14 @@ export default function SignupMain() {
     );
   }
 
+  const { bg } = useRandomBackground();
+
   return (
     <motion.section className={styles.main} initial="hidden" animate="visible">
+      <div
+        className={styles.bg_wrapper}
+        style={bg ? { backgroundImage: `url(${bg})` } : undefined}
+      />
       <div className={styles.container}>
         <motion.div className={styles.holder} variants={containerVariants}>
           <div className={styles.light} />

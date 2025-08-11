@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import styles from "./Main.module.css";
 import Image from "next/image";
 import { links } from "@/lib/nav";
@@ -22,6 +22,7 @@ import ResendCode from "@/components/auth/ResendCode";
 import OTPInput from "@/components/auth/OTPInput";
 import SpinnerMask from "@/components/SpinnerMask/SpinnerMask";
 import { OtpState } from "@/lib/types/auth";
+import { useRandomBackground } from "@/hooks/useRandomBackground";
 
 const initialState: OtpState = { step: "email" };
 
@@ -39,7 +40,7 @@ export default function Main() {
     initialState
   );
 
-  const state = React.useMemo(() => {
+  const state = useMemo(() => {
     if (codeState.step !== "email") {
       return {
         ...codeState,
@@ -51,8 +52,8 @@ export default function Main() {
     return emailState;
   }, [codeState, emailState]);
 
-  const [email, setEmail] = React.useState("");
-  React.useEffect(() => {
+  const [email, setEmail] = useState("");
+  useEffect(() => {
     if (state.email) setEmail(state.email);
   }, [state.email]);
 
@@ -86,15 +87,15 @@ export default function Main() {
     } else setFormLoading(false);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     handleShake();
   }, [codeState]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     handleLoading();
   }, [codePending, emailPending]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (state.loggedIn) {
       setFormLoading(true);
       setTimeout(() => {
@@ -103,8 +104,14 @@ export default function Main() {
     }
   }, [state.loggedIn, router]);
 
+  const { bg } = useRandomBackground();
+
   return (
     <motion.section className={styles.main} initial="hidden" animate="visible">
+      <div
+        className={styles.bg_wrapper}
+        style={bg ? { backgroundImage: `url(${bg})` } : undefined}
+      />
       <div className={styles.container}>
         <motion.div className={styles.holder} variants={containerVariants}>
           {formLoading && <SpinnerMask />}

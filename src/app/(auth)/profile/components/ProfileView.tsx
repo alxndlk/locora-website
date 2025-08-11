@@ -2,94 +2,253 @@
 
 import Image from "next/image";
 import styles from "./ProfileView.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { VscVerifiedFilled } from "react-icons/vsc";
 import { GiAchievement } from "react-icons/gi";
 import { RxInfoCircled } from "react-icons/rx";
 import { signout } from "@/lib/auth-actions";
 import { links } from "@/lib/nav";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+
+import { SettingsOptions } from "@/components/SettingsOptions";
+import { Segmented } from "@/components/SelectOption";
+import { useUserPreferences } from "@/hooks/useUserPreferences";
+import SpinnerMask from "@/components/SpinnerMask/SpinnerMask";
+
+import type {
+  CurrencyCode,
+  Prefs,
+  ProfileViewProps,
+  TempUnit,
+  TimeFmt,
+} from "../../../../../types";
+import { updateUserPrefs } from "@/app/actions/update-user-prefs";
+import { grantAchievement } from "@/app/actions/grant-achievement";
 import { MdOutlineLogout } from "react-icons/md";
-import Spinner from "@/ui/Spinner";
-import { useFormStatus } from "react-dom";
 
-export type Trip = {
-  id: string;
-  city: string;
-  country: string;
-  dateFrom: string;
-  dateTo?: string;
-  coverUrl?: string;
+type Props = ProfileViewProps & {
+  initialPrefs: Prefs;
 };
-
-export type Badge = {
-  id: string;
-  emoji?: string;
-  color?: string;
-};
-
-export type ProfileViewProps = {
-  name: string;
-  username?: string;
-  email?: string;
-  avatarUrl?: string;
-  memberSince?: string;
-  bio?: string;
-
-  totalTrips: number;
-  countries: number;
-  cities: number;
-  daysOnRoad: number;
-
-  recentTrips: Trip[];
-  badges: Badge[];
-
-  editHref?: string;
-  exportHref?: string;
-  privacyHref?: string;
-};
-
-const SettingOptions = [
-  { name: "General", icon: "" },
-  { name: "Plan", icon: "" },
-];
 
 export default function ProfileView({
   name,
   email,
   avatarUrl = "/images/avatar-fallback.png",
-  badges,
-}: ProfileViewProps) {
-  const [bg, setBg] = useState<string>("");
+  achievements,
+  totalAchiements,
+  memberSince,
+  countries,
+  cities,
+  initialPrefs,
+}: Props) {
   const [currentOption, setcurrentOption] = useState<number>(0);
-
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
+  const {
+    currentTemperature,
+    setCurrentTemperature,
+    currentTimeFormat,
+    setCurrentTimeFormat,
+    currentCurrency,
+    setCurrentCurrency,
+  } = useUserPreferences(
+    initialPrefs.currency ?? "USD",
+    initialPrefs.temp_unit ?? "C",
+    initialPrefs.time_fmt ?? "24"
+  );
+
+  type PrefKey = keyof Prefs;
+
+  const timersRef = useRef<
+    Partial<Record<PrefKey, ReturnType<typeof setTimeout>>>
+  >({});
+  const latestRef = useRef<{
+    currency: CurrencyCode;
+    temp_unit: TempUnit;
+    time_fmt: TimeFmt;
+  }>({
+    currency: currentCurrency,
+    temp_unit: currentTemperature,
+    time_fmt: currentTimeFormat,
+  });
 
   useEffect(() => {
-    const randomNum = Math.floor(Math.random() * 15) + 1;
-    setBg(`/profile_bgs/${randomNum}.jpg`);
-    console.log(bg);
+    latestRef.current.currency = currentCurrency;
+  }, [currentCurrency]);
+  useEffect(() => {
+    latestRef.current.temp_unit = currentTemperature;
+  }, [currentTemperature]);
+  useEffect(() => {
+    latestRef.current.time_fmt = currentTimeFormat;
+  }, [currentTimeFormat]);
+
+  const scheduleSave = (key: PrefKey, delay = 350) => {
+    const t = timersRef.current[key];
+    if (t) clearTimeout(t);
+
+    timersRef.current[key] = setTimeout(async () => {
+      setLoading(true);
+      await grantAchievement("update_preferences");
+      try {
+        await updateUserPrefs({ [key]: latestRef.current[key] } as Prefs);
+      } finally {
+        setLoading(false);
+      }
+    }, delay);
+  };
+
+  useEffect(() => {
+    return () => {
+      Object.values(timersRef.current).forEach((t) => t && clearTimeout(t));
+    };
   }, []);
+
+  function renderPanel() {
+    switch (currentOption) {
+      case 0:
+        return (
+          <div className={styles.panel}>
+            {loading && <SpinnerMask />}
+            <ul className={styles.kv}>
+              <li>
+                <span>Name</span>
+                <h2>{name || "—"}</h2>
+              </li>
+
+              <li>
+                <span>Email</span>
+                <h2>
+                  {email || "—"} <VscVerifiedFilled color="#007aff" size={18} />
+                </h2>
+              </li>
+
+              <li>
+                <span>Member since</span>
+                <h2>
+                  {memberSince ? new Date(memberSince).toDateString() : "—"}
+                </h2>
+              </li>
+
+              <li>
+                <span>Currency</span>
+                <Segmented<CurrencyCode>
+                  value={currentCurrency}
+                  onChange={(v) => {
+                    setCurrentCurrency(v);
+                    scheduleSave("currency");
+                  }}
+                  options={[
+                    { value: "USD", label: "USD" },
+                    { value: "EUR", label: "EUR" },
+                    { value: "AUD", label: "AUD" },
+                    { value: "GBP", label: "GBP" },
+                    { value: "JPY", label: "JPY" },
+                    { value: "CZK", label: "CZK" },
+                    { value: "UAH", label: "UAH" },
+                  ]}
+                />
+              </li>
+
+              <li>
+                <span>Temperature</span>
+                <Segmented<TempUnit>
+                  value={currentTemperature}
+                  onChange={(v) => {
+                    setCurrentTemperature(v);
+                    scheduleSave("temp_unit");
+                  }}
+                  options={[
+                    { value: "C", label: "°C — Celsius" },
+                    { value: "F", label: "°F — Fahrenheit" },
+                  ]}
+                />
+              </li>
+
+              <li>
+                <span>Time Format</span>
+                <Segmented<TimeFmt>
+                  value={currentTimeFormat}
+                  onChange={(v) => {
+                    setCurrentTimeFormat(v);
+                    scheduleSave("time_fmt");
+                  }}
+                  options={[
+                    { value: "12", label: "12‑hour" },
+                    { value: "24", label: "24‑hour" },
+                  ]}
+                />
+              </li>
+            </ul>
+          </div>
+        );
+
+      case 1:
+        return (
+          <div className={styles.panel}>
+            {achievements.length === 0 ? (
+              <p className={styles.muted}>No achievements yet.</p>
+            ) : (
+              <div className={styles.achGrid}>
+                {achievements.map((a) => (
+                  <div key={a.id} className={styles.achCard}>
+                    <div
+                      className={styles.achIcon}
+                      style={{ background: a.color }}
+                    >
+                      {a.emoji}
+                    </div>
+                    <div className={styles.achBody}>
+                      <div className={styles.achTitle}>{a.label}</div>
+                      {a.description && (
+                        <div className={styles.achDesc}>{a.description}</div>
+                      )}
+                      {a.achieved_at && (
+                        <div className={styles.achDate}>
+                          Earned: {new Date(a.achieved_at).toLocaleDateString()}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        );
+
+      case 2: // Countries
+        return (
+          <div className={styles.panel}>
+            <h4>You haven&apos;t visited any countries yet.</h4>
+          </div>
+        );
+
+      case 3:
+        return (
+          <div className={styles.panel}>
+            <h4>You haven&apos;t visited any cities yet.</h4>
+          </div>
+        );
+
+      default:
+        return null;
+    }
+  }
 
   return (
     <div className={styles.wrap}>
-      <div
-        className={styles.bg_wrapper}
-        style={bg ? { backgroundImage: `url(${bg})` } : undefined}
-      />
+      <div className={styles.bg_wrapper} />
       <section className={styles.headerCard}>
         <div className={styles.container}>
           <div className={styles.avatarWrap}>
             <Image
               src={avatarUrl}
               alt={`${name} avatar`}
-              width={160}
-              height={160}
+              width={512}
+              height={512}
               className={styles.avatar}
               priority
             />
-            <div className={styles.plan}>Free Plan</div>
           </div>
 
           <div className={styles.identity}>
@@ -103,19 +262,19 @@ export default function ProfileView({
               )}
             </div>
 
-            {!!badges?.length && (
+            {!!achievements?.length && (
               <div className={styles.badges}>
-                {badges.slice(0, 12).map((b, i) => (
+                {achievements.slice(0, 12).map((a, i) => (
                   <span
-                    key={b.id}
+                    key={a.id}
                     className={styles.badge}
                     style={{
-                      background: b.color || undefined,
-                      zIndex: badges.length - i,
+                      background: a.color || undefined,
+                      zIndex: achievements.length - i,
                     }}
                   >
-                    {b.emoji && (
-                      <span className={styles.badgeEmoji}>{b.emoji}</span>
+                    {a.emoji && (
+                      <span className={styles.badgeEmoji}>{a.emoji}</span>
                     )}
                   </span>
                 ))}
@@ -123,7 +282,7 @@ export default function ProfileView({
             )}
             <span className={styles.unlock}>
               <GiAchievement />
-              You unlock {badges.length} of 123 achievements
+              You unlock {achievements.length} of {totalAchiements} achievements
             </span>
           </div>
         </div>
@@ -150,7 +309,7 @@ export default function ProfileView({
           </div>
           <div className={styles.header}>
             <ul className={styles.ul}>
-              {SettingOptions.map((value, key) => (
+              {SettingsOptions.map((value, key) => (
                 <li
                   key={key}
                   className={currentOption == key ? styles.active : ""}
@@ -158,6 +317,7 @@ export default function ProfileView({
                     setcurrentOption(key);
                   }}
                 >
+                  <div className={styles.icon_holder}>{value.icon}</div>
                   {value.name}
                 </li>
               ))}
@@ -169,32 +329,13 @@ export default function ProfileView({
                 router.push(links.login.route);
               }}
             >
+              <MdOutlineLogout />
               Sign Out
             </button>
           </div>
+          <div className={styles.panelArea}>{renderPanel()}</div>
         </div>
       </section>
     </div>
   );
-}
-
-function Stat({ title, value }: { title: string; value: number | string }) {
-  return (
-    <div className={styles.stat}>
-      <div className={styles.statValue}>{value}</div>
-      <div className={styles.statTitle}>{title}</div>
-    </div>
-  );
-}
-
-function formatRange(fromIso: string, toIso?: string) {
-  const opts: Intl.DateTimeFormatOptions = {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  };
-  const from = new Date(fromIso).toLocaleDateString(undefined, opts);
-  if (!toIso) return from;
-  const to = new Date(toIso).toLocaleDateString(undefined, opts);
-  return `${from} — ${to}`;
 }

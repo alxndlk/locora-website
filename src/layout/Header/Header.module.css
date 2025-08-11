@@ -121,8 +121,6 @@
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(30px) saturate(180%);
-  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-    rgba(0, 0, 0, 0.5) 0px 14px 20px 0px;
   border: 1px solid rgba(255, 255, 255, 12%);
   border-radius: 1.5rem;
 }
@@ -262,8 +260,6 @@
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(30px) saturate(180%);
-  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-    rgba(0, 0, 0, 0.5) 0px 14px 20px 0px;
   border: 1px solid rgba(255, 255, 255, 12%);
   border-radius: 1.5rem;
 }

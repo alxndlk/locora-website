@@ -8,9 +8,14 @@ import { Header } from "../Header/Header";
 type WrapperProps = {
   children: ReactNode;
   footerLarge?: boolean;
+  blackHeader?: boolean;
 };
 
-export const Wrapper: React.FC<WrapperProps> = ({ children, footerLarge }) => {
+export const Wrapper: React.FC<WrapperProps> = ({
+  children,
+  footerLarge,
+  blackHeader,
+}) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -30,7 +35,7 @@ export const Wrapper: React.FC<WrapperProps> = ({ children, footerLarge }) => {
 
   return (
     <div className={styles.wrapper}>
-      <Header />
+      <Header blackHeader={blackHeader} />
       <div className={styles.line} style={{ width: `${progress}%` }} />
       {children}
       <Footer size={footerLarge} />
