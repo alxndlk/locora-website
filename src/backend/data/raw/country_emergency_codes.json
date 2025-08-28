@@ -1,0 +1,976 @@
+{
+  "AD": {
+    "ambulance": "118",
+    "fire": "118",
+    "police": "110"
+  },
+  "AE": {
+    "general": "112",
+    "ambulance": "998",
+    "fire": "997",
+    "police": "999"
+  },
+  "AF": {
+    "general": "112"
+  },
+  "AG": {
+    "general": "112"
+  },
+  "AI": {
+    "general": "112"
+  },
+  "AL": {
+    "general": "112",
+    "ambulance": "127",
+    "fire": "128",
+    "police": "129"
+  },
+  "AM": {
+    "general": "112",
+    "ambulance": "103",
+    "fire": "102",
+    "police": "101"
+  },
+  "AO": {
+    "ambulance": "118",
+    "fire": "118",
+    "police": "110"
+  },
+  "AR": {
+    "ambulance": "101",
+    "fire": "107",
+    "police": "101"
+  },
+  "AS": {
+    "general": "112"
+  },
+  "AT": {
+    "general": "112",
+    "ambulance": "144",
+    "fire": "122",
+    "police": "133"
+  },
+  "AU": {
+    "general": "112"
+  },
+  "AW": {
+    "general": "112"
+  },
+  "AZ": {
+    "general": "112",
+    "ambulance": "103",
+    "fire": "101",
+    "police": "102"
+  },
+  "BA": {
+    "general": "112",
+    "ambulance": "124",
+    "fire": "123",
+    "police": "122"
+  },
+  "BB": {
+    "ambulance": "511",
+    "fire": "311",
+    "police": "211"
+  },
+  "BD": {
+    "ambulance": "199",
+    "fire": "9555555",
+    "police": "865513"
+  },
+  "BE": {
+    "general": "112",
+    "ambulance": "103",
+    "fire": "101",
+    "police": "102"
+  },
+  "BF": {
+    "general": "112"
+  },
+  "BG": {
+    "general": "112",
+    "ambulance": "150",
+    "fire": "160",
+    "police": "166"
+  },
+  "BH": {
+    "general": "112"
+  },
+  "BI": {
+    "general": "112"
+  },
+  "BJ": {
+    "general": "112"
+  },
+  "BL": {
+    "general": "112"
+  },
+  "BM": {
+    "general": "112"
+  },
+  "BN": {
+    "ambulance": "991",
+    "fire": "995",
+    "police": "993"
+  },
+  "BO": {
+    "general": "112"
+  },
+  "BQ": {
+    "general": "112"
+  },
+  "BR": {
+    "general": "112",
+    "ambulance": "192",
+    "fire": "193"
+  },
+  "BS": {
+    "general": "112"
+  },
+  "BT": {
+    "ambulance": "110",
+    "fire": "112",
+    "police": "113"
+  },
+  "BW": {
+    "general": "112"
+  },
+  "BY": {
+    "ambulance": "103",
+    "fire": "101",
+    "police": "102"
+  },
+  "BZ": {
+    "general": "112"
+  },
+  "CA": {
+    "general": "112"
+  },
+  "CD": {
+    "general": "112"
+  },
+  "CF": {
+    "general": "112"
+  },
+  "CG": {
+    "general": "112"
+  },
+  "CH": {
+    "general": "112",
+    "ambulance": "144",
+    "fire": "118",
+    "police": "117"
+  },
+  "CI": {
+    "fire": "180",
+    "police": "110"
+  },
+  "CK": {
+    "ambulance": "998",
+    "fire": "996",
+    "police": "999"
+  },
+  "CL": {
+    "ambulance": "131",
+    "fire": "132",
+    "police": "133"
+  },
+  "CM": {
+    "general": "112"
+  },
+  "CN": {
+    "ambulance": "120",
+    "fire": "119",
+    "police": "110"
+  },
+  "CO": {
+    "ambulance": "125",
+    "fire": "119",
+    "police": "112"
+  },
+  "CR": {
+    "general": "112"
+  },
+  "CU": {
+    "general": "112"
+  },
+  "CV": {
+    "ambulance": "130",
+    "fire": "131",
+    "police": "132"
+  },
+  "CW": {
+    "ambulance": "912",
+    "fire": "114",
+    "police": "911"
+  },
+  "CX": {
+    "general": "112"
+  },
+  "CY": {
+    "general": "112"
+  },
+  "CZ": {
+    "general": "112",
+    "ambulance": "155",
+    "fire": "150",
+    "police": "158"
+  },
+  "DE": {
+    "general": "112",
+    "police": "110"
+  },
+  "DJ": {
+    "ambulance": "351351",
+    "fire": "18",
+    "police": "17"
+  },
+  "DK": {
+    "general": "112",
+    "police": "114"
+  },
+  "DM": {
+    "general": "112"
+  },
+  "DO": {
+    "general": "112"
+  },
+  "DZ": {
+    "ambulance": "21606666",
+    "fire": "14",
+    "police": "17"
+  },
+  "EC": {
+    "ambulance": "131",
+    "police": "101"
+  },
+  "EE": {
+    "general": "112",
+    "ambulance": "112",
+    "fire": "112",
+    "police": "110"
+  },
+  "EG": {
+    "general": "112",
+    "ambulance": "123",
+    "fire": "180",
+    "police": "122"
+  },
+  "ER": {
+    "general": "112"
+  },
+  "ES": {
+    "general": "112",
+    "ambulance": "061",
+    "fire": "080",
+    "police": "091"
+  },
+  "ET": {
+    "ambulance": "92",
+    "fire": "93",
+    "police": "91"
+  },
+  "FI": {
+    "general": "112"
+  },
+  "FJ": {
+    "general": "112"
+  },
+  "FK": {
+    "general": "112"
+  },
+  "FM": {
+    "general": "112"
+  },
+  "FO": {
+    "general": "112"
+  },
+  "FR": {
+    "general": "112",
+    "ambulance": "15",
+    "fire": "18",
+    "police": "17"
+  },
+  "GA": {
+    "ambulance": "1300",
+    "fire": "18",
+    "police": "1730"
+  },
+  "GB": {
+    "general": "112"
+  },
+  "GD": {
+    "ambulance": "434",
+    "fire": "112",
+    "police": "911"
+  },
+  "GE": {
+    "general": "112"
+  },
+  "GF": {
+    "ambulance": "15",
+    "fire": "18",
+    "police": "17"
+  },
+  "GG": {
+    "general": "112"
+  },
+  "GH": {
+    "ambulance": "193",
+    "fire": "192",
+    "police": "191"
+  },
+  "GI": {
+    "general": "112",
+    "fire": "190",
+    "police": "199"
+  },
+  "GL": {
+    "general": "112"
+  },
+  "GM": {
+    "ambulance": "16",
+    "fire": "18",
+    "police": "17"
+  },
+  "GN": {
+    "general": "112"
+  },
+  "GP": {
+    "ambulance": "18",
+    "fire": "18",
+    "police": "17"
+  },
+  "GQ": {
+    "general": "112"
+  },
+  "GR": {
+    "general": "112",
+    "ambulance": "166",
+    "fire": "199",
+    "police": "100"
+  },
+  "GS": {
+    "general": "112"
+  },
+  "GT": {
+    "ambulance": "123",
+    "fire": "123",
+    "police": "110"
+  },
+  "GU": {
+    "general": "112"
+  },
+  "GW": {
+    "general": "112"
+  },
+  "GY": {
+    "general": "112"
+  },
+  "HK": {
+    "general": "112"
+  },
+  "HN": {
+    "ambulance": "195",
+    "fire": "198",
+    "police": "119"
+  },
+  "HR": {
+    "general": "112",
+    "ambulance": "194",
+    "fire": "193",
+    "police": "192"
+  },
+  "HT": {
+    "ambulance": "118",
+    "police": "114"
+  },
+  "HU": {
+    "general": "112",
+    "ambulance": "104",
+    "fire": "101",
+    "police": "107"
+  },
+  "ID": {
+    "ambulance": "118",
+    "fire": "113",
+    "police": "110"
+  },
+  "IE": {
+    "general": "112"
+  },
+  "IL": {
+    "ambulance": "101",
+    "fire": "102",
+    "police": "100"
+  },
+  "IM": {
+    "general": "112"
+  },
+  "IN": {
+    "general": "112",
+    "ambulance": "102",
+    "fire": "101",
+    "police": "101"
+  },
+  "IQ": {
+    "general": "112"
+  },
+  "IR": {
+    "ambulance": "115",
+    "fire": "123",
+    "police": "110"
+  },
+  "IS": {
+    "general": "112"
+  },
+  "IT": {
+    "general": "112",
+    "ambulance": "118",
+    "fire": "115",
+    "police": "113"
+  },
+  "JE": {
+    "general": "112"
+  },
+  "JM": {
+    "ambulance": "110",
+    "fire": "110",
+    "police": "119"
+  },
+  "JO": {
+    "general": "112",
+    "ambulance": "199",
+    "fire": "199",
+    "police": "191"
+  },
+  "JP": {
+    "ambulance": "119",
+    "fire": "119",
+    "police": "110"
+  },
+  "KE": {
+    "general": "112"
+  },
+  "KG": {
+    "general": "112"
+  },
+  "KH": {
+    "ambulance": "119",
+    "fire": "118",
+    "police": "117"
+  },
+  "KI": {
+    "ambulance": "994",
+    "fire": "993",
+    "police": "992"
+  },
+  "KM": {
+    "general": "112"
+  },
+  "KN": {
+    "general": "112"
+  },
+  "KP": {
+    "general": "112"
+  },
+  "KR": {
+    "ambulance": "119",
+    "fire": "119",
+    "police": "112"
+  },
+  "KW": {
+    "general": "112",
+    "ambulance": "777"
+  },
+  "KY": {
+    "general": "112"
+  },
+  "KZ": {
+    "general": "112",
+    "ambulance": "103",
+    "fire": "101",
+    "police": "102"
+  },
+  "LA": {
+    "general": "112"
+  },
+  "LB": {
+    "ambulance": "113",
+    "police": "110"
+  },
+  "LC": {
+    "general": "112"
+  },
+  "LI": {
+    "ambulance": "144",
+    "fire": "118",
+    "police": "112"
+  },
+  "LK": {
+    "ambulance": "110",
+    "fire": "110",
+    "police": "112"
+  },
+  "LR": {
+    "general": "112"
+  },
+  "LS": {
+    "ambulance": "121",
+    "fire": "122",
+    "police": "123"
+  },
+  "LT": {
+    "general": "112"
+  },
+  "LU": {
+    "general": "112",
+    "police": "113"
+  },
+  "LV": {
+    "general": "112",
+    "ambulance": "113",
+    "police": "110"
+  },
+  "LY": {
+    "general": "112"
+  },
+  "MA": {
+    "ambulance": "15",
+    "fire": "15",
+    "police": "19"
+  },
+  "MC": {
+    "general": "112",
+    "ambulance": "15",
+    "fire": "18",
+    "police": "17"
+  },
+  "MD": {
+    "ambulance": "903",
+    "fire": "901",
+    "police": "902"
+  },
+  "ME": {
+    "general": "112",
+    "ambulance": "124",
+    "fire": "123",
+    "police": "122"
+  },
+  "MF": {
+    "general": "112"
+  },
+  "MG": {
+    "general": "112"
+  },
+  "MH": {
+    "general": "911"
+  },
+  "MK": {
+    "general": "112",
+    "ambulance": "194",
+    "fire": "193",
+    "police": "192"
+  },
+  "ML": {
+    "ambulance": "15",
+    "fire": "17",
+    "police": "18"
+  },
+  "MM": {
+    "general": "112"
+  },
+  "MN": {
+    "ambulance": "103",
+    "fire": "101",
+    "police": "102"
+  },
+  "MO": {
+    "general": "112"
+  },
+  "MP": {
+    "general": "112"
+  },
+  "MQ": {
+    "ambulance": "15",
+    "fire": "18",
+    "police": "17"
+  },
+  "MR": {
+    "fire": "118",
+    "police": "117"
+  },
+  "MS": {
+    "ambulance": "911",
+    "police": "999"
+  },
+  "MT": {
+    "general": "112"
+  },
+  "MU": {
+    "general": "112",
+    "ambulance": "114",
+    "fire": "115"
+  },
+  "MV": {
+    "ambulance": "102",
+    "fire": "999",
+    "police": "119"
+  },
+  "MW": {
+    "ambulance": "998",
+    "fire": "999",
+    "police": "997"
+  },
+  "MX": {
+    "ambulance": "065",
+    "fire": "068",
+    "police": "060"
+  },
+  "MY": {
+    "ambulance": "999",
+    "fire": "994",
+    "police": "999"
+  },
+  "MZ": {
+    "ambulance": "117",
+    "fire": "198",
+    "police": "119"
+  },
+  "NA": {
+    "ambulance": "2032276",
+    "fire": "2032270",
+    "police": "1011"
+  },
+  "NC": {
+    "general": "112"
+  },
+  "NE": {
+    "general": "112"
+  },
+  "NF": {
+    "general": "112"
+  },
+  "NG": {
+    "ambulance": "199"
+  },
+  "NI": {
+    "ambulance": "128",
+    "fire": "115",
+    "police": "118"
+  },
+  "NL": {
+    "general": "112"
+  },
+  "NO": {
+    "ambulance": "113",
+    "fire": "110",
+    "police": "112"
+  },
+  "NP": {
+    "ambulance": "102",
+    "fire": "101",
+    "police": "110"
+  },
+  "NR": {
+    "general": "112"
+  },
+  "NU": {
+    "general": "112"
+  },
+  "NZ": {
+    "general": "112"
+  },
+  "OM": {
+    "general": "112"
+  },
+  "PA": {
+    "general": "112",
+    "fire": "103",
+    "police": "104"
+  },
+  "PE": {
+    "general": "112"
+  },
+  "PF": {
+    "ambulance": "15",
+    "fire": "18",
+    "police": "17"
+  },
+  "PG": {
+    "fire": "110",
+    "police": "000"
+  },
+  "PH": {
+    "general": "112"
+  },
+  "PK": {
+    "general": "112"
+  },
+  "PL": {
+    "general": "112",
+    "ambulance": "999",
+    "fire": "998",
+    "police": "997"
+  },
+  "PM": {
+    "general": "112"
+  },
+  "PN": {
+    "general": "112"
+  },
+  "PR": {
+    "general": "112"
+  },
+  "PT": {
+    "general": "112"
+  },
+  "PW": {
+    "general": "112"
+  },
+  "PY": {
+    "general": "112"
+  },
+  "QA": {
+    "general": "112"
+  },
+  "RE": {
+    "ambulance": "112",
+    "fire": "18",
+    "police": "17"
+  },
+  "RO": {
+    "general": "112"
+  },
+  "RS": {
+    "general": "112",
+    "ambulance": "194",
+    "fire": "193",
+    "police": "192"
+  },
+  "RU": {
+    "general": "112",
+    "ambulance": "103",
+    "fire": "101",
+    "police": "102"
+  },
+  "RW": {
+    "ambulance": "912",
+    "fire": "112",
+    "police": "112"
+  },
+  "SA": {
+    "general": "112",
+    "ambulance": "997",
+    "fire": "998",
+    "police": "999"
+  },
+  "SB": {
+    "general": "112"
+  },
+  "SC": {
+    "general": "112"
+  },
+  "SD": {
+    "general": "112"
+  },
+  "SE": {
+    "general": "112"
+  },
+  "SG": {
+    "ambulance": "995",
+    "fire": "995",
+    "police": "999"
+  },
+  "SH": {
+    "general": "112"
+  },
+  "SI": {
+    "general": "112",
+    "police": "113"
+  },
+  "SK": {
+    "general": "112",
+    "ambulance": "155",
+    "fire": "150",
+    "police": "158"
+  },
+  "SL": {
+    "ambulance": "999",
+    "fire": "019",
+    "police": "999"
+  },
+  "SM": {
+    "ambulance": "118",
+    "fire": "115",
+    "police": "112"
+  },
+  "SN": {
+    "general": "112",
+    "ambulance": "15",
+    "fire": "18",
+    "police": "17"
+  },
+  "SO": {
+    "general": "112"
+  },
+  "SR": {
+    "general": "112"
+  },
+  "SS": {
+    "general": "112"
+  },
+  "ST": {
+    "general": "112"
+  },
+  "SV": {
+    "general": "112"
+  },
+  "SX": {
+    "general": "112"
+  },
+  "SY": {
+    "ambulance": "110",
+    "fire": "113",
+    "police": "112"
+  },
+  "SZ": {
+    "general": "112"
+  },
+  "TC": {
+    "general": "112"
+  },
+  "TD": {
+    "fire": "18",
+    "police": "17"
+  },
+  "TG": {
+    "police": "101"
+  },
+  "TH": {
+    "ambulance": "191",
+    "fire": "199",
+    "police": "191"
+  },
+  "TJ": {
+    "general": "112"
+  },
+  "TL": {
+    "general": "112"
+  },
+  "TM": {
+    "ambulance": "103",
+    "fire": "101",
+    "police": "102"
+  },
+  "TN": {
+    "ambulance": "190",
+    "fire": "198",
+    "police": "197"
+  },
+  "TO": {
+    "general": "112"
+  },
+  "TR": {
+    "ambulance": "112",
+    "fire": "110",
+    "police": "155"
+  },
+  "TT": {
+    "ambulance": "990",
+    "fire": "990",
+    "police": "999"
+  },
+  "TV": {
+    "general": "112"
+  },
+  "TW": {
+    "ambulance": "119",
+    "fire": "119",
+    "police": "110"
+  },
+  "TZ": {
+    "general": "112"
+  },
+  "UA": {
+    "general": "112",
+    "ambulance": "103",
+    "fire": "101",
+    "police": "102"
+  },
+  "UG": {
+    "general": "112"
+  },
+  "US": {
+    "general": "112"
+  },
+  "UY": {
+    "general": "112"
+  },
+  "UZ": {
+    "general": "112"
+  },
+  "VA": {
+    "general": "112",
+    "ambulance": "118",
+    "fire": "115",
+    "police": "113"
+  },
+  "VC": {
+    "general": "112"
+  },
+  "VE": {
+    "general": "112"
+  },
+  "VG": {
+    "general": "112"
+  },
+  "VI": {
+    "general": "112"
+  },
+  "VN": {
+    "ambulance": "115",
+    "fire": "114",
+    "police": "113"
+  },
+  "VU": {
+    "general": "112"
+  },
+  "WF": {
+    "general": "112"
+  },
+  "WS": {
+    "general": "112"
+  },
+  "XG": {
+    "general": "112"
+  },
+  "XK": {
+    "general": "112"
+  },
+  "XR": {
+    "general": "112"
+  },
+  "XW": {
+    "general": "112"
+  },
+  "YE": {
+    "ambulance": "191",
+    "fire": "191",
+    "police": "194"
+  },
+  "YT": {
+    "general": "112"
+  },
+  "ZA": {
+    "ambulance": "10177",
+    "fire": "10177",
+    "police": "10111"
+  },
+  "ZM": {
+    "general": "112"
+  },
+  "ZW": {
+    "general": "112"
+  }
+}

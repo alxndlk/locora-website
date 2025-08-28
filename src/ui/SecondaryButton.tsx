@@ -8,6 +8,7 @@ import {
 import styles from "./Ui.module.css";
 import { SecondaryButtonProps } from "../../types";
 import { PiUserList } from "react-icons/pi";
+import { IoInformationCircleSharp } from "react-icons/io5";
 
 export const SecondaryButton = ({
   text,
@@ -28,6 +29,9 @@ export const SecondaryButton = ({
     FaStore: <FaStore size={iconSize} color={iconColor} />,
     FaAppStore: <FaAppStore size={iconSize} color={iconColor} />,
     PiUserList: <PiUserList size={iconSize} color={iconColor} />,
+    IoInformationCircleSharp: (
+      <IoInformationCircleSharp size={iconSize} color={iconColor} />
+    ),
   };
 
   const IconComponent = icon ? iconsMap[icon] : null;

@@ -1,10 +1,4 @@
-import {
-  FaXTwitter,
-  FaLinkedin,
-  FaYoutube,
-  FaSlack,
-  FaGithub,
-} from "react-icons/fa6";
+import { FaXTwitter, FaGithub, FaReddit, FaDiscord } from "react-icons/fa6";
 import { NavLink } from "../../types";
 
 export const links = {
@@ -24,11 +18,11 @@ export const links = {
     route: "/download",
     description: "Download our app",
   },
-  pricing: {
-    name: "Pricing",
-    route: "/pricing",
-    description: "See our pricing plans",
-  },
+  // pricing: {
+  //   name: "Pricing",
+  //   route: "/pricing",
+  //   description: "See our pricing plans",
+  // },
   changelog: {
     name: "Changelog",
     route: "/changelog",
@@ -68,23 +62,17 @@ export const socialLinks = {
     icon: FaXTwitter,
     description: "Follow us on X (Twitter)",
   },
-  linkedin: {
-    name: "LinkedIn",
-    href: "https://linkedin.com",
-    icon: FaLinkedin,
-    description: "Connect with us on LinkedIn",
+  reddit: {
+    name: "Reddit",
+    href: "https://reddit.com",
+    icon: FaReddit,
+    description: "Join our community on Reddit",
   },
-  youtube: {
-    name: "YouTube",
-    href: "https://youtube.com",
-    icon: FaYoutube,
-    description: "Watch our videos on YouTube",
-  },
-  slack: {
-    name: "Slack",
-    href: "https://slack.com",
-    icon: FaSlack,
-    description: "Join our Slack community",
+  Discord: {
+    name: "Discord",
+    href: "https://discord.com",
+    icon: FaDiscord,
+    description: "Join our Discord server",
   },
   github: {
     name: "GitHub",
@@ -95,10 +83,10 @@ export const socialLinks = {
 } as const;
 
 export const navItems: Record<string, { title: string; values: NavLink[] }> = {
-  pricing: {
-    title: links.pricing.name,
-    values: [links.pricing],
-  },
+  // pricing: {
+  //   title: links.pricing.name,
+  //   values: [links.pricing],
+  // },
   resources: {
     title: "Resources",
     values: [links.changelog, links.docs, links.blog],

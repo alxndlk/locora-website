@@ -5,7 +5,7 @@
   position: relative;
   justify-content: space-between;
   overflow: hidden;
-  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
 }
 
 .line {

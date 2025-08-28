@@ -25,6 +25,8 @@ import type {
 import { updateUserPrefs } from "@/app/actions/update-user-prefs";
 import { grantAchievement } from "@/app/actions/grant-achievement";
 import { MdOutlineLogout } from "react-icons/md";
+import "flag-icons/css/flag-icons.min.css";
+import AvatarUploader from "@/components/AvatarUploader";
 
 type Props = ProfileViewProps & {
   initialPrefs: Prefs;
@@ -33,7 +35,7 @@ type Props = ProfileViewProps & {
 export default function ProfileView({
   name,
   email,
-  avatarUrl = "/images/avatar-fallback.png",
+  avatarUrl = "/images/default-avatar.png",
   achievements,
   totalAchiements,
   memberSince,
@@ -109,7 +111,7 @@ export default function ProfileView({
       case 0:
         return (
           <div className={styles.panel}>
-            {loading && <SpinnerMask />}
+            {loading && <SpinnerMask backdrop={false} />}
             <ul className={styles.kv}>
               <li>
                 <span>Name</span>
@@ -219,14 +221,80 @@ export default function ProfileView({
       case 2: // Countries
         return (
           <div className={styles.panel}>
-            <h4>You haven&apos;t visited any countries yet.</h4>
+            {countries.length === 0 ? (
+              <p className={styles.muted}>No countries visited yet.</p>
+            ) : (
+              <div className={styles.achGrid}>
+                {countries.map((country) => (
+                  <div key={country.country_code} className={styles.achCard}>
+                    {window.innerWidth > 450 ? (
+                      <div className={styles.achFlag}>
+                        <span
+                          className={`fi fi-${country.country_code.toLowerCase()}`}
+                        />
+                      </div>
+                    ) : (
+                      <div className={styles.achIcon}>
+                        <span>{country.country_flag}</span>
+                      </div>
+                    )}
+
+                    <div className={styles.achBody}>
+                      <div className={styles.achTitle}>
+                        {country.country_name}, {country.country_code}
+                      </div>
+                      {country.visited_at && (
+                        <div className={styles.achDate}>
+                          Visited:{" "}
+                          {new Date(country.visited_at).toLocaleDateString()}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         );
 
-      case 3:
+      case 3: // Cities
         return (
           <div className={styles.panel}>
-            <h4>You haven&apos;t visited any cities yet.</h4>
+            {cities.length === 0 ? (
+              <p className={styles.muted}>No cities visited yet.</p>
+            ) : (
+              <div className={styles.achGrid}>
+                {cities.map((city) => (
+                  <div key={city.id} className={styles.achCard}>
+                    {window.innerWidth > 450 ? (
+                      <div className={styles.achFlag}>
+                        <span
+                          className={`fi fi-${city.country_code.toLowerCase()}`}
+                        />
+                      </div>
+                    ) : (
+                      <div className={styles.achIcon}>
+                        <span>{city.country_flag}</span>
+                      </div>
+                    )}
+                    <div className={styles.achBody}>
+                      <div className={styles.achTitle}>{city.city_name}</div>
+                      {city.country_name && city.country_code && (
+                        <div className={styles.achDesc}>
+                          {city.country_name}, {city.country_code}
+                        </div>
+                      )}
+                      {city.visited_at && (
+                        <div className={styles.achDate}>
+                          Visited:{" "}
+                          {new Date(city.visited_at).toLocaleDateString()}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         );
 
@@ -241,14 +309,7 @@ export default function ProfileView({
       <section className={styles.headerCard}>
         <div className={styles.container}>
           <div className={styles.avatarWrap}>
-            <Image
-              src={avatarUrl}
-              alt={`${name} avatar`}
-              width={512}
-              height={512}
-              className={styles.avatar}
-              priority
-            />
+            <AvatarUploader avatarUrl={avatarUrl} name={name} />
           </div>
 
           <div className={styles.identity}>
@@ -295,15 +356,17 @@ export default function ProfileView({
             </div>
 
             <div className={styles.text_rest}>
-              <h2>Возрастные ограничения изменились</h2>
+              <h2>Profile Information</h2>
               <span>
-                Apple представила обновленную, более детальную систему
-                возрастных ограничений с новыми вопросами для их определения.
-                Существующие возрастные ограничения приложений были
-                автоматически скорректированы в соответствии с нашей обновленной
-                системой. Просмотреть скорректированные возрастные ограничения и
-                ответить на новые вопросы о них можно в разделе информации
-                каждого приложения.
+                View and update your profile details, preferences, achievements,
+                and travel history. Changes to preferences are saved
+                automatically. Your profile shows your name, email and avatar.
+                You can select your preferred currency, temperature unit, and
+                time format. Achievements appear here, and you can track your
+                progress. The travel history section lists countries and cities
+                you&apos;ve visited. Use the options above to switch views. To
+                update your avatar, click your profile image. All updates are
+                saved securely. Sign out anytime using the button below.
               </span>
             </div>
           </div>

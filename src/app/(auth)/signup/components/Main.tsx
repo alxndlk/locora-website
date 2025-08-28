@@ -63,7 +63,7 @@ export default function SignupMain() {
           <div className={styles.image_holder}>
             <Image
               alt=""
-              src={"/images/logo-white.png"}
+              src={"/images/plane.png"}
               width={512}
               height={512}
               className={styles.icon}

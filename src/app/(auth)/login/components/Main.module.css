@@ -32,7 +32,7 @@
 
 .holder {
   padding: 3rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   width: 480px;
   min-height: 480px;
   display: flex;
@@ -70,7 +70,7 @@
 }
 
 .span span {
-  opacity: 0.4;
+  opacity: 0.6;
   color: #fff;
 }
 
@@ -87,10 +87,6 @@
   width: 42px;
   height: 42px;
   transition: 0.3s ease;
-}
-
-.icon:hover {
-  transform: rotate(180deg);
 }
 
 .holder h3 {
@@ -137,7 +133,7 @@
   align-items: center;
   text-align: start;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 24%);
+  background-color: rgba(255, 255, 255, 0.05);
   position: relative;
 }
 
@@ -189,7 +185,7 @@
   padding-right: 8px;
   box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px,
     rgba(255, 255, 255, 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
-  background-color: rgba(0, 0, 0, 24%);
+  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 0.25rem;
   display: flex;
   flex-direction: row;
@@ -203,7 +199,7 @@
 }
 
 .buttons button:hover {
-  background-color: rgba(255, 255, 255, 6%);
+  background-color: rgba(255, 255, 255, 10%);
 }
 
 .inputs {
@@ -232,7 +228,7 @@
   text-align: center;
   justify-content: center;
   width: 48px;
-  background-color: rgb(11 12 14);
+  background-color: rgba(255, 255, 255, 0.05);
   position: relative;
 }
 

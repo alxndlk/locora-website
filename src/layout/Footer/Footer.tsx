@@ -45,14 +45,14 @@ const Footer = ({ size = true }: FooterProps) => {
               className={styles.text_container}
               variants={itemVariants}
             >
-              <h1>Join the Movement</h1>
+              <h1>Everything you need.</h1>
               <p>
-                Unlock the future of productivity with Huly. Remember, this
-                journey is just getting started.
+                50,000+ cities ready when you land. This is where every trip
+                starts.
               </p>
               <div className={styles.buttons}>
                 <PrimaryButton
-                  text="SEE IN ACTION"
+                  text="DOWNLOAD ON APP STORE"
                   fontSize={15}
                   iconPosition="left"
                   icon="GoArrowUpRight"
@@ -61,10 +61,10 @@ const Footer = ({ size = true }: FooterProps) => {
                   paddingButton="14.25px 24px"
                 />
                 <SecondaryButton
-                  text="JOIN OUR SLACK"
+                  text="WHAT’S INSIDE"
                   fontSize={15}
                   iconPosition="left"
-                  icon="PiUserList"
+                  icon="IoInformationCircleSharp"
                   iconSize={20}
                   fontWeight={500}
                   paddingButton="14.25px 24px"
@@ -75,7 +75,7 @@ const Footer = ({ size = true }: FooterProps) => {
         )}
 
         <motion.div className={styles.text} variants={itemVariants}>
-          <span>Copyright © 2025 Huly Labs. All rights reserved.</span>
+          <span>Copyright © 2025 Locora. All rights reserved.</span>
           <ul className={styles.ul}>
             <li>
               <a href={links.terms.route} className={styles.ul_link}>

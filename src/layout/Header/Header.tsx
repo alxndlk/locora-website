@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -17,7 +15,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { MdOutlineLogout } from "react-icons/md";
 import { useFormStatus } from "react-dom";
 import Spinner from "@/ui/Spinner";
-import Avatar from "boring-avatars";
+import { useProfile } from "../../../context/ProfileContext";
 
 type HeaderProps = {
   blackHeader?: boolean;
@@ -28,6 +26,8 @@ export const Header = ({ blackHeader }: HeaderProps) => {
 
   const supabase = useMemo(() => createClient(), []);
   const [user, setUser] = useState<User | null>(null);
+
+  const { profile, setProfile } = useProfile();
 
   useEffect(() => {
     let mounted = true;
@@ -130,14 +130,14 @@ export const Header = ({ blackHeader }: HeaderProps) => {
           transition={{ delay: 0.2, duration: 0.4 }}
         >
           <Link href="/" className={styles.logo}>
-            <Image
-              src="/images/logo-white.png"
+            {/* <Image
+              src="/images/plane.png"
               alt="logo"
               width={1024}
               height={1024}
               className={styles.logoImage}
-              style={blackHeader ? { filter: "invert(1)" } : {}}
-            />
+            /> */}
+            Locora
           </Link>
 
           <nav className={styles.nav}>
@@ -242,15 +242,12 @@ export const Header = ({ blackHeader }: HeaderProps) => {
               onMouseLeave={() => setOpenMenu(null)}
             >
               <Image
-                src={
-                  user.user_metadata.avatar_url ?? user.user_metadata.picture
-                }
-                alt={
-                  user.user_metadata.full_name ?? user.email ?? "User avatar"
-                }
+                src={profile?.avatar_url || "/images/default-avatar.png"}
+                alt={userName ?? "User avatar"}
                 className={styles.avatar}
                 width={32}
                 height={32}
+                unoptimized
                 onClick={() => {
                   router.push(links.profile.route);
                 }}
@@ -286,7 +283,10 @@ export const Header = ({ blackHeader }: HeaderProps) => {
                         router.push(links.login.route);
                       }}
                       className={styles.dropdownItem}
-                      style={{ justifyContent: "space-between", width: "100%" }}
+                      style={{
+                        justifyContent: "space-between",
+                        width: "100%",
+                      }}
                     >
                       <SignoutButton />
                     </form>

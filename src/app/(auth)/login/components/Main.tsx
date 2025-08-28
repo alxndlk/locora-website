@@ -114,12 +114,12 @@ export default function Main() {
       />
       <div className={styles.container}>
         <motion.div className={styles.holder} variants={containerVariants}>
-          {formLoading && <SpinnerMask />}
+          {formLoading && <SpinnerMask backdrop={false} />}
           <div className={styles.light} />
           <div className={styles.image_holder}>
             <Image
               alt=""
-              src={"/images/logo-white.png"}
+              src={"/images/plane.png"}
               width={512}
               height={512}
               className={styles.icon}

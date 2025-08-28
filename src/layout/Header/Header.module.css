@@ -23,6 +23,10 @@
   justify-content: center;
   text-align: center;
   margin-right: 5rem;
+  font-size: 22px;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 500;
 }
 
 .logo h1 {
@@ -37,10 +41,6 @@
   width: 32px;
   height: 32px;
   transition: transform 0.3s ease;
-}
-
-.logoImage:hover {
-  transform: rotate(180deg);
 }
 
 .left,
@@ -226,6 +226,7 @@
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 12%);
   position: relative;
+  object-fit: cover;
 }
 
 .profile {

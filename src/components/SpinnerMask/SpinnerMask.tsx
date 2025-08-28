@@ -2,10 +2,10 @@ import Spinner from "@/ui/Spinner";
 import React from "react";
 import styles from "./SpinnerMask.module.css";
 
-const SpinnerMask = () => {
+const SpinnerMask = ({ backdrop }: { backdrop: boolean }) => {
   return (
-    <div className={styles.loading}>
-      <Spinner />
+    <div className={backdrop ? styles.loadingBackdrop : styles.loading}>
+      <Spinner color="#fff" />
     </div>
   );
 };

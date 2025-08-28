@@ -32,7 +32,7 @@ export const Knowledge = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          Unmatched productivity
+          Why Travelers Choose Locora
         </motion.h1>
 
         <motion.p
@@ -41,28 +41,28 @@ export const Knowledge = () => {
           transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          Huly is a process, project, time, and knowledge management platform
-          that provides amazing collaboration opportunities for developers and
-          product teams alike.
+          Arrive in a new place and instantly feel at home. From tourist to
+          local fast: skip the search – see what matters now and feel local in
+          minutes.
         </motion.p>
 
         <ul className={styles.flex}>
           {[
             {
-              title: "Keyboard shortcuts.",
-              text: "Work efficiently with instant access to common actions.",
+              title: "City Search.",
+              text: "50,000+ places with clear profiles and instant context.",
             },
             {
-              title: "Team Planner.",
-              text: "Keep track of the bigger picture by viewing all tasks in one centralized calendar.",
-            },
-            {
-              title: "Time-blocking.",
-              text: "Transform daily tasks into structured time blocks for focused productivity.",
+              title: "Welcome Brief.",
+              text: "Meet any city in seconds with a clean, focused first screen.",
             },
             {
               title: "Notifications.",
-              text: "Keep up to date with any changes by receiving instant notifications.",
+              text: " Welcome alerts and updates you control—opt in, opt out.",
+            },
+            {
+              title: "Community.",
+              text: " Share tips, like what helps, and help build the guide.",
             },
           ].map((item, i) => (
             <motion.li

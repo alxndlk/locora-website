@@ -7,12 +7,11 @@ import { SecondaryButton } from "@/ui/SecondaryButton";
 import { PrimaryButton } from "@/ui/PrimaryButton";
 
 const listItems = [
-  "Team Planner",
-  "Project Management",
-  "Virtual Office",
-  "Chat",
-  "Documents",
-  "Inbox",
+  "Welcome Brief",
+  "City Essentials",
+  "Local Tips",
+  "Food & Cafes",
+  "Travel Stats",
 ];
 
 const itemVariants = {
@@ -30,12 +29,7 @@ const itemVariants = {
 
 export const Hero = () => {
   return (
-    <motion.div
-      className={styles.hero}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
-    >
+    <div className={styles.hero}>
       <video
         src="/videos/video_3.mp4"
         className={styles.video}
@@ -45,34 +39,16 @@ export const Hero = () => {
       />
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            viewport={{ once: false }}
-          >
-            Everything App for your teams
-          </motion.h1>
+          <h1>Meet Cities Like A Local</h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
-            viewport={{ once: false }}
-          >
-            Huly, an open-source platform, serves as an all-in-one replacement
-            of Linear, Jira, Slack, and Notion.
-          </motion.p>
+          <p>
+            Open Locora for a quick city brief, real local tips, and a simple
+            way to track your trips.
+          </p>
 
-          <motion.div
-            className={styles.buttons}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: false }}
-          >
+          <div className={styles.buttons}>
             <PrimaryButton
-              text="GET STARTED NOW"
+              text="INSTALL ON IOS"
               fontSize={15}
               iconPosition="left"
               icon="GoArrowUpRight"
@@ -81,41 +57,26 @@ export const Hero = () => {
               paddingButton="14.25px 24px"
             />
             <SecondaryButton
-              text="VIEW SERVICES"
+              text="FEATURE TOUR"
               fontSize={15}
               iconPosition="left"
-              icon="PiUserList"
+              icon="IoInformationCircleSharp"
               iconSize={20}
               fontWeight={500}
               paddingButton="14.25px 24px"
             />
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div
-          className={styles.absolute}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.7, ease: "easeOut" }}
-          viewport={{ once: false }}
-        >
-          <h2>Everything you need for productive team work:</h2>
+        <div className={styles.absolute}>
+          <h2>From first tap to first step:</h2>
           <ul>
             {listItems.map((item, i) => (
-              <motion.li
-                key={i}
-                custom={i}
-                variants={itemVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false }}
-              >
-                {item}
-              </motion.li>
+              <li key={i}>{item}</li>
             ))}
           </ul>
-        </motion.div>
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 };

@@ -4,11 +4,13 @@ import React, { useRef, useEffect, useState } from "react";
 import styles from "./Main.module.css";
 import Blocks from "./Blocks";
 
-const paragraphs = [
-  `Locora helps you decode cities. It's a smart layer of information designed for travelers, digital nomads, and remote workers who want more than just Google Maps.`,
-  `Instead of scrolling forums or blogs, you get structured, city-specific insights — from average prices and SIM cards to culture tips, emergency numbers, and hidden gems.`,
-  `All data is curated, verified, and easy to digest. You’ll know how much a coffee costs, which local apps to install, how safe the area is, and where to get help if you need it.`,
-  `Whether you're landing in Lisbon, Seoul, or Tbilisi, Locora makes your first day feel like your third week — confident, connected, and informed.`,
+const paragraphs_top = [
+  `Locora helps you skip the noise and feel the rhythm of a new city right away. More than maps, it's context - the local layer travelers and nomads.`,
+];
+
+const paragraphs_bottom = [
+  `No endless searching, no tourist traps — just the essentials and the hidden gems that make every city feel like home.`,
+  `Whether you're landing for a week or staying for months, Locora gives you the confidence to move, explore, and live like a local in minutes.`,
 ];
 
 const splitText = (text: string) =>
@@ -44,7 +46,8 @@ const Main = () => {
   }, []);
 
   let globalIndex = 0;
-  const allWordsNested = paragraphs.map(splitText);
+  const allWordsNestedTop = paragraphs_top.map(splitText);
+  const allWordsNestedBottom = paragraphs_bottom.map(splitText);
 
   return (
     <section className={styles.section}>
@@ -54,7 +57,7 @@ const Main = () => {
       <div className={styles.container}>
         {/* TEXT SECTION */}
         <div className={styles.textSection}>
-          {allWordsNested.map((words, pIndex) => (
+          {allWordsNestedTop.map((words, pIndex) => (
             <p className={styles.paragraph} key={pIndex}>
               {words.map((word, wIndex) => {
                 const index = globalIndex++;
@@ -92,7 +95,7 @@ const Main = () => {
       <div className={styles.container}>
         {/* TEXT SECTION */}
         <div className={styles.textSection}>
-          {allWordsNested.map((words, pIndex) => (
+          {allWordsNestedBottom.map((words, pIndex) => (
             <p className={styles.paragraph} key={pIndex}>
               {words.map((word, wIndex) => {
                 const index = globalIndex++;

@@ -95,7 +95,7 @@
 }
 
 .card:nth-last-of-type(4)::before {
-  background-image: url("/images/bg_2.avif");
+  background-image: url("/images/6.jpg");
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -172,7 +172,7 @@
 }
 
 .card:nth-last-of-type(1)::before {
-  background-image: url("/images/bg.avif");
+  background-image: url("/images/15.jpg");
   background-size: cover;
   background-position: center;
   width: 100%;

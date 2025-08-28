@@ -33,7 +33,7 @@ export const MetaBrain = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Work together. Like in the office.
+            Built by travelers. Made by locals.
           </motion.h1>
 
           <motion.p
@@ -42,8 +42,8 @@ export const MetaBrain = () => {
             transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Create customized virtual office spaces for any department or event
-            with high quality audio and video conferencing.
+            Share a tip, help someone land, and get the good stuff when you
+            touch down.
           </motion.p>
         </div>
       </div>

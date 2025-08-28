@@ -83,6 +83,33 @@ export type Achievements = {
   color?: string;
 };
 
+export type Countries = {
+  country_code: string;
+  country_name: string;
+  country_flag: string;
+  visited_at: Date;
+}[];
+
+export type Cities = {
+  id: number;
+  city_id: string;
+  city_name: string;
+  country_code: string;
+  country_name: string;
+  country_flag: string;
+  language?: string | null;
+  lat: number;
+  lon: number;
+  currency_code?: string | null;
+  currency_symbol?: string | null;
+  currency_name?: string | null;
+  population?: string;
+  visited_at: Date;
+  welcome_message_title?: string;
+  welcome_message_body?: string;
+  welcome_message_image?: string | null;
+}[];
+
 export type ProfileViewProps = {
   name: string;
   username?: string;
@@ -90,8 +117,8 @@ export type ProfileViewProps = {
   avatarUrl?: string;
   memberSince?: string;
 
-  countries: number;
-  cities: number;
+  countries: Countries;
+  cities: Cities;
 
   achievements: Achievements[];
   totalAchiements: number;

@@ -3,6 +3,7 @@ import styles from "./Block.module.css";
 import { FaCheck } from "react-icons/fa6";
 import { IoMdInformationCircle } from "react-icons/io";
 import { motion } from "framer-motion";
+import { PrimaryButton } from "@/ui/PrimaryButton";
 
 const Blocks = () => {
   const BLOCKS = [
@@ -10,13 +11,23 @@ const Blocks = () => {
       name: "Basic",
       price: 0,
       type: "/monthly",
-      description: "Perfect for individuals exploring Locora's core features.",
+      description:
+        "Perfect for trying Locora and getting global essentials anywhere.",
       features: [
-        { value: "1 workspace", alt: null },
-        { value: "Up to 3 users", alt: null },
-        { value: "Basic collaboration tools", alt: null },
-        { value: "Community support", alt: null },
-        { value: "5GB media storage", alt: null },
+        {
+          value: "Global essentials — welcome brief for 50,000+ cities",
+          alt: null,
+        },
+        {
+          value: "Local Tips (home only) — read & publish in your home city",
+          alt: null,
+        },
+        { value: "Tips elsewhere — locked on the free plan", alt: null },
+        {
+          value: "Travel stats (countries only) — no city count yet",
+          alt: null,
+        },
+        { value: "Profile & starter achievements", alt: null },
       ],
     },
     {
@@ -28,44 +39,91 @@ const Blocks = () => {
       description:
         "Designed for growing teams who need more power and flexibility.",
       features: [
-        { value: "Unlimited workspaces", alt: null },
-        { value: "Up to 15 users", alt: null },
         {
-          value: "Advanced collaboration tools",
+          value: "All cities — arrival brief & essentials in 50,000+ places",
+          alt: null,
+        },
+        {
+          value: "Local Tips (worldwide) — read and publish anywhere",
+          alt: null,
+        },
+        {
+          value: "Full travel stats — cities, countries, days, streaks",
           alt: "Task assignment, file sharing, comments",
         },
-        { value: "Priority email support", alt: null },
-        { value: "50GB media storage", alt: null },
+        {
+          value: "Smart arrival — notifications and suggestions you control",
+          alt: null,
+        },
+        {
+          value: "Profile & achievements — plus early access to new stuff",
+          alt: null,
+        },
       ],
     },
     {
-      name: "One time",
+      name: "Pro",
       price: 89,
       coins: ".99",
-      type: "",
+      type: "/yearly",
       description: "A lifetime license for solo creators or small teams.",
       features: [
-        { value: "1 lifetime workspace", alt: null },
-        { value: "Up to 5 users", alt: null },
-        { value: "All Pro features included", alt: null },
-        { value: "One-time payment, no recurring", alt: null },
-        { value: "100GB media storage", alt: null },
+        {
+          value: "All cities — arrival brief & essentials in 50,000+ places",
+          alt: null,
+        },
+        {
+          value: "Local Tips (worldwide) — read and publish anywhere",
+          alt: null,
+        },
+        {
+          value: "Full travel stats — cities, countries, days, streaks",
+          alt: null,
+        },
+        {
+          value: "Smart arrival — notifications and suggestions you control",
+          alt: null,
+        },
+        { value: "All future Pro features — included, no renewals", alt: null },
       ],
     },
     {
-      name: "One time + Editing",
+      name: "Pro + Editing",
       price: 159,
       coins: ".99",
-      type: "",
-      tag: "✏️ Edit any town",
+      type: "/yearly",
+      tag: "✏️ Edit any city",
       description:
         "Lifetime license + built-in video/audio editing capabilities.",
       features: [
-        { value: "Everything in One time plan", alt: null },
-        { value: "Built-in video/audio editor", alt: "Trim, merge, subtitles" },
-        { value: "Unlimited export quality", alt: "Up to 4K" },
-        { value: "Access to future editing features", alt: null },
-        { value: "150GB media storage", alt: null },
+        {
+          value:
+            "Global editing — update city pages anywhere (texts, basics, phrases)",
+          alt: null,
+        },
+        {
+          value:
+            "Add places & media — create POIs and upload photos (reviewed before publish)",
+          alt: "Trim, merge, subtitles",
+        },
+        {
+          value:
+            "Local Tips (worldwide) — read, publish, and refine tips in any city",
+          alt: "Up to 4K",
+        },
+        {
+          value: "Full travel stats — cities, countries, days, streaks",
+          alt: null,
+        },
+        {
+          value:
+            "Priority review & Creator badge — faster moderation + in-app badge",
+          alt: null,
+        },
+        {
+          value: "All future Pro features — included for life",
+          alt: null,
+        },
       ],
     },
   ];
@@ -130,18 +188,20 @@ const Blocks = () => {
               <span className={styles.line} />
               <ul className={styles.features}>
                 {item.features.map((feature, key) => (
-                  <span key={key} className={styles.feature}>
-                    <FaCheck size={16} />
+                  <li key={key} className={styles.feature}>
                     {feature.value}
-                    {feature.alt !== null && (
-                      <div className={styles.tip}>
-                        <IoMdInformationCircle size={16} />
-                      </div>
-                    )}
-                  </span>
+                  </li>
                 ))}
               </ul>
-              <button className={styles.button}>Start Free</button>
+              <PrimaryButton
+                text="GET STARTED"
+                fontSize={15}
+                iconPosition="left"
+                icon="GoArrowUpRight"
+                iconSize={20}
+                fontWeight={500}
+                paddingButton="14.25px 24px"
+              />
             </motion.div>
           ))}
         </div>

@@ -14,7 +14,7 @@
   position: absolute;
   content: "";
   background-size: cover;
-  filter: hue-rotate(320deg);
+  filter: hue-rotate(130deg);
 }
 
 .container {
