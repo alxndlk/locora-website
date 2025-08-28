@@ -114,11 +114,6 @@
   margin-bottom: 0.875rem;
 }
 
-:global(strong) {
-  color: #fff !important;
-  font-weight: 400 !important;
-}
-
 .list {
   color: rgb(176 178 183);
   letter-spacing: -0.04em;

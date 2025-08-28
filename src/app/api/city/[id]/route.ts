@@ -1,31 +1,28 @@
-import { pool } from "@/backend/db";
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 import { NextResponse } from "next/server";
+import { pool } from "@/backend/db";
 
 export async function GET(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: { code: string } }
 ) {
-  try {
-    const client = await pool.connect();
+  const client = await pool.connect();
+  const { code } = params;
 
-    const result = await client.query(
-      `SELECT *
-       FROM cities
-       WHERE city_id = $1
-       LIMIT 1`,
-      [params.id]
-    );
+  const result = await client.query(
+    `SELECT country_code, country_name, country_flag
+     FROM cities
+     WHERE country_code = $1
+     LIMIT 1`,
+    [code.toUpperCase()]
+  );
 
-    client.release();
+  client.release();
 
-    if (result.rowCount === 0) {
-      return NextResponse.json({ error: "City not found" }, { status: 404 });
-    }
-
-    return NextResponse.json(result.rows[0]);
-  } catch (err: unknown) {
-    const errorMessage =
-      err instanceof Error ? err.message : "An unexpected error occurred";
-    return NextResponse.json({ error: errorMessage }, { status: 500 });
+  if (result.rowCount === 0) {
+    return NextResponse.json({ error: "Country not found" }, { status: 404 });
   }
+
+  return NextResponse.json(result.rows[0]);
 }

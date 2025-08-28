@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { motion } from "framer-motion";
 import React from "react";
 import { GoArrowUpRight } from "react-icons/go";

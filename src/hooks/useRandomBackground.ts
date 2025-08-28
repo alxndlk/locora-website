@@ -6,8 +6,11 @@ export const useRandomBackground = () => {
   useEffect(() => {
     const randomNum = Math.floor(Math.random() * 7) + 1;
     setBg(`/profile_bgs/${randomNum}.jpg`);
-    console.log(bg);
   }, []);
+
+  useEffect(() => {
+    console.log(bg);
+  }, [bg]);
 
   return {
     bg,

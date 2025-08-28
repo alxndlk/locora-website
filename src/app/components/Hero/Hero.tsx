@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion, easeOut } from "framer-motion";
 import styles from "./Hero.module.css";
 import { SecondaryButton } from "@/ui/SecondaryButton";
 import { PrimaryButton } from "@/ui/PrimaryButton";
@@ -13,19 +12,6 @@ const listItems = [
   "Food & Cafes",
   "Travel Stats",
 ];
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 10 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.15,
-      duration: 0.6,
-      ease: easeOut,
-    },
-  }),
-};
 
 export const Hero = () => {
   return (

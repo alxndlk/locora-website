@@ -27,7 +27,7 @@ export const Header = ({ blackHeader }: HeaderProps) => {
   const supabase = useMemo(() => createClient(), []);
   const [user, setUser] = useState<User | null>(null);
 
-  const { profile, setProfile } = useProfile();
+  const { profile } = useProfile();
 
   useEffect(() => {
     let mounted = true;

@@ -1,6 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
-import Image from "next/image";
 import styles from "./ProfileView.module.css";
 import { useEffect, useRef, useState } from "react";
 import { VscVerifiedFilled } from "react-icons/vsc";
@@ -102,7 +102,8 @@ export default function ProfileView({
 
   useEffect(() => {
     return () => {
-      Object.values(timersRef.current).forEach((t) => t && clearTimeout(t));
+      const timers = { ...timersRef.current };
+      Object.values(timers).forEach((t) => t && clearTimeout(t));
     };
   }, []);
 

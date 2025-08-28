@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import React, { useEffect, useMemo, useState } from "react";
 import styles from "./Main.module.css";

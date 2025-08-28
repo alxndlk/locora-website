@@ -24,11 +24,6 @@
   flex-direction: column;
 }
 
-:global(strong) {
-  color: #fff !important;
-  font-weight: 400 !important;
-}
-
 .emptyState {
   opacity: 0.4;
   margin-left: 0.75rem;

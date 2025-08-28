@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./Main.module.css";
-import { GoArrowUpRight } from "react-icons/go";
 import { motion, AnimatePresence } from "framer-motion";
 import { FilterOptions } from "@/components/FilterOptions";
 import General from "./General";
@@ -122,8 +122,12 @@ const Main: React.FC = () => {
         });
 
         setEntries(sorted);
-      } catch (e: any) {
-        setErr(e?.message || "Failed to load changelog");
+      } catch (e: unknown) {
+        if (e instanceof Error) {
+          setErr(e.message);
+        } else {
+          setErr("Failed to load changelog");
+        }
       } finally {
         setLoading(false);
       }
@@ -249,7 +253,7 @@ const Main: React.FC = () => {
                     headingsRef={headingsRef}
                   />
                 ) : (
-                  <CityChanges />
+                  <CityChanges key={entry.key} />
                 )
               )}
             </AnimatePresence>

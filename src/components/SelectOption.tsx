@@ -25,7 +25,6 @@ export function Segmented<T extends string>({
             type="button"
             role="tab"
             aria-selected={active}
-            aria-pressed={active}
             className={`${styles.segment} ${
               active ? styles.segment_active : ""
             }`}

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import styles from "./Block.module.css";
-import { FaCheck } from "react-icons/fa6";
-import { IoMdInformationCircle } from "react-icons/io";
 import { motion } from "framer-motion";
 import { PrimaryButton } from "@/ui/PrimaryButton";
 
