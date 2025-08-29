@@ -228,7 +228,7 @@ export default function ProfileView({
               <div className={styles.achGrid}>
                 {countries.map((country) => (
                   <div key={country.country_code} className={styles.achCard}>
-                    {window.innerWidth > 450 ? (
+                    {window.navigator.platform.startsWith("Win") ? (
                       <div className={styles.achFlag}>
                         <span
                           className={`fi fi-${country.country_code.toLowerCase()}`}
@@ -267,7 +267,7 @@ export default function ProfileView({
               <div className={styles.achGrid}>
                 {cities.map((city) => (
                   <div key={city.id} className={styles.achCard}>
-                    {window.innerWidth > 450 ? (
+                    {window.navigator.platform.startsWith("Win") ? (
                       <div className={styles.achFlag}>
                         <span
                           className={`fi fi-${city.country_code.toLowerCase()}`}

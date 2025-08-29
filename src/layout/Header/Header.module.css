@@ -6,6 +6,7 @@
   width: 100%;
   z-index: 10000;
   position: relative;
+  padding: 0 2rem;
 }
 
 .container {
@@ -286,6 +287,12 @@
   transition: 0.3s ease;
 }
 
+.user_buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
 .logout:hover {
   opacity: 1;
 }
@@ -303,4 +310,28 @@
   position: relative;
   cursor: pointer;
   width: 100%;
+}
+
+@media (max-width: 800px) {
+  .nav {
+    display: none;
+  }
+  .menu {
+    display: flex;
+  }
+
+  .menuIcon {
+    margin-left: 1rem;
+  }
+
+  .starLink {
+    display: none;
+  }
+
+  .user_buttons {
+    display: none;
+  }
+  .profileDropdown {
+    right: -4rem;
+  }
 }

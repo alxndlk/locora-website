@@ -5,17 +5,17 @@ import { pool } from "@/backend/db";
 
 export async function GET(
   req: Request,
-  { params }: { params: { code: string } }
+  { params }: { params: { id: string } }
 ) {
   const client = await pool.connect();
-  const { code } = params;
+  const { id } = params;
 
   const result = await client.query(
-    `SELECT country_code, country_name, country_flag
+    `SELECT *
      FROM cities
-     WHERE country_code = $1
+     WHERE city_id = $1
      LIMIT 1`,
-    [code.toUpperCase()]
+    [id.toUpperCase()]
   );
 
   client.release();

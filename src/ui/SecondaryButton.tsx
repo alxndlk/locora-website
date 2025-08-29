@@ -22,6 +22,7 @@ export const SecondaryButton = ({
   onClick,
   widthButton,
   paddingButton,
+  color,
 }: SecondaryButtonProps) => {
   const iconsMap: { [key: string]: JSX.Element } = {
     FaChevronRight: <FaChevronRight size={iconSize} color={iconColor} />,
@@ -46,6 +47,7 @@ export const SecondaryButton = ({
         fontWeight: fontWeight,
         width: widthButton,
         padding: paddingButton,
+        color: color,
       }}
     >
       {iconPosition === "left" && IconComponent}

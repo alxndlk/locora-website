@@ -7,11 +7,3 @@
   overflow: hidden;
   scroll-behavior: smooth;
 }
-
-.line {
-  position: fixed;
-  top: 0;
-  height: 1px;
-  z-index: 100000;
-  background-color: var(--color-green-600);
-}

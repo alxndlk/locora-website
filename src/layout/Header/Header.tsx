@@ -16,6 +16,8 @@ import { MdOutlineLogout } from "react-icons/md";
 import { useFormStatus } from "react-dom";
 import Spinner from "@/ui/Spinner";
 import { useProfile } from "../../../context/ProfileContext";
+import MobileHeader from "./MobileHeader";
+import { IoMenuOutline } from "react-icons/io5";
 
 type HeaderProps = {
   blackHeader?: boolean;
@@ -109,6 +111,8 @@ export const Header = ({ blackHeader }: HeaderProps) => {
     );
   }
 
+  const [isMobileHeader, setMobileHeader] = useState<boolean>(false);
+
   return (
     <motion.header
       className={styles.header}
@@ -117,6 +121,13 @@ export const Header = ({ blackHeader }: HeaderProps) => {
       transition={{ duration: 0.3, ease: "easeOut" }}
       style={blackHeader ? { color: "#0b0d10" } : {}}
     >
+      <MobileHeader
+        isOpen={isMobileHeader}
+        onClose={() => setMobileHeader(false)}
+        user={user}
+        userName={userName}
+        avatarURL={profile?.avatar_url || "/images/default-avatar.png"}
+      />
       <motion.div
         className={styles.container}
         initial={{ opacity: 0, y: -6 }}
@@ -130,13 +141,6 @@ export const Header = ({ blackHeader }: HeaderProps) => {
           transition={{ delay: 0.2, duration: 0.4 }}
         >
           <Link href="/" className={styles.logo}>
-            {/* <Image
-              src="/images/plane.png"
-              alt="logo"
-              width={1024}
-              height={1024}
-              className={styles.logoImage}
-            /> */}
             Locora
           </Link>
 
@@ -219,12 +223,13 @@ export const Header = ({ blackHeader }: HeaderProps) => {
           </a>
 
           {!user ? (
-            <>
+            <div className={styles.user_buttons}>
               <SecondaryButton
                 text="SIGN IN"
                 buttonSize={32}
                 fontSize={11}
                 fontWeight={700}
+                widthButton="max-content"
                 onClick={() => router.push(links.login.route)}
               />
               <SecondaryButton
@@ -232,9 +237,10 @@ export const Header = ({ blackHeader }: HeaderProps) => {
                 buttonSize={32}
                 fontSize={11}
                 fontWeight={700}
+                widthButton="max-content"
                 onClick={() => router.push(links.signup.route)}
               />
-            </>
+            </div>
           ) : (
             <div
               className={styles.profile}
@@ -295,6 +301,14 @@ export const Header = ({ blackHeader }: HeaderProps) => {
               </AnimatePresence>
             </div>
           )}
+
+          <div className={styles.menuButton}>
+            <IoMenuOutline
+              size={24}
+              onClick={() => setMobileHeader(true)}
+              className={styles.menuIcon}
+            />
+          </div>
         </motion.div>
       </motion.div>
     </motion.header>

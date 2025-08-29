@@ -27,6 +27,7 @@ export type SecondaryButtonProps = {
   onClick?: () => void;
   widthButton?: string;
   paddingButton?: string;
+  color?: string;
 };
 
 export type PrimaryButtonProps = {

@@ -1,0 +1,168 @@
+.main {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  color: rgb(255, 255, 255);
+  flex-direction: column;
+  gap: 8px;
+  min-height: 36px;
+  font-weight: 500;
+  transition: 0.3s;
+  display: flex;
+  font-size: 14px !important;
+  transition: 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  padding-top: 0;
+  z-index: 99999;
+  backdrop-filter: blur(30px) saturate(180%);
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-right: 5rem;
+  font-size: 22px;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.logo h1 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 18px;
+  margin-left: 0.5rem;
+}
+
+.logoImage {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.left,
+.right,
+.top {
+  display: flex;
+}
+
+.top {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+}
+
+.navBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  text-align: start;
+  margin-top: 3rem;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.socialLinks {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3rem;
+  gap: 1.5rem;
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+}
+
+.userData {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.user_buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.user_info {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  text-align: end;
+  justify-content: center;
+}
+
+.avatar::before {
+  width: 10px;
+  height: 10px;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  content: "";
+  background: rgb(34, 139, 34);
+  background: linear-gradient(
+    159deg,
+    rgba(34, 139, 34, 1) 0%,
+    rgba(50, 205, 50, 1) 100%
+  );
+  border-radius: 50%;
+  z-index: 10000;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 12%);
+  position: relative;
+  object-fit: cover;
+}
+
+.user_text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: start;
+  justify-content: start;
+}
+
+.email {
+  font-size: 12px;
+  color: rgb(176 178 183);
+}
