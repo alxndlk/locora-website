@@ -5,7 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 import styles from "./Styles.module.css";
 import Spinner from "@/ui/Spinner";
-import { useProfile } from "../../context/ProfileContext";
+import { useProfile } from "../context/ProfileContext";
 import { FaPen } from "react-icons/fa6";
 
 export default function AvatarUploader({

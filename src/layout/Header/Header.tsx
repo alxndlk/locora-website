@@ -15,7 +15,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { MdOutlineLogout } from "react-icons/md";
 import { useFormStatus } from "react-dom";
 import Spinner from "@/ui/Spinner";
-import { useProfile } from "../../../context/ProfileContext";
+import { useProfile } from "../../context/ProfileContext";
 import MobileHeader from "./MobileHeader";
 import { IoMenuOutline } from "react-icons/io5";
 

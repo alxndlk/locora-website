@@ -75,7 +75,10 @@ const Footer = ({ size = true }: FooterProps) => {
         )}
 
         <motion.div className={styles.text} variants={itemVariants}>
-          <span>Copyright © 2025 Locora. All rights reserved.</span>
+          <span>
+            Copyright &copy; {new Date().getFullYear()} Locora. All rights
+            reserved.
+          </span>
           <ul className={styles.ul}>
             <li>
               <a href={links.terms.route} className={styles.ul_link}>

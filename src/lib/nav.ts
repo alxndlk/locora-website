@@ -87,10 +87,10 @@ export const navItems: Record<string, { title: string; values: NavLink[] }> = {
   //   title: links.pricing.name,
   //   values: [links.pricing],
   // },
-  resources: {
-    title: "Resources",
-    values: [links.changelog, links.docs, links.blog],
-  },
+  // resources: {
+  //   title: "Resources",
+  //   values: [links.changelog, links.docs, links.blog],
+  // },
   community: {
     title: "Community",
     values: Object.values(socialLinks),
