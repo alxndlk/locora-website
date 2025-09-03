@@ -80,7 +80,7 @@ export default function AvatarUploader({
             <input
               id="avatarInput"
               type="file"
-              accept="image/png,image/jpeg,image/gif,image/avif,image/apng"
+              accept="image/*"
               style={{ display: "none" }}
               className={styles.input}
               onChange={handleFileChange}

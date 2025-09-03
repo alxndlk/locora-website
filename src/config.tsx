@@ -42,5 +42,8 @@ export const config = {
       type: "website",
     },
     category: "travel",
+    icons: {
+      icon: [{ url: "/plane.png" }],
+    },
   },
 };

@@ -15,6 +15,7 @@
     "@supabase/auth-helpers-nextjs": "^0.10.0",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.54.0",
+    "@vercel/analytics": "^1.5.0",
     "animejs": "^4.1.2",
     "boring-avatars": "^2.0.1",
     "country-code-to-flag-emoji": "^2.0.0",
