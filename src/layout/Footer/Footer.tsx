@@ -38,6 +38,7 @@ const Footer = ({ size = true }: FooterProps) => {
                 alt="image"
                 width={1024}
                 height={1024}
+                className={styles.img}
               />
             </motion.div>
 
@@ -59,6 +60,7 @@ const Footer = ({ size = true }: FooterProps) => {
                   iconSize={20}
                   fontWeight={500}
                   paddingButton="14.25px 24px"
+                  widthButton="max-content"
                 />
                 <SecondaryButton
                   text="WHAT’S INSIDE"
@@ -68,6 +70,7 @@ const Footer = ({ size = true }: FooterProps) => {
                   iconSize={20}
                   fontWeight={500}
                   paddingButton="14.25px 24px"
+                  widthButton="max-content"
                 />
               </div>
             </motion.div>
