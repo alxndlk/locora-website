@@ -242,4 +242,9 @@
     line-height: 40px;
     margin-top: 2rem;
   }
+
+  .text {
+    padding: 32px 2rem;
+    gap: 1rem;
+  }
 }
