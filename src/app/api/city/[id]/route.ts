@@ -15,14 +15,20 @@ export async function GET(
   const apiKey = req.headers.get("x-api-key");
 
   if (!origin && !apiKey) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    return NextResponse.json(
+      { error: "Forbidden", message: "Origin and API key are required" },
+      { status: 403 }
+    );
   }
 
   const apiKeyValid = process.env.INTERNAL_API_KEY;
 
   if (!apiKeyValid) {
     return NextResponse.json(
-      { error: "Internal server error: INTERNAL_API_KEY" },
+      {
+        error: "Internal server error: INTERNAL_API_KEY",
+        message: "INTERNAL_API_KEY is not set",
+      },
       { status: 500 }
     );
   }
@@ -30,7 +36,10 @@ export async function GET(
   const allowedOrigins = ["https://locora.app", "http://localhost:3000"];
 
   if (!allowedOrigins.includes(origin) && apiKey !== apiKeyValid) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    return NextResponse.json(
+      { error: "Forbidden", message: "Invalid origin or API key" },
+      { status: 403 }
+    );
   }
 
   const client = await pool.connect();
