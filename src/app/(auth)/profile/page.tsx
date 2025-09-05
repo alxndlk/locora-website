@@ -9,8 +9,14 @@ async function enrichCities(cityList: { id: number; visited_at: Date }[]) {
       try {
         const res = await fetch(
           `${process.env.NEXT_PUBLIC_APP_URL}/api/city/${city.id}`,
-          { cache: "no-store" }
+          {
+            cache: "no-store",
+            headers: {
+              "x-api-key": process.env.INTERNAL_API_KEY ?? "",
+            },
+          }
         );
+
         if (!res.ok) throw new Error("Failed to fetch city");
         const data = await res.json();
         return { ...data, visited_at: city.visited_at };
