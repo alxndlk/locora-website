@@ -14,12 +14,22 @@ export async function GET(
   const origin = req.headers.get("origin") || "";
   const apiKey = req.headers.get("x-api-key");
 
+  if (!origin && !apiKey) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
+  const apiKeyValid = process.env.INTERNAL_API_KEY;
+
+  if (!apiKeyValid) {
+    return NextResponse.json(
+      { error: "Internal server error: INTERNAL_API_KEY" },
+      { status: 500 }
+    );
+  }
+
   const allowedOrigins = ["https://locora.app", "http://localhost:3000"];
 
-  if (
-    !allowedOrigins.includes(origin) &&
-    apiKey !== process.env.INTERNAL_API_KEY
-  ) {
+  if (!allowedOrigins.includes(origin) && apiKey !== apiKeyValid) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
