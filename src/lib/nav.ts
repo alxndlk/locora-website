@@ -58,25 +58,25 @@ export const links = {
 export const socialLinks = {
   x: {
     name: "Twitter",
-    href: "https://x.com",
+    href: "https://x.com/locora_app",
     icon: FaXTwitter,
     description: "Follow us on X (Twitter)",
   },
   reddit: {
     name: "Reddit",
-    href: "https://reddit.com",
+    href: "https://www.reddit.com/r/locora/",
     icon: FaReddit,
     description: "Join our community on Reddit",
   },
   Discord: {
     name: "Discord",
-    href: "https://discord.com",
+    href: "https://discord.gg/ksxrdnETuc",
     icon: FaDiscord,
     description: "Join our Discord server",
   },
   github: {
     name: "GitHub",
-    href: "https://github.com",
+    href: "https://github.com/alxndlk/locora-website",
     icon: FaGithub,
     description: "Check out our GitHub repos",
   },
