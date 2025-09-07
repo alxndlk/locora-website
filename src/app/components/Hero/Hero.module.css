@@ -14,6 +14,7 @@
   height: 100%;
   justify-content: space-between;
   display: flex;
+  position: relative;
   flex-direction: column;
 }
 
@@ -50,8 +51,7 @@
 .container h1 {
   font-size: 84px;
   font-weight: 600;
-  letter-spacing: -0.04em;
-  line-height: 0.9;
+  line-height: 92px;
   text-wrap: balance;
 
   background: linear-gradient(45deg, #fff 50%, #fffded);
@@ -69,11 +69,10 @@
 }
 
 .container p {
-  letter-spacing: -0.04em;
   margin-top: 0.125rem;
   font-size: 18px;
   font-weight: 300;
-  line-height: 1.375;
+  line-height: 26px;
   margin-top: 1rem;
   color: rgb(229 229 231);
   max-width: 28rem;
@@ -124,7 +123,7 @@
 
 .absolute ul {
   display: flex;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.125;
   font-size: 14px;
 }
@@ -183,4 +182,47 @@
   transform: translateX(-50%) translateY(-50%) rotate(45deg);
   z-index: 0;
   background-color: #ffe6084d;
+}
+
+.image {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  z-index: 10;
+  background-image: url("/plane-chrome.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.image::after {
+  width: 700px;
+  height: 700px;
+  position: absolute;
+  z-index: -1;
+  background-image: url("/plane-chrome.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(60px);
+  top: 50%;
+  left: 50%;
+  content: "";
+  transform: translateX(-50%) translateY(-50%);
+  opacity: 0.2;
+}
+
+.image::before {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  transition: 0.3s ease;
+  content: "";
+  top: 50%;
+  left: 50%;
+  filter: blur(135px);
+  opacity: 0.1;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  background-color: #0821ff;
 }

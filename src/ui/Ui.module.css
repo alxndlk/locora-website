@@ -9,40 +9,13 @@
   cursor: pointer;
   gap: 0.5rem;
   z-index: 10;
-}
-
-.secondaryButton::before {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: 9999px;
-  border-width: 1px;
-  border-color: transparent;
-  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  content: "";
-  background: linear-gradient(rgba(0, 0, 0, 0.4)) padding-box,
-    linear-gradient(180deg, hsla(0, 0%, 100%, 0.3), hsla(0, 0%, 100%, 0.15))
-      border-box;
+  background-color: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(20px) saturate(180%);
+  transition: 0.3s ease;
 }
 
-.secondaryButton::after {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: 9999px;
-  content: "";
-  border-width: 1px;
-  border-color: transparent;
-  opacity: 0;
-  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  background: linear-gradient(rgba(0, 0, 0, 0.5)) padding-box,
-    linear-gradient(180deg, hsla(0, 0%, 100%, 0.5), hsla(0, 0%, 100%, 0.25))
-      border-box;
-}
-
-.secondaryButton:hover::after {
-  opacity: 1;
+.secondaryButton:hover {
+  background-color: rgba(255, 255, 255, 0.16);
 }
 
 .primaryButton {
@@ -56,13 +29,13 @@
   text-align: center;
   gap: 0.5rem;
   color: #000;
-  font-weight: 500;
+  font-weight: 400;
   transition: 0.3s ease;
   cursor: pointer;
 }
 
 .primaryButton:hover {
-  box-shadow: 0 0 200px 0 rgba(255, 255, 255, 0.5);
+  gap: 1rem;
 }
 
 .spinner {

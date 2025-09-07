@@ -16,14 +16,9 @@ const listItems = [
 export const Hero = () => {
   return (
     <div className={styles.hero}>
-      <video
-        src="/videos/video_3.mp4"
-        className={styles.video}
-        loop
-        muted
-        autoPlay
-      />
       <div className={styles.wrapper}>
+        <div className={styles.image} />
+
         <div className={styles.container}>
           <h1>Meet Cities Like A Local</h1>
 
@@ -39,7 +34,7 @@ export const Hero = () => {
               iconPosition="left"
               icon="GoArrowUpRight"
               iconSize={20}
-              fontWeight={500}
+              fontWeight={400}
               paddingButton="14.25px 24px"
             />
             <SecondaryButton
@@ -48,7 +43,7 @@ export const Hero = () => {
               iconPosition="left"
               icon="IoInformationCircleSharp"
               iconSize={20}
-              fontWeight={500}
+              fontWeight={400}
               paddingButton="14.25px 24px"
             />
           </div>

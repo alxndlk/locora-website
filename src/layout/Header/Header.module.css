@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-right: 5rem;
+  margin-right: 2.5rem;
   font-size: 22px;
   font-family: "Playfair Display", serif;
   font-style: italic;
@@ -39,8 +39,8 @@
 }
 
 .logoImage {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   transition: transform 0.3s ease;
 }
 

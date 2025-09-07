@@ -141,7 +141,7 @@ export const Header = ({ blackHeader }: HeaderProps) => {
           transition={{ delay: 0.2, duration: 0.4 }}
         >
           <Link href="/" className={styles.logo}>
-            Locora
+            <Image src="/plane.png" alt="Locora" width={28} height={28} />
           </Link>
 
           <nav className={styles.nav}>
@@ -228,7 +228,7 @@ export const Header = ({ blackHeader }: HeaderProps) => {
                 text="SIGN IN"
                 buttonSize={32}
                 fontSize={11}
-                fontWeight={700}
+                fontWeight={400}
                 widthButton="max-content"
                 onClick={() => router.push(links.login.route)}
               />
@@ -236,7 +236,7 @@ export const Header = ({ blackHeader }: HeaderProps) => {
                 text="SIGN UP"
                 buttonSize={32}
                 fontSize={11}
-                fontWeight={700}
+                fontWeight={400}
                 widthButton="max-content"
                 onClick={() => router.push(links.signup.route)}
               />
