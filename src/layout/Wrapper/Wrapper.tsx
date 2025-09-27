@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 import styles from "./Wrapper.module.css";
 import Footer from "../Footer/Footer";
 import { Header } from "../Header/Header";
-import AuthHeader from "../AuthHeader/AuthHeader";
+import AuthHeader from "../AuthHeader/RoutingHeader";
 
 type WrapperProps = {
   children: ReactNode;

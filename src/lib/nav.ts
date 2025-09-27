@@ -6,51 +6,49 @@ export const links = {
   login: {
     name: "Sign In",
     route: "/login",
+    label: "Authentication",
     description: "Log in to your account",
-  },
-  signup: {
-    name: "Sign Up",
-    route: "/signup",
-    description: "Create a new account",
   },
   download: {
     name: "Download",
     route: "/download",
+    label: "Download",
     description: "Download our app",
   },
-  // pricing: {
-  //   name: "Pricing",
-  //   route: "/pricing",
-  //   description: "See our pricing plans",
-  // },
   changelog: {
     name: "Changelog",
     route: "/changelog",
+    label: "Changelog",
     description: "View latest updates",
   },
   docs: {
     name: "Documentation",
     route: "/docs",
+    label: "Documentation",
     description: "Read the documentation",
   },
   blog: {
     name: "Blog",
     route: "/blog",
+    label: "Blog",
     description: "Read our latest articles",
   },
   terms: {
     name: "Terms of Service",
     route: "/terms",
+    label: "Terms of Service",
     description: "Review the rules and conditions for using our services",
   },
   privacy: {
     name: "Privacy Policy",
     route: "/privacy",
+    label: "Privacy Policy",
     description: "Learn how we collect, use, and protect your information",
   },
   profile: {
     name: "Profile",
     route: "/profile",
+    label: "Profile",
     description: "Get and manage information about your account.",
   },
 };
@@ -83,14 +81,6 @@ export const socialLinks = {
 } as const;
 
 export const navItems: Record<string, { title: string; values: NavLink[] }> = {
-  // pricing: {
-  //   title: links.pricing.name,
-  //   values: [links.pricing],
-  // },
-  // resources: {
-  //   title: "Resources",
-  //   values: [links.changelog, links.docs, links.blog],
-  // },
   community: {
     title: "Community",
     values: Object.values(socialLinks),

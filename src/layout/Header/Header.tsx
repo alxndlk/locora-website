@@ -17,7 +17,7 @@ import { useFormStatus } from "react-dom";
 import Spinner from "@/ui/Spinner";
 import { useProfile } from "../../context/ProfileContext";
 import MobileHeader from "./MobileHeader";
-import { IoMenuOutline } from "react-icons/io5";
+import { TbMenu3 } from "react-icons/tb";
 
 type HeaderProps = {
   blackHeader?: boolean;
@@ -126,7 +126,7 @@ export const Header = ({ blackHeader }: HeaderProps) => {
         onClose={() => setMobileHeader(false)}
         user={user}
         userName={userName}
-        avatarURL={profile?.avatar_url || "/images/default-avatar.png"}
+        avatarURL={profile?.avatar_url}
       />
       <motion.div
         className={styles.container}
@@ -295,8 +295,8 @@ export const Header = ({ blackHeader }: HeaderProps) => {
           )}
 
           <div className={styles.menuButton}>
-            <IoMenuOutline
-              size={24}
+            <TbMenu3
+              size={16}
               onClick={() => setMobileHeader(true)}
               className={styles.menuIcon}
             />

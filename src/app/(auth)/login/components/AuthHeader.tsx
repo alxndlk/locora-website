@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import s from "./Main.module.css";
 
 export default function AuthHeader({
   step,
@@ -12,9 +13,9 @@ export default function AuthHeader({
     return (
       <>
         <h3>
-          OTP Code <h2>Verification</h2>
+          Email <h2>Verification</h2>
         </h3>
-        <p style={{ marginTop: "1rem" }}>
+        <p style={{ marginTop: "1rem" }} className={s.subtitle}>
           We&apos;ve sent an OTP code to <span>{email}</span>. Enter the OTP
           code below to verify your email address.
         </p>
@@ -24,7 +25,7 @@ export default function AuthHeader({
   return (
     <>
       <h3>Sign in to Locora</h3>
-      <p style={{ marginTop: "1rem" }}>
+      <p style={{ marginTop: "1rem" }} className={s.subtitle}>
         Open Locora for a quick city brief, real local tips, and a simple way to
         track your trips.
       </p>

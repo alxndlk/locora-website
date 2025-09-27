@@ -106,7 +106,6 @@ const Footer = ({ size = true }: FooterProps) => {
                   title={description}
                   className={styles.social_link}
                   variants={itemVariants}
-                  whileHover={{ scale: 1.15 }}
                 >
                   <Icon size={18} />
                 </motion.a>

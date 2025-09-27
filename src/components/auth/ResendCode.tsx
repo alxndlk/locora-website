@@ -19,20 +19,9 @@ export default function ResendCode({
     : "Resend OTP";
 
   return (
-    <form
-      action={onResend}
-      className={className}
-      style={{
-        marginTop: "1.5rem",
-        display: "flex",
-        gap: "0.5rem",
-        alignItems: "center",
-      }}
-    >
+    <form action={onResend} className={className}>
       <input type="hidden" name="email" value={email} />
-      <p className={textClassName} style={{ fontSize: "14px" }}>
-        Haven&apos;t received the code?
-      </p>
+      <p className={textClassName}>Haven&apos;t received the code?</p>
       <button
         type="submit"
         disabled={disabled}

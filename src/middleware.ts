@@ -54,7 +54,7 @@ export async function middleware(request: NextRequest) {
     return withCookiesRedirect(url);
   }
 
-  if (user && (path === "/login" || path === "/signup")) {
+  if (user && path === "/login") {
     url.pathname = "/";
     url.searchParams.delete("next");
     return withCookiesRedirect(url);
@@ -64,5 +64,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/login", "/signup", "/profile"],
+  matcher: ["/login", "/profile"],
 };

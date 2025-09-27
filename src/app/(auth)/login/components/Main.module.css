@@ -1,8 +1,12 @@
 .main {
   width: 100%;
+  height: 100%;
   margin-top: -48px;
   display: flex;
   justify-content: center;
+  align-items: start;
+  text-align: center;
+  min-height: 90vh;
 }
 
 .container {
@@ -11,16 +15,17 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   position: relative;
   margin-top: 3rem;
 }
 
-.container p {
+.subtitle {
   font-weight: 200;
-  opacity: 0.7;
+  font-size: var(--paragraph-size-l);
+  color: var(--gray-color);
 }
 
 .holder {
@@ -36,7 +41,7 @@
   margin-top: 2rem;
 }
 
-.span {
+.agreement {
   display: flex;
   gap: 0.25rem;
   margin-top: 2rem;
@@ -45,20 +50,19 @@
   margin-bottom: 2rem;
 }
 
-.span span {
-  opacity: 0.7;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 300;
+.agreement span {
+  color: var(--gray-color);
+  font-size: var(--paragraph-size-m);
+  font-weight: 200;
 }
 
-.span a {
+.agreement a {
   transition: 0.3s ease;
   color: var(--blue-color);
-  font-size: 13px;
+  font-size: var(--paragraph-size-m);
   font-weight: 400;
 }
-.span a:hover {
+.agreement a:hover {
   text-decoration: underline;
 }
 
@@ -87,7 +91,7 @@
 .input {
   display: flex;
   flex-direction: column;
-  margin-top: 1.75rem;
+  margin-top: 1rem;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -164,7 +168,7 @@
   padding-bottom: 12.5px;
   padding-right: 14px;
   padding-left: 14px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--gray-on-black);
   border-radius: 9999px;
   display: flex;
   flex-direction: row;
@@ -201,55 +205,41 @@
   text-align: center;
   border-radius: 16px;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--gray-on-black);
   position: relative;
-}
-
-.sent_email {
-  color: rgb(121 125 134);
-  letter-spacing: -0.02em;
-  line-height: 1.375;
-  margin-top: 0.5rem;
-}
-
-.sent_email span {
-  color: rgb(201 203 207);
-}
-
-.paragraph {
-  padding-top: 1rem;
-  font-size: 13px;
-}
-.paragraph p {
-  margin: 0 !important;
 }
 
 .devider {
   width: 0.875rem;
   height: 1px;
-  background-color: rgba(255, 255, 255, 24%);
+  background-color: var(--gray-on-black-accent);
   border-radius: 9999px;
   display: block;
-}
-
-.get_code {
-  transition: 0.3s ease;
-  color: var(--blue-color);
-  font-size: 14px;
-  font-weight: 600;
 }
 
 .inlineForm {
   display: flex;
   flex-direction: row;
-  gap: 0.25rem;
-  align-items: center;
-  text-align: center;
-  justify-content: start;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: var(--paragraph-size-m) !important;
 }
 
-.inlineForm button {
-  margin: 0 !important;
+.helpText {
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  align-items: center;
+  font-weight: 200;
+  text-align: center;
+  justify-content: start;
+  color: var(--gray-color);
+}
+
+.get_code {
+  transition: 0.3s ease;
+  color: var(--blue-color);
+  font-weight: 400;
 }
 
 .icon_apple,
@@ -284,8 +274,7 @@
     padding: 0 1.5rem;
   }
 
-  .container p {
-    font-size: 14px;
+  .subtitle {
     max-width: 90%;
   }
 }

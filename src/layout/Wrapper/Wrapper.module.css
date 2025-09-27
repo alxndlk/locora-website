@@ -6,4 +6,5 @@
   justify-content: space-between;
   overflow: hidden;
   scroll-behavior: smooth;
+  background-color: var(--color-black);
 }

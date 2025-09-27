@@ -4,11 +4,13 @@ export type NavLink =
   | {
       name: string;
       route: string;
+      label?: string;
       description: string;
     }
   | {
       name: string;
       href: string;
+      label?: string;
       icon: IconType;
       description: string;
     };

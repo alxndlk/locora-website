@@ -1,9 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #090a0c;
+  --background: #131313;
   --foreground: #fff;
   --blue-color: rgba(0, 136, 255, 1);
+  --red-color: rgba(255, 56, 60, 1);
+  --gray-color: rgba(255, 255, 255, 0.85);
+
+  --paragraph-size-l: 14px;
+  --paragraph-size-m: 12px;
+
+  --gray-on-black: rgba(255, 255, 255, 0.1);
+  --gray-on-black-accent: rgba(255, 255, 255, 0.24);
+  --gray-text: rgba(255, 255, 255, 0.6);
+
+  --blue-background: rgba(0, 136, 255, 0.1);
+  --blue-background-border: rgba(0, 136, 255, 0.24);
+
+  --red-background: rgba(255, 56, 60, 0.1);
+  --red-background-border: rgba(255, 56, 60, 0.24);
 }
 
 body {
@@ -11,7 +26,6 @@ body {
   color: var(--foreground);
   transition: 0.3s ease;
   scroll-behavior: smooth;
-  transition: 0.3s ease;
   font-family: Inter, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji",
     sans-serif;
 }

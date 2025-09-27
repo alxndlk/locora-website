@@ -83,7 +83,7 @@ export default function Main() {
           {state.step === "email" && <SocialButtons disabled={emailPending} />}
         </motion.div>
 
-        <div className={styles.span}>
+        <div className={styles.agreement}>
           <span>
             By clicking you agree to our{" "}
             <a href={links.terms.route}>{links.terms.name}</a> and{" "}

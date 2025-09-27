@@ -30,21 +30,23 @@ export const Hero = () => {
           <div className={styles.buttons}>
             <PrimaryButton
               text="INSTALL ON IOS"
-              fontSize={15}
+              fontSize={13}
               iconPosition="left"
               icon="GoArrowUpRight"
-              iconSize={20}
+              iconSize={16}
               fontWeight={400}
-              paddingButton="14.25px 24px"
+              paddingButton="12.5px 14px;"
+              widthButton="max-content"
             />
             <SecondaryButton
               text="FEATURE TOUR"
-              fontSize={15}
+              fontSize={13}
               iconPosition="left"
               icon="IoInformationCircleSharp"
-              iconSize={20}
+              iconSize={16}
+              widthButton="max-content"
               fontWeight={400}
-              paddingButton="14.25px 24px"
+              paddingButton="12.5px 14px;"
             />
           </div>
         </div>

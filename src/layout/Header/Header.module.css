@@ -6,7 +6,7 @@
   width: 100%;
   z-index: 10000;
   position: relative;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 
 .container {
@@ -314,6 +314,16 @@
 
 .menuButton {
   display: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px) saturate(180%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 @media (max-width: 800px) {
@@ -322,10 +332,6 @@
   }
   .menu {
     display: flex;
-  }
-
-  .menuIcon {
-    margin-left: 1rem;
   }
 
   .starLink {
