@@ -24,10 +24,9 @@
   justify-content: center;
   text-align: center;
   margin-right: 2.5rem;
-  font-size: 22px;
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  font-weight: 500;
+  gap: 0.5rem;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .logo h1 {
@@ -348,4 +347,5 @@
   .menuButton {
     display: flex;
   }
+
 }

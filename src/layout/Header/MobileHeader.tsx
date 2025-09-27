@@ -82,24 +82,24 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
                     ) : (
                       <div className={styles.user_buttons}>
                         <SecondaryButton
-                          text="DOWNLOAD"
+                          text="Download App"
                           fontSize={13}
                           iconPosition="left"
                           icon="FaAppStore"
                           iconSize={16}
                           fontWeight={400}
-                          paddingButton="8px 12px"
+                          paddingButton="12.5px 12px"
                           widthButton="max-content"
                           onClick={() => router.push(links.download.route)}
                         />
                         <PrimaryButton
-                          text="SIGN IN"
+                          text="Sign in"
                           fontSize={13}
                           iconPosition="left"
                           icon="GoArrowUpRight"
                           iconSize={16}
                           fontWeight={500}
-                          paddingButton="8px 12px"
+                          paddingButton="12.5px 12px"
                           widthButton="max-content"
                           onClick={() => router.push(links.login.route)}
                         />

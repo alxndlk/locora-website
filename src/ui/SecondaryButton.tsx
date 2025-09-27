@@ -2,13 +2,14 @@ import React, { JSX } from "react";
 import {
   FaChevronRight,
   FaChevronLeft,
-  FaStore,
+  FaApple,
   FaAppStore,
 } from "react-icons/fa";
 import styles from "./Ui.module.css";
 import { SecondaryButtonProps } from "../../types";
 import { PiUserList } from "react-icons/pi";
-import { IoInformationCircleSharp } from "react-icons/io5";
+import { GoArrowUpRight } from "react-icons/go";
+import Spinner from "./Spinner";
 
 export const SecondaryButton = ({
   text,
@@ -20,19 +21,19 @@ export const SecondaryButton = ({
   fontSize,
   fontWeight,
   onClick,
-  widthButton,
+  widthButton = "100%",
   paddingButton,
-  color,
+  type,
+  formAction,
+  loading,
 }: SecondaryButtonProps) => {
   const iconsMap: { [key: string]: JSX.Element } = {
     FaChevronRight: <FaChevronRight size={iconSize} color={iconColor} />,
     FaChevronLeft: <FaChevronLeft size={iconSize} color={iconColor} />,
-    FaStore: <FaStore size={iconSize} color={iconColor} />,
     FaAppStore: <FaAppStore size={iconSize} color={iconColor} />,
+    FaApple: <FaApple size={iconSize} color={iconColor} />,
     PiUserList: <PiUserList size={iconSize} color={iconColor} />,
-    IoInformationCircleSharp: (
-      <IoInformationCircleSharp size={iconSize} color={iconColor} />
-    ),
+    GoArrowUpRight: <GoArrowUpRight size={iconSize} color={iconColor} />,
   };
 
   const IconComponent = icon ? iconsMap[icon] : null;
@@ -41,18 +42,25 @@ export const SecondaryButton = ({
     <button
       className={styles.secondaryButton}
       onClick={onClick}
+      type={type}
+      formAction={formAction}
       style={{
         height: buttonSize,
         fontSize: fontSize,
         fontWeight: fontWeight,
-        width: widthButton,
-        padding: paddingButton,
-        color: color,
+        width: loading ? "max-content" : widthButton,
+        padding: loading ? "12.5px" : paddingButton,
       }}
     >
-      {iconPosition === "left" && IconComponent}
-      <span>{text}</span>
-      {iconPosition === "right" && IconComponent}
+      {loading ? (
+        <Spinner color="#000" size={16} />
+      ) : (
+        <>
+          {iconPosition === "left" && IconComponent}
+          <span>{text}</span>
+          {iconPosition === "right" && IconComponent}
+        </>
+      )}
     </button>
   );
 };

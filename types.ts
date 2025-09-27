@@ -29,7 +29,9 @@ export type SecondaryButtonProps = {
   onClick?: () => void;
   widthButton?: string;
   paddingButton?: string;
-  color?: string;
+  type?: "submit" | "reset" | "button" | undefined;
+  formAction?: (formData: FormData) => void | Promise<void>;
+  loading?: boolean;
 };
 
 export type PrimaryButtonProps = {

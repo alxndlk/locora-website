@@ -18,6 +18,7 @@ import Spinner from "@/ui/Spinner";
 import { useProfile } from "../../context/ProfileContext";
 import MobileHeader from "./MobileHeader";
 import { TbMenu3 } from "react-icons/tb";
+import { PrimaryButton } from "@/ui/PrimaryButton";
 
 type HeaderProps = {
   blackHeader?: boolean;
@@ -225,10 +226,24 @@ export const Header = ({ blackHeader }: HeaderProps) => {
           {!user ? (
             <div className={styles.user_buttons}>
               <SecondaryButton
-                text="SIGN IN"
-                buttonSize={32}
+                text="Download App"
                 fontSize={11}
+                iconPosition="left"
+                icon="FaAppStore"
+                iconSize={13}
                 fontWeight={400}
+                paddingButton="8px 12px"
+                widthButton="max-content"
+                onClick={() => router.push(links.download.route)}
+              />
+              <PrimaryButton
+                text="Sign in"
+                fontSize={11}
+                iconPosition="left"
+                icon="GoArrowUpRight"
+                iconSize={13}
+                fontWeight={500}
+                paddingButton="8px 12px"
                 widthButton="max-content"
                 onClick={() => router.push(links.login.route)}
               />
