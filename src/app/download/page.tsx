@@ -1,5 +1,5 @@
 import { Wrapper } from "@/layout/Wrapper/Wrapper";
-import Main from "./components/Main";
+import Main from "../components/Download/Main";
 
 export default function Download() {
   return (

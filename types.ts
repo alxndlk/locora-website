@@ -32,6 +32,7 @@ export type SecondaryButtonProps = {
   type?: "submit" | "reset" | "button" | undefined;
   formAction?: (formData: FormData) => void | Promise<void>;
   loading?: boolean;
+  buttonColor: string;
 };
 
 export type PrimaryButtonProps = {

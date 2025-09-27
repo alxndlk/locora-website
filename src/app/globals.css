@@ -19,6 +19,31 @@
 
   --red-background: rgba(255, 56, 60, 0.1);
   --red-background-border: rgba(255, 56, 60, 0.24);
+
+  --clr-red: #ff383c; /* R255 G56  B60  */
+  --clr-orange: #ff8d28; /* R255 G141 B40  */
+  --clr-yellow: #ffcc00; /* R255 G204 B0   */
+  --clr-green: #34c759; /* R52  G199 B89  */
+  --clr-teal: #00c8b3; /* R0   G200 B179 */
+  --clr-cyan: #00c3d0; /* R0   G195 B208 */
+  --clr-sky: #00c0e8; /* R0   G192 B232 */
+  --clr-blue: #0088ff; /* R0   G136 B255 */
+  --clr-indigo: #6155f5; /* R97  G85  B245 */
+  --clr-purple: #cb30e0; /* R203 G48  B224 */
+  --clr-rose: #ff2d55; /* R255 G45  B85  */
+  --clr-brown: #ac7f5e; /* R172 G127 B94  */
+
+  --footer-gray-text: rgba(255, 255, 255, 0.56);
+  --footer-background: rgb(29, 29, 31);
+  --footer-border-color: rgba(255, 255, 255, 0.24);
+  --footer-text-color: rgba(255, 255, 255, 0.56);
+  --footer-link-color: rgba(255, 255, 255, 0.8);
+  --footer-pipe-color: rgba(255, 255, 255, 0.4);
+  --footer-directory-title-color: rgba(255, 255, 255, 0.92);
+  --footer-directory-title-color-hover: #fff;
+
+  --globalnav-submenu-header-color: rgb(134, 134, 139);
+  --globalnav-color-secondary: #e8e8ed;
 }
 
 body {

@@ -1,5 +1,5 @@
 import { createServerSupabaseClient } from "@/utils/supabase/server";
-import ProfileView from "./components/ProfileView";
+import ProfileView from "../../components/Profile/ProfileView";
 import { Wrapper } from "@/layout/Wrapper/Wrapper";
 import { getUserAchievements } from "@/app/actions/get-user-achievements";
 

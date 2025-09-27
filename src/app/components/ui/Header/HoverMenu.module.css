@@ -1,0 +1,59 @@
+.hover_menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(30px) saturate(180%);
+  z-index: -1;
+  display: flex;
+}
+
+.content {
+  width: 100%;
+  height: 60vh;
+  background-color: var(--background);
+  transition: 0.3s ease;
+  padding-top: calc(52px + 3rem);
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 5rem;
+}
+
+.container h1 {
+  color: var(--globalnav-submenu-header-color);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.container a {
+  color: var(--globalnav-color-secondary);
+  font-weight: 600;
+  padding: 7px 11px;
+  padding-left: 0;
+  margin-bottom: -6px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}

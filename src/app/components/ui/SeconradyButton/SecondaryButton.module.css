@@ -1,0 +1,18 @@
+.secondaryButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  border-radius: 9999px;
+  cursor: pointer;
+  gap: 0.5rem;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px) saturate(180%);
+  transition: 0.3s ease;
+}
+
+.secondaryButton:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+}

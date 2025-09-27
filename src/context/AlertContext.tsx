@@ -8,7 +8,7 @@ import React, {
   useState,
 } from "react";
 import { createPortal } from "react-dom";
-import Alert from "@/components/Alert";
+import Alert from "@/app/components/ui/Alert/Alert";
 import s from "./AlertStack.module.css";
 import { AnimatePresence } from "framer-motion";
 

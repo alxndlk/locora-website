@@ -1,0 +1,18 @@
+.primaryButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  border-radius: 9999px;
+  cursor: pointer;
+  gap: 0.5rem;
+  z-index: 10;
+  background-color: #fff;
+  color: #000;
+  transition: 0.3s ease;
+}
+
+.primaryButton:hover {
+  gap: 0.75rem;
+}

@@ -1,5 +1,4 @@
 import { FaXTwitter, FaGithub, FaReddit, FaDiscord } from "react-icons/fa6";
-import { NavLink } from "../../types";
 
 export const links = {
   home: { name: "Home", route: "/", description: "Go to the homepage" },
@@ -55,38 +54,51 @@ export const links = {
 
 export const socialLinks = {
   x: {
-    name: "Twitter",
+    name: "Twitter / X",
     href: "https://x.com/locora_app",
     icon: FaXTwitter,
     description: "Follow us on X (Twitter)",
   },
   reddit: {
-    name: "Reddit",
+    name: "Reddit Community",
     href: "https://www.reddit.com/r/locora/",
     icon: FaReddit,
     description: "Join our community on Reddit",
   },
   Discord: {
-    name: "Discord",
+    name: "Discord Community",
     href: "https://discord.gg/ksxrdnETuc",
     icon: FaDiscord,
     description: "Join our Discord server",
   },
   github: {
-    name: "GitHub",
+    name: "GitHub Repository",
     href: "https://github.com/alxndlk/locora-website",
     icon: FaGithub,
     description: "Check out our GitHub repos",
   },
 } as const;
 
-export const navItems: Record<string, { title: string; values: NavLink[] }> = {
-  community: {
-    title: "Community",
-    values: Object.values(socialLinks),
+export const ADMINISTRATION_LINKS = {
+  telegram: {
+    name: "Developer Telegram",
+    href: "https://t.me/alxndlk",
+    description: "Contact us on Telegram",
+    label: "Administration",
   },
-  download: {
-    title: links.download.name,
-    values: [links.download],
+  email: {
+    name: "Developer Email",
+    href: "mailto:livik059@gmail.com",
+    description: "Contact us via Email",
+    label: "Administration",
+  },
+};
+
+export const APPLICATION_SUPPORT_EMAIL = {
+  support_email: {
+    name: "Application Support Email",
+    href: "mailto:support@locora.app",
+    description: "Get support via Email",
+    label: "Administration",
   },
 };
