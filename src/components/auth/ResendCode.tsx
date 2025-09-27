@@ -15,19 +15,29 @@ export default function ResendCode({
   const label = emailPending
     ? "Sending…"
     : cooldownLeft > 0
-    ? `Get a new code (${cooldownLeft}s)`
-    : "Get a new code";
+    ? `Resend OTP (${cooldownLeft}s)`
+    : "Resend OTP";
 
   return (
-    <form action={onResend} className={className}>
+    <form
+      action={onResend}
+      className={className}
+      style={{
+        marginTop: "1.5rem",
+        display: "flex",
+        gap: "0.5rem",
+        alignItems: "center",
+      }}
+    >
       <input type="hidden" name="email" value={email} />
-      <p className={textClassName}>Haven&apos;t received the code?</p>
+      <p className={textClassName} style={{ fontSize: "14px" }}>
+        Haven&apos;t received the code?
+      </p>
       <button
         type="submit"
         disabled={disabled}
         className={buttonClassName}
         aria-disabled={disabled}
-        style={!disabled ? { cursor: "pointer" } : { cursor: "default" }}
         title={cooldownLeft > 0 ? `Try again in ${cooldownLeft}s` : undefined}
       >
         {label}

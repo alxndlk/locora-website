@@ -9,6 +9,7 @@ import styles from "./Ui.module.css";
 import { PrimaryButtonProps } from "../../types";
 import { PiUserList } from "react-icons/pi";
 import { GoArrowUpRight } from "react-icons/go";
+import Spinner from "./Spinner";
 
 export const PrimaryButton = ({
   text,
@@ -20,10 +21,11 @@ export const PrimaryButton = ({
   fontSize,
   fontWeight,
   onClick,
-  widthButton,
+  widthButton = "100%",
   paddingButton,
   type,
-  formAction
+  formAction,
+  loading,
 }: PrimaryButtonProps) => {
   const iconsMap: { [key: string]: JSX.Element } = {
     FaChevronRight: <FaChevronRight size={iconSize} color={iconColor} />,
@@ -46,13 +48,19 @@ export const PrimaryButton = ({
         height: buttonSize,
         fontSize: fontSize,
         fontWeight: fontWeight,
-        width: widthButton,
-        padding: paddingButton,
+        width: loading ? "max-content" : widthButton,
+        padding: loading ? "12.5px" : paddingButton,
       }}
     >
-      {iconPosition === "left" && IconComponent}
-      <span>{text}</span>
-      {iconPosition === "right" && IconComponent}
+      {loading ? (
+        <Spinner color="#000" size={16} />
+      ) : (
+        <>
+          {iconPosition === "left" && IconComponent}
+          <span>{text}</span>
+          {iconPosition === "right" && IconComponent}
+        </>
+      )}
     </button>
   );
 };

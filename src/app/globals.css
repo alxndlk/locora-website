@@ -3,7 +3,7 @@
 :root {
   --background: #090a0c;
   --foreground: #fff;
-  --blue-color: #007aff;
+  --blue-color: rgba(0, 136, 255, 1);
 }
 
 body {

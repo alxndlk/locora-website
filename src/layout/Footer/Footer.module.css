@@ -6,7 +6,7 @@
   align-items: center;
   text-align: center;
   z-index: 999999999;
-  background-color: var(--background);
+  background-color: #131313;
 }
 
 .container {
@@ -69,7 +69,9 @@
   color: #fff;
 }
 
-.alex {
+.download {
+  color: rgb(97 101 107);
+  font-weight: 400;
   font-weight: 400;
   margin-left: auto;
   display: flex;
@@ -78,26 +80,11 @@
   align-items: center;
   text-align: center;
   justify-content: center;
-  background-image: linear-gradient(
-    90deg,
-    #ff4e4e,
-    #ac5c5c 25.6%,
-    #adadad 41.58%,
-    #adadad 56.98%,
-    #adadad 69.44%
-  );
-  -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
 }
 
-.alex a {
-  color: rgb(201 203 207);
-  transition: 0.3s ease;
-}
-
-.alex a:hover {
-  color: #fff;
+.download:hover {
+  text-decoration: underline;
 }
 
 .flex {
@@ -223,7 +210,7 @@
     height: 36px;
   }
 
-  .alex {
+  .download {
     margin: 0;
   }
 }

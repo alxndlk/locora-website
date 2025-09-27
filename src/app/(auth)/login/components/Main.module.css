@@ -1,20 +1,8 @@
 .main {
   width: 100%;
-  margin-top: -64px;
+  margin-top: -48px;
   display: flex;
   justify-content: center;
-}
-
-.bg_wrapper {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  background-size: cover;
-  filter: brightness(0.4);
-  z-index: -1;
 }
 
 .container {
@@ -30,71 +18,70 @@
   margin-top: 3rem;
 }
 
+.container p {
+  font-weight: 200;
+  opacity: 0.7;
+}
+
 .holder {
-  padding: 3rem;
-  background-color: rgba(0, 0, 0, 0.3);
-  width: 480px;
-  min-height: 480px;
+  width: auto;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: start;
   text-align: start;
   justify-content: start;
-  box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
-    4px 6px 25px rgba(0, 0, 0, 0.56);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(30px) saturate(180%);
   border-radius: 24px;
   position: relative;
-  overflow: hidden;
-}
-
-.light {
-  opacity: 0.6;
-  background: radial-gradient(50% 50%, #fff, rgba(199, 255, 238, 0));
-  width: 80%;
-  height: 1px;
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 2rem;
 }
 
 .span {
-  letter-spacing: -0.02em;
-  line-height: 1.375;
-  font-size: 14px;
   display: flex;
   gap: 0.25rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
+  text-wrap: balance;
+  max-width: 250px;
+  margin-bottom: 2rem;
 }
 
 .span span {
-  opacity: 0.6;
+  opacity: 0.7;
   color: #fff;
+  font-size: 13px;
+  font-weight: 300;
 }
 
 .span a {
   transition: 0.3s ease;
-  color: rgb(201 203 207);
+  color: var(--blue-color);
+  font-size: 13px;
+  font-weight: 400;
 }
-
 .span a:hover {
-  color: #fff;
+  text-decoration: underline;
 }
 
 .icon {
-  width: 42px;
-  height: 42px;
+  width: 96px;
+  height: 96px;
   transition: 0.3s ease;
+  margin-bottom: 0.5rem;
 }
 
 .holder h3 {
   letter-spacing: -0.02em;
   line-height: 1;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 36px;
   margin-top: 17px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.holder h2 {
+  font-weight: 300;
 }
 
 .input {
@@ -102,6 +89,9 @@
   flex-direction: column;
   margin-top: 1.75rem;
   width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .input p {
@@ -109,42 +99,36 @@
   line-height: 1.375;
   font-size: 14px;
   color: rgb(193, 193, 194);
-  margin-bottom: 0.25rem;
   font-weight: 300;
 }
 
 .input input {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
   color: rgb(255 255 255);
-  letter-spacing: -0.02em;
   font-size: 13px;
-  padding-top: 9px;
-  font-weight: 400;
-  padding-bottom: 9px;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  border-color: hsla(0, 0%, 100%, 0.1);
-  border-width: 1px;
-  border-radius: 0.25rem;
-  height: 42px;
+  padding-top: 12.5px;
+  font-weight: 300;
+  padding-bottom: 12.5px;
+  padding-right: 16px;
+  padding-left: 16px;
+  border-radius: 9999px;
   width: 100%;
   display: flex;
   align-items: center;
   text-align: start;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.1);
   position: relative;
+  outline: none;
 }
 
 .input button {
-  margin-top: 27px;
+  margin-top: 1rem;
 }
 
 .or {
   display: flex;
   flex-direction: row;
-  margin-top: 25px;
+  margin-top: 1rem;
   align-items: center;
   width: 100%;
 }
@@ -169,24 +153,19 @@
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 25px;
+  margin-top: 1rem;
 }
 
 .buttons button {
+  justify-content: space-between;
   font-size: 13px;
-  font-weight: 500;
-  height: 40px;
-  justify-content: center;
-  letter-spacing: 0.26px;
-  line-height: 19.5px;
-  margin-left: 1px;
-  margin-right: 1px;
-  padding-left: 8px;
-  padding-right: 8px;
-  box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px,
-    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 0.25rem;
+  padding-top: 12.5px;
+  font-weight: 300;
+  padding-bottom: 12.5px;
+  padding-right: 14px;
+  padding-left: 14px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
@@ -212,23 +191,17 @@
 }
 
 .inputs input {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
   color: rgb(255 255 255);
-  letter-spacing: -0.02em;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 300;
-  border-color: hsla(0, 0%, 100%, 0.1);
-  border-width: 1px;
-  border-radius: 0.25rem;
   height: 70px;
   width: 100%;
   display: flex;
   align-items: center;
   text-align: center;
+  border-radius: 16px;
   justify-content: center;
-  width: 48px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.1);
   position: relative;
 }
 
@@ -244,10 +217,8 @@
 }
 
 .paragraph {
-  padding-top: 2rem;
+  padding-top: 1rem;
   font-size: 13px;
-  letter-spacing: -0.02em;
-  color: rgb(121 125 134);
 }
 .paragraph p {
   margin: 0 !important;
@@ -262,23 +233,10 @@
 }
 
 .get_code {
-  opacity: 1 !important;
-  color: #fff !important;
   transition: 0.3s ease;
-  font-weight: 400;
-  margin-left: 0.125rem;
-}
-
-.error {
-  color: rgb(255 137 100);
-  letter-spacing: -0.02em;
-  margin-top: 0.25rem;
-  font-size: 13px;
-  top: calc(50% - 6px);
-}
-
-.error_input {
-  border-color: rgba(255, 137, 100, 0.5) !important;
+  color: var(--blue-color);
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .inlineForm {
@@ -292,4 +250,42 @@
 
 .inlineForm button {
   margin: 0 !important;
+}
+
+.icon_apple,
+.icon_github {
+  filter: invert(1);
+}
+
+.image_holder {
+  position: relative;
+}
+
+.image_overlay {
+  position: absolute;
+  inset: 0;
+  left: -25px;
+  top: -25px;
+  width: 150px;
+  height: 150px;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 140, 255, 0.3) 0%,
+    rgba(0, 140, 255, 0.18) 40%,
+    rgba(0, 140, 255, 0.06) 60%,
+    rgba(0, 140, 255, 0) 75%
+  );
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 1.5rem;
+  }
+
+  .container p {
+    font-size: 14px;
+    max-width: 90%;
+  }
 }

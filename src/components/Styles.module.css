@@ -73,3 +73,35 @@
     text-align: center;
   }
 }
+
+.alert {
+  display: flex;
+  gap: 8px;
+  padding: 8px 1rem;
+  font-size: 13px;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+.alert__icon {
+  line-height: 0;
+}
+
+.alert__message {
+  flex: 1;
+}
+
+/* Цвета тем/вариантов */
+.alert.success {
+  background: rgba(52, 199, 89, 0.2);
+  color: rgba(52, 199, 89, 1);
+}
+.alert.error {
+  background: rgba(255, 56, 60, 0.2);
+  color: rgba(255, 56, 60, 1);
+}
+.alert.info {
+  background: rgba(0, 136, 255, 0.2);
+  color: rgba(0, 136, 255, 1);
+}

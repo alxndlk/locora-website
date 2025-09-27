@@ -1,11 +1,17 @@
 export type OtpState = {
   step: "email" | "code" | "done";
   email?: string;
-  error?: string;
+
   message?: string;
+  error?: string | boolean;
   loggedIn?: boolean;
+
+  cooldown?: boolean;
   cooldownUntil?: number;
+
   errorNonce?: number;
+  infoNonce?: number;
+  forceShakeNonce?: number;
 };
 
 export const COOLDOWN_MS = 60_000;

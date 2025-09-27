@@ -46,6 +46,7 @@ export type PrimaryButtonProps = {
   paddingButton?: string;
   type?: "submit" | "reset" | "button" | undefined;
   formAction?: (formData: FormData) => void | Promise<void>;
+  loading?: boolean;
 };
 
 export type OTPInputProps = {
@@ -62,6 +63,8 @@ export type OTPInputProps = {
   className?: string;
   inputClassName?: string;
   dividerClassName?: string;
+  errorNonce?: number;
+  forceShakeNonce?: number;
 };
 
 export type ResendCodeProps = {

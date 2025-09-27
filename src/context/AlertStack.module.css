@@ -1,0 +1,14 @@
+.stack {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.item {
+  pointer-events: auto;
+}

@@ -232,14 +232,6 @@ export const Header = ({ blackHeader }: HeaderProps) => {
                 widthButton="max-content"
                 onClick={() => router.push(links.login.route)}
               />
-              <SecondaryButton
-                text="SIGN UP"
-                buttonSize={32}
-                fontSize={11}
-                fontWeight={400}
-                widthButton="max-content"
-                onClick={() => router.push(links.signup.route)}
-              />
             </div>
           ) : (
             <div

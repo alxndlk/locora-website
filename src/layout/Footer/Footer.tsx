@@ -7,6 +7,7 @@ import Image from "next/image";
 import { PrimaryButton } from "@/ui/PrimaryButton";
 import { SecondaryButton } from "@/ui/SecondaryButton";
 import { motion } from "framer-motion";
+import { FaApple, FaAppStore } from "react-icons/fa6";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -113,10 +114,10 @@ const Footer = ({ size = true }: FooterProps) => {
             )}
           </div>
 
-          <h3 className={styles.alex}>
-            Made by <a href="https://t.me/alxndlk">alxndlk</a> for commercial
-            use
-          </h3>
+          <a className={styles.download} href={links.download.route}>
+            Download the app for iOS <FaAppStore />
+            <FaApple />
+          </a>
         </motion.div>
       </div>
     </div>
