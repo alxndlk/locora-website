@@ -1,4 +1,5 @@
 import { FaXTwitter, FaGithub, FaReddit, FaDiscord } from "react-icons/fa6";
+import { LinkItem, NavigationHeaderLinks, Section } from "./types/types";
 
 export const links = {
   home: { name: "Home", route: "/", description: "Go to the homepage" },
@@ -77,7 +78,7 @@ export const socialLinks = {
     icon: FaGithub,
     description: "Check out our GitHub repos",
   },
-} as const;
+} satisfies Record<string, LinkItem>;
 
 export const ADMINISTRATION_LINKS = {
   telegram: {
@@ -92,7 +93,7 @@ export const ADMINISTRATION_LINKS = {
     description: "Contact us via Email",
     label: "Administration",
   },
-};
+} satisfies Record<string, LinkItem>;
 
 export const APPLICATION_SUPPORT_EMAIL = {
   support_email: {
@@ -101,4 +102,16 @@ export const APPLICATION_SUPPORT_EMAIL = {
     description: "Get support via Email",
     label: "Administration",
   },
-};
+} satisfies Record<string, LinkItem>;
+
+export const SOCIALS = [
+  { name: "Explore Socials", values: socialLinks },
+  { name: "Administration Links", values: ADMINISTRATION_LINKS },
+  { name: "Application Support Email", values: APPLICATION_SUPPORT_EMAIL },
+] satisfies Section[];
+
+export const NAVIGATION_LINKS_HEADER = {
+  home: { name: "Overview", route: "/" },
+  socials: { name: "Socials", values: SOCIALS },
+  download: { name: "Download", route: links.download.route },
+} satisfies NavigationHeaderLinks;

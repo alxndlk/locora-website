@@ -9,9 +9,9 @@ import { User } from "@supabase/supabase-js";
 import { useProfile } from "@/context/ProfileContext";
 import HeaderView from "@/app/components/ui/Header/HeaderView";
 
-type HeaderProps = { blackHeader?: boolean };
+type HeaderProps = { blackHeader?: boolean; headerText?: string };
 
-const HeaderContainer: React.FC<HeaderProps> = ({ blackHeader }) => {
+const HeaderContainer: React.FC<HeaderProps> = ({ blackHeader, headerText }) => {
   const [isMobileHeader, setMobileHeader] = useState(false);
 
   const supabase = useMemo(() => createClient(), []);
@@ -59,6 +59,8 @@ const HeaderContainer: React.FC<HeaderProps> = ({ blackHeader }) => {
       links={links}
       onGo={go}
       onSignOut={onSignOut}
+      theme={blackHeader ? "black" : "white"}
+      headerText={headerText}
     />
   );
 };

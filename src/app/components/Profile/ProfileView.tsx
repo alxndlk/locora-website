@@ -112,7 +112,7 @@ export default function ProfileView({
       case 0:
         return (
           <div className={styles.panel}>
-            {loading && <SpinnerMask backdrop={false} />}
+            {loading && <SpinnerMask />}
             <ul className={styles.kv}>
               <li>
                 <span>Name</span>

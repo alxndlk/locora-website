@@ -2,7 +2,6 @@ import { User } from "@supabase/supabase-js";
 import { ReactNode } from "react";
 import type { IconType } from "react-icons";
 import { links, socialLinks } from "../nav";
-import { NAVIGATION_LINKS_HEADER } from "@/constants";
 
 export type AlertProps = {
   message: React.ReactNode;
@@ -21,6 +20,8 @@ export type WrapperProps = {
   footerLarge?: boolean;
   blackHeader?: boolean;
   needHeader?: boolean;
+  footerTheme?: "white" | "black";
+  headerText?: string;
 };
 
 export type MobileHeaderProps = {
@@ -29,6 +30,7 @@ export type MobileHeaderProps = {
   user: User | null;
   userName?: string | null;
   avatarURL?: string | null;
+  theme?: "black" | "white";
 };
 
 export type AppRouteLink = {
@@ -65,20 +67,51 @@ export type HeaderViewProps = {
   onGo: (href: string) => void;
   onSignOut: () => Promise<void> | void;
   headerText?: string;
+  theme?: "black" | "white";
 };
 
 export type HoverMenuProps = {
   open: string | null;
   setOpen: React.Dispatch<React.SetStateAction<string | null>>;
-  menuData: SocialLinksMap;
+  menuData: Section[];
+  theme: "black" | "white";
 };
 
 export type Item = { label: string; href: string; external?: boolean };
-export type Section = { title: string; items: Item[] };
-export type NavigationHeaderLinks = typeof NAVIGATION_LINKS_HEADER;
+export type NavSection = { name: string; values: Record<string, unknown> };
 
 export type NavProps = {
   hovered: string | null;
   onHoverChange: (key: string | null) => void;
-  setMenuData: React.Dispatch<React.SetStateAction<SocialLinksMap>>;
+  setMenuData: React.Dispatch<React.SetStateAction<object | null>>;
+  theme: "black" | "white";
 };
+
+export type LinkItem = {
+  name: string;
+  href: string;
+  description?: string;
+  label?: string;
+  icon?: IconType;
+};
+
+export type SectionItemProps = {
+  label: string;
+  href: string;
+  external?: boolean;
+};
+
+export type Section = {
+  name: string;
+  values: Record<string, LinkItem>;
+};
+
+export type SectionItem = {
+  title: string;
+  items: SectionItemProps[];
+};
+
+export type NavRoute = { name: string; route: string };
+export type NavGroup = { name: string; values: Section[] };
+export type NavigationHeaderLink = NavRoute | NavGroup;
+export type NavigationHeaderLinks = Record<string, NavigationHeaderLink>;

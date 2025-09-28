@@ -3,10 +3,6 @@ import path from "path";
 import { pipeline } from "stream/promises";
 import { Client } from "pg";
 import copy from "pg-copy-streams";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const LOCORA_DATA_SET_SRC = "C:\\Users\\livik\\Developer\\locora-dataset\\en";
 const TMP_FILE = "bulk_import.csv";
@@ -42,7 +38,6 @@ async function run() {
   out.end();
   console.log("CSV готов:", TMP_FILE);
 
-  // --- Подключаемся к Postgres ---
   const client = new Client({
     user: "postgres",
     host: "57.129.86.35",
@@ -52,7 +47,6 @@ async function run() {
   });
   await client.connect();
 
-  // --- Импортируем CSV ---
   const copyFrom = `
     COPY cities_import (
       city_id,
@@ -65,7 +59,6 @@ async function run() {
   await pipeline(fileStream, copyStream);
   console.log("CSV загружен во временную таблицу");
 
-  // --- Обновляем основную таблицу ---
   await client.query(`
     UPDATE cities c
     SET

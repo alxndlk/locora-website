@@ -1,13 +1,18 @@
 import React from "react";
 import styles from "./Spinner.module.css";
 import { SpinnerProps } from "@/lib/types/types";
+import Image from "next/image";
 
-const Spinner = ({ size, color }: SpinnerProps) => {
+const Spinner = ({ size }: SpinnerProps) => {
   return (
-    <div
-      className={color == "#fff" ? styles.spinner : styles.spinnerDark}
+    <Image
+      src="/icons/loading.gif"
+      className={styles.spinner}
       style={{ width: size, height: size }}
-    ></div>
+      width={128}
+      height={128}
+      alt="Loading..."
+    />
   );
 };
 

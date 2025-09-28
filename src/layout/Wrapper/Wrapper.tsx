@@ -8,15 +8,16 @@ import Header from "../Header/Header";
 
 export const Wrapper: React.FC<WrapperProps> = ({
   children,
-  footerLarge,
   blackHeader,
   needHeader = true,
+  footerTheme,
+  headerText = "Locora for iOS",
 }) => {
   return (
     <div className={styles.wrapper}>
-      {needHeader ? <Header blackHeader={blackHeader} /> : <AuthHeader />}
+      {needHeader ? <Header blackHeader={blackHeader} headerText={headerText} /> : <AuthHeader />}
       {children}
-      <Footer size={footerLarge} />
+      <Footer theme={footerTheme} />
     </div>
   );
 };

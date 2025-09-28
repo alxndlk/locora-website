@@ -3,82 +3,69 @@
 import React from "react";
 import styles from "./HoverMenu.module.css";
 import { motion, AnimatePresence } from "framer-motion";
-import type { HoverMenuProps } from "@/lib/types/types";
-import { containerVariants } from "@/variants";
 import Link from "next/link";
-import { ADMINISTRATION_LINKS, APPLICATION_SUPPORT_EMAIL } from "@/lib/nav";
+import { containerVariants } from "@/variants";
+import { setColorTheme } from "@/utils/themeSchema";
+import { HoverMenuProps } from "@/lib/types/types";
+import { config } from "@/config";
 
-const HoverMenu: React.FC<HoverMenuProps> = ({ open, setOpen, menuData }) => {
-  const [present, setPresent] = React.useState<boolean>(!!open);
-  console.log(menuData);
+const HoverMenu: React.FC<HoverMenuProps> = ({
+  open,
+  setOpen,
+  menuData,
+  theme,
+}) => {
+  if (config.debug) {
+    console.log("HoverMenu Rendered with menuData:", menuData);
+  }
 
-  React.useEffect(() => {
-    if (open && !present) setPresent(true);
-  }, [open, present]);
+  const data = menuData;
+  const contentClass = setColorTheme(styles, theme, "content");
+  const headingClass = setColorTheme(styles, theme, "heading");
+  const linkClass = setColorTheme(styles, theme, "link");
 
   return (
-    <AnimatePresence mode="sync" onExitComplete={() => setPresent(false)}>
-      {present && (
-        <motion.div
-          className={styles.hover_menu}
-          variants={containerVariants}
-          onClick={() => setOpen(null)}
-          onMouseEnter={() => setOpen(open)}
-          initial="hidden"
-          animate={open ? "visible" : "exit"}
-          exit="exit"
-        >
-          <div className={styles.content}>
-            <div className={styles.container}>
-              <div className={styles.block}>
-                <h1>Explore Socials</h1>
-                {menuData &&
-                  Object.entries(menuData).map(([key, item]) => (
-                    <Link
-                      key={key}
-                      href={item.href}
-                      className={styles.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-              </div>
-              <div className={styles.block}>
-                <h1>Administration Links</h1>
-                {Object.entries(ADMINISTRATION_LINKS).map(([key, item]) => (
-                  <Link
-                    key={key}
-                    href={item.href}
-                    className={styles.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-              <div className={styles.block}>
-                <h1>Application Support Email</h1>
-                {Object.entries(APPLICATION_SUPPORT_EMAIL).map(
-                  ([key, item]) => (
-                    <Link
-                      key={key}
-                      href={item.href}
-                      className={styles.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {item.name}
-                    </Link>
-                  )
-                )}
-              </div>
-            </div>
+    <AnimatePresence mode="wait">
+      <motion.div
+        className={open ? styles.hover_menu : styles.active}
+        variants={containerVariants}
+        initial="hidden"
+        animate={open ? "visible" : "exit"}
+        exit="exit"
+        onMouseEnter={() => {
+          setOpen(open);
+        }}
+        onClick={() => setOpen(null)}
+      >
+        <div className={contentClass}>
+          <div className={styles.container}>
+            {(data ?? []).map((section, idx) => {
+              const entries = Object.entries(section.values);
+              return (
+                <div className={styles.block} key={`${section.name}-${idx}`}>
+                  <h2 className={headingClass}>{section.name}</h2>
+                  <div className={styles.links}>
+                    {entries.map(([key, item]) => {
+                      return (
+                        <Link
+                          key={key}
+                          href={item.href}
+                          className={linkClass}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title={item.description}
+                        >
+                          <span>{item.name}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
           </div>
-        </motion.div>
-      )}
+        </div>
+      </motion.div>
     </AnimatePresence>
   );
 };

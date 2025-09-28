@@ -3,7 +3,7 @@ import Main from "../../components/Authentication/Main";
 
 export default function Login() {
   return (
-    <Wrapper footerLarge={false} needHeader={false}>
+    <Wrapper footerTheme="black" needHeader={false}>
       <Main />
     </Wrapper>
   );

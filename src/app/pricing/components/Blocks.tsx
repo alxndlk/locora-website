@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Block.module.css";
 import { motion } from "framer-motion";
-import { PrimaryButton } from "@/ui/PrimaryButton";
+import { PrimaryButton } from "@/app/components/ui/PrimaryButton/PrimaryButton";
 
 const Blocks = () => {
   const BLOCKS = [

@@ -1,66 +1,60 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
+
 import React from "react";
 import s from "./Header.module.css";
-import { NAVIGATION_LINKS_HEADER } from "@/constants";
-import {
-  NavigationHeaderLinks,
-  NavProps,
-  SocialLinksMap,
-} from "@/lib/types/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {
+  NavGroup,
+  NavigationHeaderLink,
+  NavigationHeaderLinks,
+  NavProps,
+  NavRoute,
+} from "@/lib/types/types";
+import { NAVIGATION_LINKS_HEADER } from "@/lib/nav";
+import { setColorTheme } from "@/utils/themeSchema";
 
-const Nav: React.FC<NavProps> = ({ hovered, onHoverChange, setMenuData }) => {
+const isRoute = (x: NavigationHeaderLink): x is NavRoute => "route" in x;
+const isGroup = (x: NavigationHeaderLink): x is NavGroup =>
+  "values" in x && Array.isArray((x as NavGroup).values);
+
+const Nav: React.FC<NavProps> = ({ onHoverChange, setMenuData, theme }) => {
   const path = usePathname();
 
-  const isRoute = (
-    item: NavigationHeaderLinks[keyof NavigationHeaderLinks]
-  ): item is { name: string; route: string } => {
-    return (item as { name: string; route: string }).route !== undefined;
-  };
+  const activeKey = Object.entries(
+    NAVIGATION_LINKS_HEADER as NavigationHeaderLinks
+  ).find(([, item]) => isRoute(item) && item.route === path)?.[0];
 
-  const isGroup = (
-    item: NavigationHeaderLinks[keyof NavigationHeaderLinks]
-  ): item is { name: string; values: SocialLinksMap } => {
-    return (
-      (item as { name: string; values: SocialLinksMap }).values !== undefined
-    );
-  };
+  const LinkClassName = setColorTheme(s, theme, "navLink");
+  const ButtonClassName = setColorTheme(s, theme, "navButton");
 
-  const activeLabel = Object.entries(NAVIGATION_LINKS_HEADER).find(
-    ([_, item]) => isRoute(item) && item.route === path
-  )?.[0];
+  const renderObject = (object: NavigationHeaderLinks) =>
+    Object.entries(object).map(([key, raw]) => {
+      const item = raw as NavigationHeaderLink;
 
-  const renderObject = (object: NavigationHeaderLinks) => {
-    return Object.entries(object).map(([key, item]) => {
       if (isRoute(item)) {
-        const cls =
-          activeLabel === key ? `${s.navLink} ${s.active}` : s.navLink;
         return (
-          <Link key={key} href={item.route} className={cls}>
+          <Link
+            key={key}
+            href={item.route}
+            className={activeKey === key ? s.active : LinkClassName}
+          >
             {item.name}
           </Link>
         );
       }
 
       if (isGroup(item)) {
-        const isOpen = hovered === key;
-        setMenuData(item.values);
-
         return (
           <div
             key={key}
             className={s.navGroup}
-            onMouseEnter={() => onHoverChange(key)}
-            onMouseLeave={() => onHoverChange(null)}
+            onMouseEnter={() => {
+              onHoverChange(key);
+              setMenuData?.(item.values);
+            }}
           >
-            <button
-              type="button"
-              className={isOpen ? `${s.navButton} ${s.open}` : s.navButton}
-              aria-haspopup="menu"
-              aria-expanded={isOpen}
-            >
+            <button type="button" className={ButtonClassName}>
               {item.name}
             </button>
           </div>
@@ -69,11 +63,12 @@ const Nav: React.FC<NavProps> = ({ hovered, onHoverChange, setMenuData }) => {
 
       return null;
     });
-  };
 
   return (
     <div className={s.navigation_header}>
-      {renderObject(NAVIGATION_LINKS_HEADER)}
+      {renderObject(
+        NAVIGATION_LINKS_HEADER as unknown as NavigationHeaderLinks
+      )}
     </div>
   );
 };

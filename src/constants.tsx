@@ -1,6 +1,6 @@
 import { FiAlertCircle, FiCheckCircle, FiInfo } from "react-icons/fi";
 import { links, socialLinks } from "./lib/nav";
-import { Section } from "./lib/types/types";
+import { SectionItem } from "./lib/types/types";
 
 export const ICONS = {
   success: <FiCheckCircle aria-hidden />,
@@ -21,7 +21,7 @@ export const footerText = [
 
 export const download_app_src: string = "/icons/download.png";
 
-export const sections: Section[] = [
+export const sections: SectionItem[] = [
   {
     title: "Shop and Learn",
     items: [
@@ -58,9 +58,3 @@ export const sections: Section[] = [
     ],
   },
 ];
-
-export const NAVIGATION_LINKS_HEADER = {
-  home: { name: "Overview", route: "/" },
-  socials: { name: "Socials", values: socialLinks },
-  download: { name: "Download", route: links.download.route },
-};

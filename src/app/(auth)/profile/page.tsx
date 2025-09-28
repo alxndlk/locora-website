@@ -113,7 +113,7 @@ export default async function ProfilePage() {
   const enrichedCountries = await enrichCountries(countryList);
 
   return (
-    <Wrapper footerLarge={false} blackHeader={true}>
+    <Wrapper footerLarge={false} blackHeader={true} footerTheme="black">
       <ProfileView
         name={user?.user_metadata?.full_name ?? "Traveler"}
         email={user?.email ?? undefined}
