@@ -1,10 +1,10 @@
 import { Wrapper } from "@/layout/Wrapper/Wrapper";
-import { Hero } from "./components/Home/Hero/Hero";
+import Main from "./components/Home/Main";
 
 export default function Home() {
   return (
-    <Wrapper>
-      <Hero />
+    <Wrapper footerTheme="black" blackHeader={true}>
+      <Main />
     </Wrapper>
   );
 }

@@ -27,6 +27,7 @@ const Nav: React.FC<NavProps> = ({ onHoverChange, setMenuData, theme }) => {
 
   const LinkClassName = setColorTheme(s, theme, "navLink");
   const ButtonClassName = setColorTheme(s, theme, "navButton");
+  const activeClassName = setColorTheme(s, theme, "active");
 
   const renderObject = (object: NavigationHeaderLinks) =>
     Object.entries(object).map(([key, raw]) => {
@@ -37,7 +38,7 @@ const Nav: React.FC<NavProps> = ({ onHoverChange, setMenuData, theme }) => {
           <Link
             key={key}
             href={item.route}
-            className={activeKey === key ? s.active : LinkClassName}
+            className={activeKey === key ? activeClassName : LinkClassName}
           >
             {item.name}
           </Link>

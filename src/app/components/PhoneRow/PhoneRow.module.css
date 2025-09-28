@@ -1,0 +1,106 @@
+.wrap {
+  padding: clamp(32px, 6vw, 80px) 16px;
+  display: flex;
+}
+
+.row {
+  --w: 286px;
+  --gap: 33px;
+  display: grid;
+  grid-template-columns: repeat(5, var(--w));
+  gap: var(--gap);
+  align-items: end;
+  width: calc(5 * var(--w) + 4 * var(--gap));
+  justify-content: center;
+}
+
+.container {
+  display: block;
+  margin: 0 auto;
+  padding-block-end: 96px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.figure {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 18px;
+  width: var(--w);
+  height: calc(var(--w) * 2.021);
+}
+
+.figure::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("/icons/phone.png") no-repeat center/contain;
+  pointer-events: none;
+  width: calc(var(--w) * 1.797); /* 514 / 286 */
+  height: calc(var(--w) * 2.535); /* 725 / 286 */
+  background-size: calc(var(--w) * 1.797) calc(var(--w) * 2.535);
+  background-repeat: no-repeat;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.phone {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 18px;
+}
+
+.phone:nth-child(2),
+.phone:nth-child(4) {
+  transform: translateY(var(--ty, -48px));
+  transition: transform 0.2s linear;
+  will-change: transform;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 1400px) {
+  .row {
+    --w: 260px;
+    --gap: 28px;
+  }
+}
+@media (max-width: 1280px) {
+  .row {
+    --w: 240px;
+    --gap: 24px;
+  }
+}
+@media (max-width: 1120px) {
+  .row {
+    --w: 220px;
+    --gap: 22px;
+  }
+}
+@media (max-width: 980px) {
+  .row {
+    --w: 200px;
+    --gap: 20px;
+  }
+}
+@media (max-width: 860px) {
+  .row {
+    --w: 184px;
+    --gap: 18px;
+  }
+}
+@media (max-width: 760px) {
+  .row {
+    --w: 168px;
+    --gap: 16px;
+  }
+}

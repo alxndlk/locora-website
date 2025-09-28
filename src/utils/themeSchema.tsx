@@ -21,6 +21,7 @@ export function setColorTheme(
     | "mobileHeaderContainer"
     | "mobileProfileText"
     | "icons"
+    | "active"
 ): string {
   const isBlack = theme === "black";
 
@@ -29,6 +30,8 @@ export function setColorTheme(
       // Header and hover
       case "content":
         return styles.contentBlack;
+      case "active":
+        return styles.activeBlack;
       case "heading":
         return styles.blackHeading;
       case "link":
@@ -72,6 +75,8 @@ export function setColorTheme(
       // Header and hover
       case "content":
         return styles.content;
+      case "active":
+        return styles.active;
       case "heading":
         return styles.heading;
       case "link":

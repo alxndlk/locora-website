@@ -3,7 +3,11 @@ import Main from "../components/Download/Main";
 
 export default function Download() {
   return (
-    <Wrapper>
+    <Wrapper
+      footerTheme="black"
+      blackHeader={true}
+      headerText="Download Locora"
+    >
       <Main />
     </Wrapper>
   );

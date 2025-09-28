@@ -115,3 +115,4 @@ export type NavRoute = { name: string; route: string };
 export type NavGroup = { name: string; values: Section[] };
 export type NavigationHeaderLink = NavRoute | NavGroup;
 export type NavigationHeaderLinks = Record<string, NavigationHeaderLink>;
+export type FaqItem = { q: string; a: string };

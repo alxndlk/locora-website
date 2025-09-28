@@ -4,6 +4,8 @@
   --background: rgb(29, 29, 31);
   --foreground: #fff;
   --blue-color: #06c;
+  --blue-color-button: rgb(0, 113, 227);
+  --promo-bg: #f73558;
   --red-color: rgba(255, 56, 60, 1);
   --gray-color: rgba(255, 255, 255, 0.85);
 
@@ -62,6 +64,10 @@
   --page-width: 1000px;
   --sm-page-width: 820px;
   --black-h1-color: #1d1d1f;
+
+  --gray-color-faq: #86868b;
+  --faq-border-color: #d2d2d7;
+  --general-bg: #161617;
 }
 
 body {

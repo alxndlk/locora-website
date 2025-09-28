@@ -9,7 +9,6 @@
   top: 0;
   padding: 0 1rem;
   transition: 0.1s ease-in-out;
-  background-color: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(30px) saturate(180%);
 }
 
@@ -121,6 +120,16 @@
 
 .active {
   border-bottom: 1px solid white;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+}
+
+.activeBlack {
+  border-bottom: 1px solid var(--globalnav-color);
+  color: var(--globalnav-color);
   height: 100%;
   justify-content: center;
   align-items: center;
