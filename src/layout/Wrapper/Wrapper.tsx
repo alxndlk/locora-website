@@ -15,7 +15,11 @@ export const Wrapper: React.FC<WrapperProps> = ({
 }) => {
   return (
     <div className={styles.wrapper}>
-      {needHeader ? <Header blackHeader={blackHeader} headerText={headerText} /> : <AuthHeader />}
+      {needHeader ? (
+        <Header blackHeader={blackHeader} headerText={headerText} />
+      ) : (
+        <AuthHeader />
+      )}
       {children}
       <Footer theme={footerTheme} />
     </div>

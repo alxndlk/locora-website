@@ -115,3 +115,13 @@ export const NAVIGATION_LINKS_HEADER = {
   socials: { name: "Socials", values: SOCIALS },
   download: { name: "Download", route: links.download.route },
 } satisfies NavigationHeaderLinks;
+
+export const SANDIMAX_NAVIGATION_LINKS_HEADER = {
+  wallper: { name: "Wallper", route: "https://wallper.app" },
+  locora: { name: "Locora", route: "https://locora.app" },
+  discord: { name: "Discord", route: "https://discord.gg/ksxrdnETuc" },
+  github: { name: "GitHub", route: "https://github.com/alxndlk/" },
+  terms: { name: "Terms", route: "https://sandimax.com/terms" },
+  privacy: { name: "Privacy", route: "https://sandimax.com/privacy" },
+  refund: { name: "Refund", route: "https://sandimax.com/refund" },
+} satisfies NavigationHeaderLinks;

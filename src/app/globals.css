@@ -49,6 +49,7 @@
   --globalnav-submenu-header-color: rgb(134, 134, 139);
   --globalnav-submenu-header-color-dark: rgb(110, 110, 115);
   --globalnav-color-secondary: #e8e8ed;
+  --r-globalnav-color: #000000cc;
 
   --globalnav-color: rgba(0, 0, 0, 0.8);
   --globalnav-background-opened: #fafafc;
@@ -70,8 +71,12 @@
   --general-bg: #161617;
 }
 
+html {
+  min-height: 100%;
+}
+
 body {
-  background: var(--background);
+  background: #fff;
   color: var(--foreground);
   transition: 0.3s ease;
   scroll-behavior: smooth;

@@ -11,7 +11,7 @@
   display: flex;
   font-size: 14px !important;
   transition: 0.3s ease;
-  padding-top: 0;
+  padding-top: 0px;
   backdrop-filter: blur(5px);
   z-index: -1;
 }
@@ -24,7 +24,7 @@
   flex-direction: column;
   background-color: var(--background);
   padding: 2rem 1rem;
-  padding-top: 52px;
+  padding-top: calc(52px + 44px);
 }
 
 .containerBlack {
@@ -35,7 +35,7 @@
   flex-direction: column;
   background-color: var(--mobile-header-bg);
   padding: 2rem 1rem;
-  padding-top: 52px;
+  padding-top: calc(52px + 44px);
 }
 
 .containerBlack::after {

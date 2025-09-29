@@ -47,7 +47,7 @@ const Main = () => {
         </motion.div>
 
         <motion.h1 variants={itemVariants}>
-          Everything you need all in one place.
+          Everything you need in one place.
         </motion.h1>
 
         <motion.p variants={itemVariants}>
@@ -60,8 +60,8 @@ const Main = () => {
             text="Try for free*"
             fontSize={17}
             fontWeight={600}
-            paddingButton="18px 31px"
-            buttonSize={56}
+            paddingButton={`0px ${window.innerWidth > 1000 ? 31 : 22}px`}
+            buttonSize={window.innerWidth > 1000 ? 56 : 44}
             buttonColor="rgb(0, 113, 227)"
           />
         </motion.div>

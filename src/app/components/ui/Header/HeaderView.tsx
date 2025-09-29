@@ -11,6 +11,7 @@ import MobileHeader from "@/layout/Header/MobileHeader/MobileHeader";
 import { HeaderViewProps, Section } from "@/lib/types/types";
 import Nav from "./Nav";
 import HoverMenu from "./HoverMenu";
+import SandimaxHeader from "./SandimaxHeader";
 
 const HeaderView: React.FC<HeaderViewProps> = ({
   blackHeader,
@@ -28,6 +29,7 @@ const HeaderView: React.FC<HeaderViewProps> = ({
   const [menuData, setMenuData] = React.useState<Section[] | null>(null);
   const [rotate, setRotate] = React.useState<number>(180);
   const [isMobileHeader, setIsMobileHeader] = React.useState(false);
+  const [isSandimaxHeader, setIsSandimaxHeader] = React.useState(false);
 
   const handleRotate = () => {
     setRotate((prev) => prev + 180);
@@ -36,9 +38,13 @@ const HeaderView: React.FC<HeaderViewProps> = ({
   return (
     <motion.header
       className={
-        !openMenu && !isMobileHeader ? styles.header : styles.active_header
+        !openMenu && !isMobileHeader && !isSandimaxHeader
+          ? styles.header
+          : styles.active_header
       }
     >
+      <SandimaxHeader setOpen={setIsSandimaxHeader} />
+
       <MobileHeader
         isOpen={isMobileHeader}
         onClose={closeMobile}

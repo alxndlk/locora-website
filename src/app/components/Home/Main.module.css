@@ -12,7 +12,7 @@
 
 .container {
   padding: 0 2rem;
-  padding-top: 8rem;
+  padding-top: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,7 +30,7 @@
   font-weight: 700;
   letter-spacing: -0.008em;
   max-width: 800px;
-  text-wrap: pretty;
+  text-wrap: balance;
   color: var(--black-h1-color);
 }
 
@@ -50,4 +50,40 @@
 
 .buttons {
   color: #fff;
+}
+
+@media (max-width: 1000px) {
+  .container h1 {
+    font-size: 44px;
+    line-height: 1.0909090909;
+    font-weight: 700;
+    letter-spacing: -0.001em;
+    max-width: 520px;
+    margin-top: 1rem;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .container p {
+    font-size: 17px;
+    max-width: 400px;
+    margin-top: 0.5rem;
+    margin-bottom: 20px;
+  }
+
+  .buttons {
+    height: 44px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container h1 {
+    font-size: 40px;
+    line-height: 1.025;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
 }

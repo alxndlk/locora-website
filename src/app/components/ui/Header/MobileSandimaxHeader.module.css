@@ -1,50 +1,38 @@
 .hover_menu {
   position: fixed;
-  top: 44px;
+  top: 0;
   width: 100%;
   height: 100vh;
   left: 0;
   backdrop-filter: blur(5px);
   display: flex;
+  z-index: 10000;
 }
 
 .active {
   position: fixed;
-  top: 44px;
+  top: 0;
   width: 100%;
   height: 100vh;
   left: 0;
   backdrop-filter: blur(5px);
   display: none;
-}
-
-.content {
-  width: 100%;
-  height: max-content;
-  background-color: var(--background);
-  transition: 0.3s ease;
-  padding-top: calc(52px + 3rem);
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  padding-bottom: 84px;
-  text-align: center;
-  z-index: 9999;
+  z-index: 10000;
 }
 
 .contentBlack {
   width: 100%;
   height: max-content;
-  background-color: var(--globalnav-background-opened);
+  background-color: #fff;
   transition: 0.3s ease;
-  padding-top: calc(52px + 3rem);
   display: flex;
   justify-content: start;
   align-items: start;
-  position: relative;
   text-align: center;
   padding-bottom: 84px;
   z-index: 9999;
+  padding-top: 50px;
+  position: relative;
 }
 
 .contentBlack::after {
@@ -60,9 +48,9 @@
 
   background: radial-gradient(
     ellipse 70% 140% at 50% 100%,
-    /* эллипс, центр внизу по центру */ rgba(0, 0, 0, 0.1) 0%,
-    /* самый центр — чуть темнее */ rgba(0, 0, 0, 0.05) 35%,
-    /* мягкий переход */ rgba(0, 0, 0, 0) 75% /* края — полностью прозрачны */
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.05) 35%,
+    rgba(0, 0, 0, 0) 75%
   );
 }
 
@@ -94,36 +82,35 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-}
-
-.link {
-  color: var(--globalnav-color-secondary);
-  font-weight: 600;
-  padding: 7px 11px;
-  padding-left: 0;
-  margin-bottom: -6px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  font-size: 24px;
+  gap: 0.5rem;
 }
 
 .blackLinks {
   color: var(--globalnav-color-secondary-dark);
   font-weight: 600;
-  padding: 7px 11px;
-  padding-left: 0;
-  margin-bottom: -6px;
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 28px;
+  margin-bottom: -7px;
+  padding-top: 3px;
+  padding-bottom: 4px;
+  padding-inline-start: calc(48px + 0px);
+  padding-inline-end: calc(48px + 0px);
+  margin-top: 4px;
 }
 
 .block {
   display: flex;
   flex-direction: column;
   align-items: start;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--r-globalnav-color) !important;
+  z-index: 10000;
 }
