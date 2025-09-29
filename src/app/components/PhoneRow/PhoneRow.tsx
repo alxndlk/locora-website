@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 import styles from "./PhoneRow.module.css";
 
@@ -10,7 +9,7 @@ type Props = {
   subtitle?: string;
 };
 
-export default function PhoneRow({ shots, title, subtitle }: Props) {
+export default function PhoneRow({ shots }: Props) {
   const visible = shots.slice(0, 5);
 
   const movers = useRef<(HTMLElement | null)[]>([]);
@@ -62,8 +61,7 @@ export default function PhoneRow({ shots, title, subtitle }: Props) {
                 if (i === 3) movers.current[1] = el;
               }}
             >
-              
-              <figure key={i} className={styles.figure}/>
+              <figure key={i} className={styles.figure} />
               <span className={styles.shadow} aria-hidden />
             </figure>
           ))}

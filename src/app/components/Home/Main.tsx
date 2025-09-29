@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import styles from "./Main.module.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -15,10 +15,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      staggerChildren: 0.15,
-    },
+    transition: { duration: 0.6, staggerChildren: 0.15 },
   },
 };
 
@@ -27,7 +24,30 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
+// Hook: узнаем ширину только на клиенте
+function useViewportWidth() {
+  const [w, setW] = useState<number | null>(null);
+  useEffect(() => {
+    const update = () => setW(window.innerWidth);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+  return w;
+}
+
 const Main = () => {
+  const width = useViewportWidth();
+  const isWide = (width ?? 0) > 1000;
+
+  const btnProps = useMemo(
+    () => ({
+      paddingButton: `0px ${isWide ? 31 : 22}px`,
+      buttonSize: isWide ? 56 : 44,
+    }),
+    [isWide]
+  );
+
   return (
     <motion.section
       className={styles.main}
@@ -38,11 +58,12 @@ const Main = () => {
       <motion.div className={styles.container} variants={containerVariants}>
         <motion.div variants={itemVariants} className={styles.logo}>
           <Image
-            alt=""
-            src={"/images/plane.png"}
+            alt="Locora plane"
+            src="/images/plane.png"
             width={512}
             height={512}
             className={styles.icon}
+            priority
           />
         </motion.div>
 
@@ -60,12 +81,13 @@ const Main = () => {
             text="Try for free*"
             fontSize={17}
             fontWeight={600}
-            paddingButton={`0px ${window.innerWidth > 1000 ? 31 : 22}px`}
-            buttonSize={window.innerWidth > 1000 ? 56 : 44}
+            paddingButton={btnProps.paddingButton}
+            buttonSize={btnProps.buttonSize}
             buttonColor="rgb(0, 113, 227)"
           />
         </motion.div>
       </motion.div>
+
       <PhoneRow
         shots={[
           { src: "/images/iphone.png", alt: "Phone 1" },
@@ -75,6 +97,7 @@ const Main = () => {
           { src: "/images/iphone.png", alt: "Phone 5" },
         ]}
       />
+
       <Promo />
       <FaqBlock />
       <Application
