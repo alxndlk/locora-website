@@ -113,7 +113,6 @@ export const SOCIALS = [
 export const NAVIGATION_LINKS_HEADER = {
   home: { name: "Overview", route: "/" },
   socials: { name: "Socials", values: SOCIALS },
-  download: { name: "Download", route: links.download.route },
 } satisfies NavigationHeaderLinks;
 
 export const SANDIMAX_NAVIGATION_LINKS_HEADER = {

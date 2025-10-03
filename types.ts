@@ -33,6 +33,7 @@ export type SecondaryButtonProps = {
   formAction?: (formData: FormData) => void | Promise<void>;
   loading?: boolean;
   buttonColor?: string;
+  textColor?: string;
 };
 
 export type PrimaryButtonProps = {

@@ -24,7 +24,7 @@
   flex-direction: column;
   background-color: var(--background);
   padding: 2rem 1rem;
-  padding-top: calc(52px + 44px);
+  padding-top: calc(52px);
 }
 
 .containerBlack {
@@ -35,7 +35,7 @@
   flex-direction: column;
   background-color: var(--mobile-header-bg);
   padding: 2rem 1rem;
-  padding-top: calc(52px + 44px);
+  padding-top: calc(52px);
 }
 
 .containerBlack::after {

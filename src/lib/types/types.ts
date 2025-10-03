@@ -121,3 +121,31 @@ export type MobileSandimaxHeaderProps = {
   open: boolean;
   setVisibility: (visible: boolean) => void;
 };
+
+export type ScrollTextProps = {
+  title: string;
+  subtitle: string;
+};
+
+export type Tile = {
+  title?: string;
+  img: string;
+  alt?: string;
+  label?: string;
+};
+
+export type Card = {
+  kicker: string;
+  headline: string;
+  title?: string;
+  body: string;
+  cta?: { label: string; href: string; external?: boolean };
+  footnote?: string;
+};
+
+export type Feature = {
+  id: string;
+  label: string;
+  Icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  desc?: string;
+};

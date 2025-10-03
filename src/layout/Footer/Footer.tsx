@@ -10,6 +10,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { config } from "@/config";
 import { setColorTheme } from "@/utils/themeSchema";
 import { useAnimatedAccordions } from "@/hooks/useAnimatedAccordions";
+import { Icons } from "@/icons";
 
 type FooterProps = {
   theme?: "white" | "black";
@@ -77,7 +78,10 @@ const Footer: React.FC<FooterProps> = ({ theme }) => {
             <details key={section.title} className={styles.details}>
               <summary className={footerSummary}>
                 {section.title}
-                <IoIosArrowForward className={styles.chevron} aria-hidden />
+                {Icons.chevrons.right({
+                  className: styles.chevron,
+                  "aria-hidden": true,
+                })}
               </summary>
 
               <div className={styles.panel} data-panel>

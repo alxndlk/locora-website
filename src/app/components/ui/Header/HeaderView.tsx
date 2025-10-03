@@ -4,14 +4,13 @@ import React from "react";
 import styles from "./Header.module.css";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { HiOutlineChevronUp } from "react-icons/hi2";
 import { PrimaryButton } from "@/app/components/ui/PrimaryButton/PrimaryButton";
 import { SecondaryButton } from "@/app/components/ui/SeconradyButton/SecondaryButton";
 import MobileHeader from "@/layout/Header/MobileHeader/MobileHeader";
 import { HeaderViewProps, Section } from "@/lib/types/types";
 import Nav from "./Nav";
 import HoverMenu from "./HoverMenu";
-import SandimaxHeader from "./SandimaxHeader";
+import { Icons } from "@/icons";
 
 const HeaderView: React.FC<HeaderViewProps> = ({
   blackHeader,
@@ -43,8 +42,6 @@ const HeaderView: React.FC<HeaderViewProps> = ({
           : styles.active_header
       }
     >
-      <SandimaxHeader setOpen={setIsSandimaxHeader} />
-
       <MobileHeader
         isOpen={isMobileHeader}
         onClose={closeMobile}
@@ -86,17 +83,17 @@ const HeaderView: React.FC<HeaderViewProps> = ({
             onClick={openMobile}
             aria-label="Open Menu"
           >
-            <HiOutlineChevronUp
-              size={20}
-              onClick={() => (
+            {Icons.chevrons.up({
+              size: 20,
+              onClick: () => (
                 handleRotate(), setIsMobileHeader((prev) => !prev)
-              )}
-              style={{
+              ),
+              style: {
                 transform: `rotate(${rotate}deg)`,
                 transition: "transform 0.2s ease-in-out",
-              }}
-              color={theme === "black" ? "#000" : "#fff"}
-            />
+              },
+              color: theme === "black" ? "#000" : "#fff",
+            })}
           </div>
           <Nav
             hovered={openMenu}
@@ -111,7 +108,7 @@ const HeaderView: React.FC<HeaderViewProps> = ({
                 text="Download App"
                 fontSize={12}
                 fontWeight={500}
-                buttonColor="rgb(0, 113, 227)"
+                buttonColor="#f73558"
                 paddingButton="3px 10px"
                 widthButton="max-content"
                 onClick={() => onGo(links.download.route)}
@@ -134,7 +131,7 @@ const HeaderView: React.FC<HeaderViewProps> = ({
               }
               fontSize={12}
               fontWeight={500}
-              buttonColor="rgb(0, 113, 227)"
+              buttonColor="#f73558"
               paddingButton="3px 10px"
               widthButton="max-content"
               onClick={() => onGo(links.profile.route)}

@@ -4,7 +4,7 @@
   --background: rgb(29, 29, 31);
   --foreground: #fff;
   --blue-color: #06c;
-  --blue-color-button: rgb(0, 113, 227);
+  --blue-color-button: #0071e3;
   --promo-bg: #f73558;
   --red-color: rgba(255, 56, 60, 1);
   --gray-color: rgba(255, 255, 255, 0.85);
@@ -69,6 +69,19 @@
   --gray-color-faq: #86868b;
   --faq-border-color: #d2d2d7;
   --general-bg: #161617;
+
+  --ribbon-background-color: #f5f5f7;
+  --ribbon-text-color: #1d1d1f;
+  --ribbon-link-color: #0066cc;
+  --ribbon-focus-color: rgba(0, 125, 250, 0.6);
+  --ribbon-link-color-initial: white;
+
+  --feature-scroll-color: rgb(29, 29, 31);
+
+  --town-showcase-bg: #f5f5f7;
+
+  --h1-title-size: 68px;
+  --desc-color-gray: #86868b;
 }
 
 html {

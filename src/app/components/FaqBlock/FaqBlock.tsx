@@ -1,9 +1,9 @@
 "use client";
 
 import styles from "./FaqBlock.module.css";
-import { IoChevronDownOutline } from "react-icons/io5";
 import { faqs } from "@/constants";
 import { useAnimatedDetails } from "@/hooks/useAnimatedDetails";
+import { Icons } from "@/icons";
 
 export default function FaqBlock() {
   useAnimatedDetails();
@@ -20,12 +20,12 @@ export default function FaqBlock() {
             <details key={i} className={styles.item}>
               <summary className={styles.summary}>
                 {f.q}
-                <IoChevronDownOutline
-                  size={28}
-                  color="#86868b"
-                  className={styles.chevron}
-                  aria-hidden
-                />
+                {Icons.chevrons.down({
+                  size: 28,
+                  color: "#86868b",
+                  className: styles.chevron,
+                  "aria-hidden": true,
+                })}
               </summary>
 
               <div className={styles.panel}>

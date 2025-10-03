@@ -32,7 +32,8 @@
     "app/api/register/route.ts",
     "app/api/userExists/route.ts",
     "app/Providers.js",
-    "next.config.js"
+    "next.config.js",
+    "src/app/components/FeatureScrollList"
   ],
   "exclude": ["node_modules", ".next"]
 }

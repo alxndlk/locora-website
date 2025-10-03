@@ -8,11 +8,12 @@
   align-items: center;
   background-color: #fff;
   color: var(--black-h1-color);
+  padding-top: 52px;
 }
 
 .container {
   padding: 0 2rem;
-  padding-top: 10rem;
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,13 +44,22 @@
 }
 
 .icon {
-  width: 156px;
-  height: 156px;
-  border-radius: 28px;
+  animation: scaleDown 1.5s ease-in-out forwards;
 }
 
 .buttons {
   color: #fff;
+}
+
+@keyframes scaleDown {
+  0% {
+    width: 256px;
+    height: 256px;
+  }
+  100% {
+    width: 156px;
+    height: 156px;
+  }
 }
 
 @media (max-width: 1000px) {

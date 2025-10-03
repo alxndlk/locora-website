@@ -27,6 +27,7 @@ export const SecondaryButton = ({
   formAction,
   loading,
   buttonColor,
+  textColor,
 }: SecondaryButtonProps) => {
   const iconsMap: { [key: string]: JSX.Element } = {
     FaChevronRight: <FaChevronRight size={iconSize} color={iconColor} />,
@@ -52,6 +53,7 @@ export const SecondaryButton = ({
         width: loading ? "max-content" : widthButton,
         padding: loading ? "12.5px" : paddingButton,
         backgroundColor: buttonColor,
+        color: textColor,
       }}
     >
       {loading ? (

@@ -1,0 +1,130 @@
+.globalBlocks {
+  background: var(--town-showcase-bg);
+  width: 100%;
+  padding-top: 200px;
+  padding-bottom: 150px;
+}
+
+.container {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.grid {
+  display: grid;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  grid-gap: 20px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  max-width: 820px;
+}
+
+.title {
+  font-size: var(--h1-title-size);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.016em;
+  color: var(--black-h1-color);
+}
+
+.top_block,
+.bottom_block {
+  min-height: 460px;
+  padding-right: 0;
+  flex-direction: row;
+  display: flex;
+  box-sizing: border-box;
+  padding: 45px;
+  align-items: center;
+  background-color: #fff;
+  grid-column: span 12;
+  border-radius: 18px;
+  overflow: hidden;
+  padding-right: 0;
+  grid-gap: 20px;
+  gap: 20px;
+}
+
+.block_title {
+  font-size: 21px;
+  line-height: 1.1904761905;
+  font-weight: 600;
+  letter-spacing: -0.003em;
+}
+
+.block_desc {
+  color: var(--desc-color-gray);
+  margin-top: 5px;
+  font-size: 19px;
+  line-height: 1.2105263158;
+  font-weight: 600;
+  letter-spacing: -0.003em;
+}
+
+.text {
+  flex-basis: 40%;
+  text-align: left;
+}
+
+.image_container {
+  margin: 0 auto;
+  margin-right: 0;
+  width: 405px;
+  height: 370px;
+  background-size: 405px 370px;
+  background-repeat: no-repeat;
+  background-image: url("/images/table.jpg");
+}
+
+.middle_block {
+  min-height: 590px;
+  padding-right: 20px;
+  padding-bottom: 0;
+  flex-direction: column;
+  display: flex;
+  box-sizing: border-box;
+  padding: 45px;
+  grid-gap: 20px;
+  gap: 20px;
+  background-color: #fff;
+  background-color: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  grid-column: span 6;
+  padding-bottom: 0;
+}
+
+.image_container_middle {
+  margin-top: auto;
+  margin: 0 auto;
+}
+
+.image_figure_middle {
+  width: 243px;
+  height: 337px;
+  background-size: 243px 337px;
+  background-repeat: no-repeat;
+  background-image: url("/images/mock_iphone_1.jpg");
+}
+
+#figure_middle_2 {
+  background-image: url("/images/mock_iphone_2.jpg");
+}
+
+.image_container_bottom {
+  padding-top: 50px;
+  padding-bottom: 57px;
+  margin: 0 auto;
+}
+
+.image_figure_bottom {
+  display: flex;
+  align-items: flex-end;
+  padding-inline-start: 12px;
+  width: 128px;
+  height: 176px;
+  background-image: url("/icons/privacy.png");
+  background-size: cover;
+}

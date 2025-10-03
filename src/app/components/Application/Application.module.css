@@ -1,11 +1,13 @@
 .wrap {
-  background: var(--bg);
+  background: var(--town-showcase-bg);
   padding-top: 130px;
   padding-bottom: 130px;
+  width: 100%;
 }
 
 .container {
   max-width: var(--page-width);
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   display: flex;
@@ -21,8 +23,6 @@
   justify-content: center;
   width: 96px;
   height: 96px;
-  border-radius: 16px;
-  background: #fff;
   margin-block-end: 30px;
 }
 

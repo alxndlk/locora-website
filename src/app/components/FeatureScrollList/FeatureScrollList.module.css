@@ -1,0 +1,35 @@
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10rem;
+}
+
+.wrap {
+  max-width: calc(var(--page-width) - 170px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.item {
+  text-align: center;
+}
+
+.title {
+  font-size: 51px;
+  line-height: 1.1765005882;
+  font-weight: 700;
+  letter-spacing: -0.0025em;
+  color: var(--promo-bg);
+  text-wrap: balance;
+}
+
+.subtitle {
+  font-size: 51px;
+  line-height: 1.1765005882;
+  font-weight: 700;
+  letter-spacing: -0.0025em;
+  color: var(--black-h1-color);
+}

@@ -1,4 +1,3 @@
-// config.ts
 export const config = {
   terms_date_confirm: new Date("2025-08-18"),
   privacy_date_confirm: new Date("2025-08-18"),
@@ -45,5 +44,13 @@ export const config = {
     icons: {
       icon: [{ url: "/plane.png" }],
     },
+  },
+  locora: {
+    baseURL: "https://locora.app/",
+    baseName: "Locora",
+  },
+  sandimax: {
+    baseURL: "https://sandimax.com/",
+    baseName: "Sandimax",
   },
 };

@@ -1,0 +1,51 @@
+.ribbon {
+  padding-top: 0.9411764706em;
+  padding-bottom: 0.9411764706em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--ribbon-background-color);
+  color: var(--ribbon-text-color);
+  font-size: var(--paragraph-size-l);
+  width: 100%;
+  font-weight: 300;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.ribbon span {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.link {
+  color: var(--ribbon-link-color);
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 820px) {
+  .ribbon span {
+    display: block;
+  }
+
+  .ribbon {
+    align-items: start;
+    text-align: start;
+    justify-content: start;
+  }
+
+  .link {
+    justify-content: start;
+  }
+}

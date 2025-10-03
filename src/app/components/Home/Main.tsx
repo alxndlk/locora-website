@@ -9,6 +9,13 @@ import Promo from "../Promo/Promo";
 import FaqBlock from "../FaqBlock/FaqBlock";
 import Application from "../Application/Application";
 import PhoneRow from "../PhoneRow/PhoneRow";
+import Ribbon from "../Ribbon/Ribbon";
+import { config } from "@/config";
+import FeatureScrollList from "../FeatureScrollList/FeatureScrollList";
+import TownsShowcase from "../TownsShowcase/TownsShowcase";
+import GlobalBlocks from "../GlobalBlocks/GlobalBlocks";
+import { fadeUp } from "@/hooks/useMotion";
+import AccessibilityShowcase from "../AccessibilityShowcase/AccessibilityShowcase";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -24,7 +31,6 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-// Hook: узнаем ширину только на клиенте
 function useViewportWidth() {
   const [w, setW] = useState<number | null>(null);
   useEffect(() => {
@@ -55,25 +61,35 @@ const Main = () => {
       initial="hidden"
       animate="visible"
     >
+      <Ribbon
+        text="This application was developed by the Sandimax Team as part of our commitment to quality software."
+        link={config.sandimax.baseURL}
+      />
+
       <motion.div className={styles.container} variants={containerVariants}>
         <motion.div variants={itemVariants} className={styles.logo}>
           <Image
             alt="Locora plane"
             src="/images/plane.png"
-            width={512}
-            height={512}
+            width={1024}
+            height={1024}
             className={styles.icon}
             priority
           />
         </motion.div>
 
-        <motion.h1 variants={itemVariants}>
-          Everything you need in one place.
+        <motion.h1
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.5 }}
+        >
+          All essential features in one solution.
         </motion.h1>
 
         <motion.p variants={itemVariants}>
-          Download Locora for free and start exploring the world with ease. Your
-          travel companion awaits!
+          Download Locora free of charge and begin your journey with confidence.
+          Your reliable travel assistant is ready to support you.
         </motion.p>
 
         <motion.div variants={itemVariants} className={styles.buttons}>
@@ -83,27 +99,30 @@ const Main = () => {
             fontWeight={600}
             paddingButton={btnProps.paddingButton}
             buttonSize={btnProps.buttonSize}
-            buttonColor="rgb(0, 113, 227)"
+            buttonColor="#f73558"
           />
         </motion.div>
       </motion.div>
 
       <PhoneRow
         shots={[
-          { src: "/images/iphone.png", alt: "Phone 1" },
+          { src: "/images/home_screen.png", alt: "Phone 1" },
           { src: "/images/iphone.png", alt: "Phone 2" },
           { src: "/images/iphone.png", alt: "Phone 3" },
           { src: "/images/iphone.png", alt: "Phone 4" },
           { src: "/images/iphone.png", alt: "Phone 5" },
         ]}
       />
-
+      <FeatureScrollList />
       <Promo />
+      <TownsShowcase />
+      <GlobalBlocks />
+      <AccessibilityShowcase />
       <FaqBlock />
       <Application
         iconSrc="/images/plane.png"
-        subtitle="Start exploring the world with Locora today."
-        title="Available on App Store"
+        subtitle="Begin your journey with Locora today."
+        title="Available on the App Store"
         cta={{ label: "Download from App Store", href: "#" }}
       />
     </motion.section>
