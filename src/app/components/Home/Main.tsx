@@ -78,14 +78,7 @@ const Main = () => {
           />
         </motion.div>
 
-        <motion.h1
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.5 }}
-        >
-          All essential features in one solution.
-        </motion.h1>
+        <motion.h1>All essential features in one solution.</motion.h1>
 
         <motion.p variants={itemVariants}>
           Download Locora free of charge and begin your journey with confidence.

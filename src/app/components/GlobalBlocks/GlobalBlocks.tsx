@@ -9,9 +9,6 @@ const GlobalBlocks = () => {
   const mid2 = useRevealOnView({ amount: 0.35 });
   const bottom = useRevealOnView({ amount: 0.35 });
 
-  const yTop = useParallax(top.ref, { distance: 40 });
-  const yM1 = useParallax(mid1.ref, { distance: 0 });
-  const yM2 = useParallax(mid2.ref, { distance: 0 });
   const yBot = useParallax(bottom.ref, { distance: 40 });
 
   return (
@@ -22,7 +19,7 @@ const GlobalBlocks = () => {
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
         >
           A global news source. Personalized for you.
         </motion.h1>
@@ -46,7 +43,7 @@ const GlobalBlocks = () => {
                 culture, and more.
               </p>
             </div>
-            <motion.div className={s.image_container} style={{ y: yTop }}>
+            <motion.div className={s.image_container}>
               <figure className={s.image_figure} />
             </motion.div>
           </motion.div>
@@ -69,7 +66,7 @@ const GlobalBlocks = () => {
                 Athletic, Sports Illustrated, local newspapers, and more.
               </p>
             </div>
-            <motion.div className={s.image_container_middle} style={{ y: yM1 }}>
+            <motion.div className={s.image_container_middle}>
               <figure className={s.image_figure_middle} />
             </motion.div>
           </motion.div>
@@ -92,7 +89,7 @@ const GlobalBlocks = () => {
                 throughout the app.
               </p>
             </div>
-            <motion.div className={s.image_container_middle} style={{ y: yM2 }}>
+            <motion.div className={s.image_container_middle}>
               <figure
                 className={s.image_figure_middle}
                 id={s.figure_middle_2}

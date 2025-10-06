@@ -112,11 +112,11 @@ export const faqs: FaqItem[] = [
     a: "Yes. The core app is free to download and use indefinitely. We may introduce optional add-ons (for example, advanced editing tools or premium data packs) as in-app purchases handled by the App Store. You can keep using the free version without buying anything, and any future purchases will be tied to your Apple ID.",
   },
   {
-    q: "How does Beta / TestFlight work?",
+    q: "How does TestFlight work?",
     a: "TestFlight lets you try pre-release builds before they hit the App Store. Features in beta may change, be removed, or occasionally break; this helps us test performance and reliability across devices. Your feedback directly shapes what ships publicly, so early testers often see fixes and improvements land fastest.",
   },
   {
-    q: "What data does Locora use for welcomes and stats?",
+    q: "What data does Locora use?",
     a: "With your permission, Locora may use precise and background location to detect arrivals and compute city/country/day counts. Location is processed with power efficiency in mind and can be disabled at any time in iOS Settings → Privacy & Security → Location Services. If you turn location off, the app still works, but automatic welcomes and some stats won’t be available.",
   },
   {
@@ -215,11 +215,6 @@ export const AccessibilityShowcaseFeatures = [
     id: "Culture",
     label: "Culture",
     Icon: ICONS.Culture,
-  },
-  {
-    id: "Sharing",
-    label: "Sharing",
-    Icon: ICONS.Sharing,
   },
   {
     id: "Airports",

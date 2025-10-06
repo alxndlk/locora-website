@@ -51,6 +51,7 @@ export default function Promo() {
           variants={fadeIn}
           initial={cta.initial}
           animate={cta.controls}
+          className={styles.button_wrap}
         >
           <PrimaryButton
             text="Try for free*"

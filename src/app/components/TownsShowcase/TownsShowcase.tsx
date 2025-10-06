@@ -20,7 +20,7 @@ export default function TownsShowcase() {
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             {TownsShowcaseText.title}
           </motion.h2>

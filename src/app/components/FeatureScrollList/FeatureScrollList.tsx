@@ -18,7 +18,7 @@ export default function FeatureScrollList() {
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             <h3 className={s.title}>
               {it.title} <span className={s.subtitle}>{it.subtitle}</span>

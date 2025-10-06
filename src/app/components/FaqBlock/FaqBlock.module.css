@@ -63,3 +63,52 @@
 .item[open] .chevron {
   transform: rotate(180deg);
 }
+
+@media (max-width: 1068px) {
+  .wrap {
+    padding-top: 93px;
+    padding-bottom: 74px;
+  }
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 692px;
+  }
+  .title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 44px;
+    line-height: 1.0909090909;
+    font-weight: 700;
+    letter-spacing: -0.001em;
+  }
+  .summary {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    padding-top: 95px;
+    padding-bottom: 46px;
+  }
+  .title {
+    font-size: 40px;
+    line-height: 1.025;
+    font-weight: 700;
+    letter-spacing: 0em;
+  }
+  .container {
+    max-width: 330px;
+    margin-inline: auto;
+    text-align: start;
+  }
+  .summary {
+    font-size: 19px;
+    gap: 40px;
+  }
+  .summary svg {
+    width: 18px;
+    height: 18px;
+  }
+}

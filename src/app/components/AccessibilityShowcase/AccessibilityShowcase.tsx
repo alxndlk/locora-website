@@ -44,7 +44,7 @@ export default function AccessibilityShowcase() {
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
           >
             {AccessibilityShowcaseText.title}
           </motion.h2>

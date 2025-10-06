@@ -91,6 +91,12 @@
     --w: 200px;
     --gap: 20px;
   }
+  .container {
+    padding: 0;
+  }
+  .wrap {
+    padding-bottom: 84px;
+  }
 }
 @media (max-width: 860px) {
   .row {

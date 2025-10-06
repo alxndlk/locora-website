@@ -7,7 +7,6 @@
   width: 100%;
   margin-block: 40px 40px;
   position: relative;
-  overflow: hidden;
 }
 
 .big {
@@ -42,22 +41,41 @@
 
 .absolute_images {
   display: flex;
-  flex-direction: row;
   gap: 20px;
   position: absolute;
-  z-index: 0;
   margin-top: -13rem;
-  scale: 103%;
-  margin-left: -5px;
-  z-index: 0;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
 .absolute_images img {
   width: 195px;
-  aspect-ratio: 1/1;
-  background-size: contain;
+  height: 195px;
   object-fit: cover;
   border-radius: 10px;
+  flex: 0 0 195px;
+  min-width: 195px;
+  min-height: 195px;
+}
+
+@media (max-width: 734px) {
+  .big {
+    width: 211px;
+    height: 432px;
+    background-size: 211px 432px;
+  }
+  .absolute_images img {
+    width: 150px;
+    height: 150px;
+    flex: 0 0 150px;
+    min-width: 150px;
+    min-height: 150px;
+  }
+
+  .absolute_images {
+    margin-top: -10rem;
+    gap: 14px;
+  }
 }
 
 @media (max-width: 640px) {
